@@ -1,6 +1,6 @@
 /**
  * Header Component
- * Main navigation header with skip link for accessibility
+ * Main navigation header based on Sacred Groves design
  */
 
 import { Link } from 'react-router-dom'
@@ -19,19 +19,28 @@ export const Header: React.FC = () => {
       </a>
       <nav className={styles.nav} role="navigation" aria-label="Main navigation">
         <div className={styles.container}>
-          <Link to="/" className={styles.logo} aria-label="Home">
-            Sacred Website
+          <Link to="/" className={styles.logo} aria-label="Sacred Groves Home">
+            <img 
+              src="/assets/logos/sacred-groves-logo.svg" 
+              alt="Sacred Groves" 
+              className={styles.logoImage}
+            />
           </Link>
-          <ul className={styles.navList}>
-            <li>
-              <Link to="/" className={styles.navLink}>
-                Home
-              </Link>
-            </li>
-          </ul>
+          
+          <div className={styles.navRight}>
+            <button className={styles.signUpButton}>Sign Up</button>
+            <button className={styles.loginButton}>Login</button>
+            <button className={styles.searchButton} aria-label="Search">
+              <img src="/assets/icons/search.svg" alt="" />
+            </button>
+            <button className={styles.menuButton} aria-label="Menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
         </div>
       </nav>
     </header>
   )
 }
-

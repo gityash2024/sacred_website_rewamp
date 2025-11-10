@@ -339,13 +339,262 @@
 }
 
 /* ============================================ */
+/* THIRD SECTION - GUARDIAN OF THE WILD */
+/* ============================================ */
+
+.guardianSection {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guardianBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.guardianBgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guardianContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Soccer Card */
+.soccerCard {
+  background: #03303D;
+  border-radius: 24px;
+  padding: 30px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.soccerIconWrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.soccerIcon {
+  width: 120px;
+  height: auto;
+}
+
+.soccerNumber {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 10px 0;
+  line-height: 1;
+}
+
+.soccerText {
+  font-family: 'Montserrat';
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 100%;
+    color: #ffffff;
+  margin: 15px 0 20px 0;
+}
+
+.soccerSource {
+  width: 100%;
+  text-align: left;
+  margin-top: auto;
+}
+
+.sourceLabel {
+  font-family: 'Montserrat';
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 3px 0;
+}
+
+.sourceValue {
+font-family: 'Montserrat';
+    font-size: 21px;
+    font-weight: 400;
+    color: #ffffff;
+  margin: 0;
+      line-height: 100%;
+}
+
+/* Guardian Text Section */
+.guardianTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.guardianHeading {
+ font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 40px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.guardianButtons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guardianBtn {
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+    padding: 16px 70px;
+    font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 800;
+    color: #03303D;
+    cursor: pointer;
+    display: flex
+;
+    align-items: center;
+    gap: 65px;
+  transition: all 0.3s ease;
+}
+
+.guardianBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btnArrow {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Location Text */
+.locationText {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.locationText p {
+    font-family: 'Montserrat';
+    font-size: 16px;
+    font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design for Guardian Section */
+@media (max-width: 1400px) {
+  .guardianContent {
+    padding: 50px 60px;
+  }
+
+  .guardianHeading {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .guardianHeading {
+    font-size: 40px;
+  }
+
+  .guardianButtons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .guardianBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .guardianContent {
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .soccerCard {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .guardianTextWrapper {
+    margin-top: 60px;
+  }
+
+  .guardianHeading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .guardianBtn {
+    padding: 14px 28px;
+    font-size: 13px;
+  }
+
+  .locationText {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .locationText p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .soccerNumber {
+    font-size: 64px;
+  }
+
+  .guardianHeading {
+    font-size: 28px;
+  }
+}
+
+/* ============================================ */
 /* NEW SPLIT BACKGROUND SECTION */
 /* ============================================ */
 
 .splitSection {
   width: 100%;
   min-height: 100vh;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
 }
 
 .splitContainer {
@@ -379,10 +628,10 @@
 }
 
 .splitHeading {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 1.3;
+  font-family: 'Montserrat';
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 36px;
   color: #03303D;
   margin: 0;
 }
@@ -400,10 +649,10 @@
 }
 
 .paragraph {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.6;
+ font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 100%;
   color: #03303D;
   margin: 0;
 }
@@ -546,12 +795,13 @@
 }
 
 .forestText {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.6;
+  font-family: 'Montserrat';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 100%;
   color: #ffffff;
   margin: 0;
+  text-align: center;
 }
 
 /* Responsive Design for Split Section */

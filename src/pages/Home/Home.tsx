@@ -13,7 +13,8 @@ import cloud from '@/assets/cloud.svg'
 import coedwing from '@/assets/coedwing.svg'
 import Usingtechnology from '@/assets/Usingtechnology.svg'
 import map from '@/assets/map.png'
-
+import BecomeaGuardianoftheWild from '@/assets/BecomeaGuardianoftheWild.jpg'
+import Soccerlogo from '@/assets/Soccerlogo.svg'
 // import humidity from '@/assets/humidity.svg'
 // import treeDensity from '@/assets/treeDensity.svg'
 
@@ -126,6 +127,7 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      
       {/* NEW Split Background Section */}
       <section className={styles.splitSection}>
         <div className={styles.splitContainer}>
@@ -148,12 +150,12 @@ export const Home: React.FC = () => {
             {/* Description Text */}
             <div className={styles.textBlock}>
               <p className={styles.paragraph}>
-                Sacred Groves is a <strong>Community Interest Company</strong> incorporated in the United Kingdom, reimagining business in partnership with nature — our ultimate shareholder.
+                Sacred Groves is a <strong>Community Interest Company</strong> <br /> incorporated in the United Kingdom, reimagining <br /> business in partnership with nature — our ultimate <br /> shareholder.
               </p>
               
               <p className={styles.paragraph}>
-                With Guardians in over <strong>30 countries</strong>, we protect three biodiverse habitats in the UK and Canada.<br />
-                By 2030, our goal is to safeguard a million acres of critical ecosystems across the planet.
+                With Guardians in over <strong>30 countries</strong>, we protect <br /> three biodiverse habitats in the UK and Canada.<br />
+                By 2030, our goal is to safeguard a million acres of <br /> critical ecosystems across the planet.
               </p>
             </div>
           </div>
@@ -218,12 +220,57 @@ export const Home: React.FC = () => {
             {/* Bottom Description */}
             <div className={styles.forestDescription}>
               <p className={styles.forestText}>
-                Once marked for private sale, these forests are now a part of the 'National Forest for Wales' network, helping build a contiguous green corridor across the Welsh country.
+                Once marked for private sale, <br /> these forests are now a part of <br /> the 'National Forest for Wales' <br /> network, helping build a <br /> contiguous green corridor <br /> across the Welsh country.
               </p>
             </div>
           </div>
         </div>
       </section>
+      {/* Third Section - Guardian of the Wild */}
+      <section className={styles.guardianSection}>
+        <div className={styles.guardianBackground}>
+          <img src={BecomeaGuardianoftheWild} alt="Ocean Sanctuary" className={styles.guardianBgImage} />
+        </div>
+
+        <div className={styles.guardianContent}>
+          {/* Left Card */}
+          <div className={styles.soccerCard}>
+            <div className={styles.soccerIconWrapper}>
+              <img src={Soccerlogo} alt="Soccer Field" className={styles.soccerIcon} />
+            </div>
+            <div className={styles.soccerNumber}>06</div>
+            <p className={styles.soccerText}>
+              Soccer pitches of tropical primary forest lost since you landed on our website.
+            </p>
+            <div className={styles.soccerSource}>
+              <p className={styles.sourceLabel}>Source:</p>
+              <p className={styles.sourceValue}>World Resources Institute, May 2025</p>
+            </div>
+          </div>
+
+          {/* Center Text */}
+          <div className={styles.guardianTextWrapper}>
+            <h2 className={styles.guardianHeading}>Become a Guardian of the Wild.</h2>
+            
+            <div className={styles.guardianButtons}>
+              <button className={styles.guardianBtn}>
+                PEOPLE FOR THE PLANET
+                <span className={styles.btnArrow}>↗</span>
+              </button>
+              <button className={styles.guardianBtn}>
+                BUSINESS FOR THE PLANET
+                <span className={styles.btnArrow}>↗</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Bottom Location Text */}
+          <div className={styles.locationText}>
+            <p>Ocean Sanctuary, Nova Scotia, Canada - Location: (43.839260304999996, -64.978444436)</p>
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }

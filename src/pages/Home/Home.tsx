@@ -18,6 +18,8 @@ import Soccerlogo from '@/assets/Soccerlogo.svg'
 import girl from '@/assets/girl.png'
 import hathi from '@/assets/hathi.svg'
 import arrow from '@/assets/arrow.svg'
+import BusinesforthePlanet from '@/assets/BusinesforthePlanet.svg'
+import plantbox from '@/assets/plantbox.png'
 
 /**
  * Home page component
@@ -286,6 +288,51 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Fifth Section - Business for the Planet */}
+      <section className={styles.businessSection}>
+        <div className={styles.businessContainer}>
+          {/* Left Side - Content */}
+          <div className={styles.businessContentSection}>
+            {/* Icons */}
+            <div className={styles.businessIcons}>
+              <img src={BusinesforthePlanet} alt="Technology Icons" className={styles.businessIconsImage} />
+            </div>
+
+            {/* Main Heading */}
+            <h2 className={styles.businessHeading}>
+              Business<br />
+              <span className={styles.businessHeadingItalic}>for the</span> Planet
+            </h2>
+
+            {/* Subheading */}
+            <p className={styles.businessSubheading}>
+              Co-create new economic models<br />
+              for People, Planet, Prosperity,<br />
+              and Purpose.
+            </p>
+
+            {/* Benefits List */}
+            <ul className={styles.businessList}>
+              <li>Partnership for the Planet</li>
+              <li>myEarth Point</li>
+              <li>Junk to Jungles</li>
+              <li>Seeds of Recognition</li>
+              <li>Brand a Habitat</li>
+            </ul>
+
+            {/* CTA Button */}
+            <button className={styles.businessJoinButton}>
+              JOIN US
+              <img src={arrow} alt="Arrow" className={styles.businessJoinArrow} />
+            </button>
+          </div>
+
+          {/* Right Side - Image */}
+          <div className={styles.businessImageSection}>
+            <img src={plantbox} alt="Plant box" className={styles.businessImage} />
+          </div>
+        </div>
+      </section>
 
     </>
   )

@@ -645,237 +645,6 @@
 }
 
 /* ============================================ */
-/* FOURTH SECTION - PEOPLE FOR THE PLANET */
-/* ============================================ */
-
-.peopleSection {
-  width: 100%;
-  min-height: 100vh;
-  font-family: 'Montserrat';
-}
-
-.peopleContainer {
-  display: flex;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Left Side - Image */
-.peopleImageSection {
-  flex: 0 0 50%;
-  width: 50%;
-  overflow: hidden;
-}
-
-.peopleImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Right Side - Content */
-.peopleContentSection {
-  flex: 0 0 50%;
-  width: 50%;
-  background-color: #03303D;
-  padding: 80px 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 30px;
-}
-
-.wildlifeIcons {
-  margin-bottom: 10px;
-}
-
-.wildlifeIconsImage {
-  height: 60px;
-  width: auto;
-}
-
-.peopleHeading {
-  font-family: 'Montserrat';
-  font-size: 64px;
-  font-weight: 600;
-  color: #ffffff;
-  margin: 0;
-  line-height: 64px;
-}
-
-.peopleHeadingItalic {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.peopleSubheading {
-  font-family: 'Montserrat';
- font-size: 32px;
-    font-weight: 600;
-    color: #ffffff;
-    margin: 0;
-    line-height: 100%;
-}
-
-.benefitsList {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.benefitsList li {
-font-family: 'Montserrat';
-    font-size: 24px;
-    font-weight: 500;
-    color: #ffffff;
-    padding-left: 25px;
-    position: relative;
-    line-height: 38px;
-}
-
-.benefitsList li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
-  font-size: 24px;
-}
-
-.joinButton {
-  background: #ffffff;
-  border: none;
-  border-radius: 50px;
-  padding: 18px 71px;
-  font-family: 'Montserrat';
-  font-size: 18px;
-  font-weight: 700;
-  color: #03303D;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 55px;
-  transition: all 0.3s ease;
-  align-self: flex-start;
-  margin-top: 20px;
-}
-
-.joinButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.joinArrow {
-  width: 20px;
-  height: 20px;
-}
-
-/* Responsive Design for People Section */
-@media (max-width: 1400px) {
-  .peopleContentSection {
-    padding: 60px 80px;
-  }
-
-  .peopleHeading {
-    font-size: 56px;
-  }
-
-  .peopleSubheading {
-    font-size: 24px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .peopleContainer {
-    flex-direction: column;
-  }
-
-  .peopleImageSection {
-    min-height: 50vh;
-  }
-
-  .peopleContentSection {
-    padding: 60px 60px;
-  }
-
-  .peopleHeading {
-    font-size: 48px;
-  }
-
-  .peopleSubheading {
-    font-size: 22px;
-  }
-
-  .benefitsList li {
-    font-size: 18px;
-  }
-
-  .joinButton {
-    padding: 16px 50px;
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 768px) {
-  .peopleImageSection {
-    min-height: 40vh;
-  }
-
-  .peopleContentSection {
-    padding: 40px 30px;
-    gap: 20px;
-  }
-
-  .wildlifeIconsImage {
-    height: 45px;
-  }
-
-  .peopleHeading {
-    font-size: 36px;
-  }
-
-  .peopleSubheading {
-    font-size: 18px;
-  }
-
-  .benefitsList {
-    margin: 15px 0;
-    gap: 10px;
-  }
-
-  .benefitsList li {
-    font-size: 16px;
-  }
-
-  .joinButton {
-    padding: 14px 40px;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .joinArrow {
-    width: 16px;
-    height: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .peopleHeading {
-    font-size: 28px;
-  }
-
-  .peopleSubheading {
-    font-size: 16px;
-  }
-
-  .benefitsList li {
-    font-size: 14px;
-  }
-}
-
-/* ============================================ */
 /* THIRD SECTION - GUARDIAN OF THE WILD */
 /* ============================================ */
 
@@ -1120,5 +889,484 @@ font-family: 'Montserrat';
 
   .guardianHeading {
     font-size: 28px;
+  }
+}
+
+/* ============================================ */
+/* FOURTH SECTION - PEOPLE FOR THE PLANET */
+/* ============================================ */
+
+.peopleSection {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat';
+}
+
+.peopleContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Side - Image */
+.peopleImageSection {
+  flex: 0 0 50%;
+  width: 50%;
+  overflow: hidden;
+}
+
+.peopleImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Right Side - Content */
+.peopleContentSection {
+  flex: 0 0 50%;
+  width: 50%;
+  background-color: #03303D;
+  padding: 80px 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+}
+
+.wildlifeIcons {
+  margin-bottom: 10px;
+}
+
+.wildlifeIconsImage {
+  height: 60px;
+  width: auto;
+}
+
+.peopleHeading {
+  font-family: 'Montserrat';
+  font-size: 64px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 64px;
+}
+
+.peopleHeadingItalic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.peopleSubheading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 100%;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefitsList li {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 25px;
+  position: relative;
+  line-height: 38px;
+}
+
+.benefitsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-size: 24px;
+}
+
+.joinButton {
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 71px;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 700;
+  color: #03303D;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 55px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.joinButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.joinArrow {
+  width: 20px;
+  height: 20px;
+}
+
+/* Responsive Design for People Section */
+@media (max-width: 1400px) {
+  .peopleContentSection {
+    padding: 60px 80px;
+  }
+
+  .peopleHeading {
+    font-size: 56px;
+  }
+
+  .peopleSubheading {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .peopleContainer {
+    flex-direction: column;
+  }
+
+  .peopleImageSection {
+    min-height: 50vh;
+  }
+
+  .peopleContentSection {
+    padding: 60px 60px;
+  }
+
+  .peopleHeading {
+    font-size: 48px;
+  }
+
+  .peopleSubheading {
+    font-size: 22px;
+  }
+
+  .benefitsList li {
+    font-size: 18px;
+  }
+
+  .joinButton {
+    padding: 16px 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .peopleImageSection {
+    min-height: 40vh;
+  }
+
+  .peopleContentSection {
+    padding: 40px 30px;
+    gap: 20px;
+  }
+
+  .wildlifeIconsImage {
+    height: 45px;
+  }
+
+  .peopleHeading {
+    font-size: 36px;
+  }
+
+  .peopleSubheading {
+    font-size: 18px;
+  }
+
+  .benefitsList {
+    margin: 15px 0;
+    gap: 10px;
+  }
+
+  .benefitsList li {
+    font-size: 16px;
+  }
+
+  .joinButton {
+    padding: 14px 40px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .joinArrow {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .peopleHeading {
+    font-size: 28px;
+  }
+
+  .peopleSubheading {
+    font-size: 16px;
+  }
+
+  .benefitsList li {
+    font-size: 14px;
+  }
+}
+
+/* ============================================ */
+/* FIFTH SECTION - BUSINESS FOR THE PLANET */
+/* ============================================ */
+
+.businessSection {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat';
+  background-color: #59C09A;
+}
+
+.businessContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Side - Content */
+.businessContentSection {
+    flex: 0 0 46%;
+    width: 45%;
+    background-color: #59C09A;
+    padding: 80px 60px 80px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    padding-left: 19%;
+}
+
+.businessIcons {
+  margin-bottom: 10px;
+}
+
+.businessIconsImage {
+  height: 60px;
+  width: auto;
+}
+
+.businessHeading {
+  font-family: 'Montserrat';
+  font-size: 64px;
+  font-weight: 600;
+  color: #03303D;
+  margin: 0;
+  line-height: 64px;
+}
+
+.businessHeadingItalic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.businessSubheading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 600;
+  color: #03303D;
+  margin: 0;
+  line-height: 100%;
+}
+
+.businessList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.businessList li {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 500;
+  color: #03303D;
+  padding-left: 25px;
+  position: relative;
+  line-height: 27px;
+}
+
+.businessList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-size: 24px;
+  color: #03303D;
+}
+
+.businessJoinButton {
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 71px;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 700;
+  color: #03303D;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 55px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.businessJoinButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.businessJoinArrow {
+  width: 20px;
+  height: 20px;
+}
+
+/* Right Side - Image */
+.businessImageSection {
+  flex: 0 0 55%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 100px 80px 40px;
+}
+
+.businessImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design for Business Section */
+@media (max-width: 1400px) {
+  .businessContentSection {
+    padding: 60px 80px;
+  }
+
+  .businessHeading {
+    font-size: 56px;
+  }
+
+  .businessSubheading {
+    font-size: 24px;
+  }
+
+  .businessImageSection {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .businessContainer {
+    flex-direction: column;
+  }
+
+  .businessContentSection,
+  .businessImageSection {
+    flex: 1;
+    width: 100%;
+  }
+
+  .businessContentSection {
+    padding: 60px 60px;
+  }
+
+  .businessImageSection {
+    min-height: 50vh;
+    padding: 40px;
+  }
+
+  .businessHeading {
+    font-size: 48px;
+  }
+
+  .businessSubheading {
+    font-size: 22px;
+  }
+
+  .businessList li {
+    font-size: 18px;
+  }
+
+  .businessJoinButton {
+    padding: 16px 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .businessContentSection {
+    padding: 40px 30px;
+    gap: 20px;
+  }
+
+  .businessIconsImage {
+    height: 45px;
+  }
+
+  .businessHeading {
+    font-size: 36px;
+  }
+
+  .businessSubheading {
+    font-size: 18px;
+  }
+
+  .businessList {
+    margin: 15px 0;
+    gap: 10px;
+  }
+
+  .businessList li {
+    font-size: 16px;
+  }
+
+  .businessJoinButton {
+    padding: 14px 40px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .businessJoinArrow {
+    width: 16px;
+    height: 16px;
+  }
+
+  .businessImageSection {
+    padding: 30px;
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .businessHeading {
+    font-size: 28px;
+  }
+
+  .businessSubheading {
+    font-size: 16px;
+  }
+
+  .businessList li {
+    font-size: 14px;
   }
 }

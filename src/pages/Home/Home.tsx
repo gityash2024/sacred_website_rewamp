@@ -15,8 +15,9 @@ import Usingtechnology from '@/assets/Usingtechnology.svg'
 import map from '@/assets/map.png'
 import BecomeaGuardianoftheWild from '@/assets/BecomeaGuardianoftheWild.jpg'
 import Soccerlogo from '@/assets/Soccerlogo.svg'
-// import humidity from '@/assets/humidity.svg'
-// import treeDensity from '@/assets/treeDensity.svg'
+import girl from '@/assets/girl.png'
+import hathi from '@/assets/hathi.svg'
+import arrow from '@/assets/arrow.svg'
 
 /**
  * Home page component
@@ -87,7 +88,6 @@ export const Home: React.FC = () => {
                 </div>
                 
                 <div className={styles.indicator}>
-                  {/* <img src={humidity} alt="Humidity" className={styles.indicatorIcon} /> */}
                   <div className={styles.indicatorContent}>
                     <span className={styles.indicatorValue}>90%</span>
                     <span className={styles.indicatorLabel}>Humidity</span>
@@ -104,7 +104,6 @@ export const Home: React.FC = () => {
               </div>
 
               <div className={styles.densitySection}>
-                {/* <img src={treeDensity} alt="Tree Density" className={styles.densityIcon} /> */}
                 <div className={styles.densityContent}>
                   <span className={styles.densityValue}>98.64%</span>
                   <span className={styles.densityLabel}>Green Cover Density</span>
@@ -177,7 +176,6 @@ export const Home: React.FC = () => {
               <div className={styles.habitatCard}>
                 <div className={styles.habitatMapWrapper}>
                   <img src={map} alt="Ocean Sanctuary" className={styles.habitatMapImage} />
-                  {/* Map outline overlay would be added here */}
                   <div className={styles.habitatOverlay}>
                     <div className={styles.habitatInfo}>
                       <h3 className={styles.habitatTitle}>Ocean Sanctuary,</h3>
@@ -187,34 +185,6 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Coed Rhyal Card - Top Right */}
-              {/* <div className={styles.habitatCard}>
-                <div className={styles.habitatMapWrapper}>
-                  <img src={map} alt="Coed Rhyal" className={styles.habitatMapImage} />
-                  <div className={styles.habitatOverlay}>
-                    <div className={styles.habitatInfo}>
-                      <h3 className={styles.habitatTitle}>Coed Rhyal</h3>
-                      <p className={styles.habitatSubtitle}>Wales, United Kingdom</p>
-                      <p className={styles.habitatCoordinates}>Location: (51.70079, -4.274005)</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
-
-              {/* Gigrin Prysg Card - Bottom Right */}
-              {/* <div className={styles.habitatCard}>
-                <div className={styles.habitatMapWrapper}>
-                  <img src={map} alt="Gigrin Prysg" className={styles.habitatMapImage} />
-                  <div className={styles.habitatOverlay}>
-                    <div className={styles.habitatInfo}>
-                      <h3 className={styles.habitatTitle}>Gigrin Prysg</h3>
-                      <p className={styles.habitatSubtitle}>Wales, United Kingdom</p>
-                      <p className={styles.habitatCoordinates}>Location: (52.291995, -3.49735)</p>
-                    </div>
-                  </div>
-                </div>
-              </div> */}
             </div>
 
             {/* Bottom Description */}
@@ -226,6 +196,8 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      
       {/* Third Section - Guardian of the Wild */}
       <section className={styles.guardianSection}>
         <div className={styles.guardianBackground}>
@@ -270,6 +242,50 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Fourth Section - People for the Planet */}
+      <section className={styles.peopleSection}>
+        <div className={styles.peopleContainer}>
+          {/* Left Side - Image */}
+          <div className={styles.peopleImageSection}>
+            <img src={girl} alt="Person in nature" className={styles.peopleImage} />
+          </div>
+
+          {/* Right Side - Content */}
+          <div className={styles.peopleContentSection}>
+            {/* Wildlife Icons */}
+            <div className={styles.wildlifeIcons}>
+              <img src={hathi} alt="Wildlife icons" className={styles.wildlifeIconsImage} />
+            </div>
+
+            {/* Main Heading */}
+            <h2 className={styles.peopleHeading}>
+              People <br />
+              <span className={styles.peopleHeadingItalic}> for the </span>
+              Planet
+            </h2>
+
+            {/* Subheading */}
+            <p className={styles.peopleSubheading}>
+              Protect a biodiverse habitat<br />
+              in your name.
+            </p>
+
+            {/* Benefits List */}
+            <ul className={styles.benefitsList}>
+              <li>Protect a Habitat</li>
+              <li>Gift a Habitat</li>
+            </ul>
+
+            {/* CTA Button */}
+            <button className={styles.joinButton}>
+              JOIN US
+              <img src={arrow} alt="Arrow" className={styles.joinArrow} />
+            </button>
+          </div>
+        </div>
+      </section>
+
 
     </>
   )

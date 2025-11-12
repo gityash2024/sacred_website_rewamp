@@ -4,6 +4,7 @@
  */
 import { SEO } from '@/components/common/SEO'
 import { DEFAULT_SEO } from '@/constants'
+import { RecognizedGlobally } from '@/pages/RecognizedGlobally'
 import styles from './Home.module.css'
 import earth from '@/assets/earth.png'
 import Alexandrelogo from '@/assets/Alexandrelogo.svg'
@@ -333,6 +334,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Recognized Globally Section */}
+      <RecognizedGlobally />
 
     </>
   )

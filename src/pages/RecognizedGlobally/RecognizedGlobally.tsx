@@ -38,6 +38,13 @@ import LearnforthePlanet_1 from '@/assets/LearnforthePlanet_1.svg'
 import JoyforthePlanet from '@/assets/JoyforthePlanet.svg'
 import JoyforthePlanet_1 from '@/assets/JoyforthePlanet_1.svg'
 
+// 5 section images : 
+import align_1 from '@/assets/align_1.svg'
+import align_2 from '@/assets/align_2.svg'
+import align_3 from '@/assets/align_3.svg'
+import align_4 from '@/assets/align_4.svg'
+import scaradelogo from '@/assets/scaradelogo.svg'
+import linkedln from '@/assets/linkedln.svg'
 
 // Next Arrow Component 
 const NextArrowIcon: React.FC = () => (
@@ -394,6 +401,8 @@ export const RecognizedGlobally: React.FC = () => {
 
         </div>
       </section>
+
+      
       
 
     </>

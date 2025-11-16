@@ -1,4 +1,5 @@
 // --- Imports ---
+import { useState } from 'react'
 import { SEO } from '@/components/common/SEO'
 import { DEFAULT_SEO } from '@/constants'
 import styles from './RecognizedGlobally.module.css'
@@ -20,7 +21,6 @@ import Blockchain from '@/assets/Blockchain.svg'
 import PartlyCloudylogo from '@/assets/PartlyCloudylogo.svg'
 import AdvancedAnalytic from '@/assets/AdvancedAnalytic.svg'
 import Satellites from '@/assets/Satellites.svg'
-
 
 // --- Seal of Trust Assets ---
 import SacredGrovesbackgroud from '@/assets/SacredGrovesbackgroud.svg' 
@@ -51,6 +51,77 @@ const NextArrowIcon: React.FC = () => (
     />
   </svg>
 )
+
+// Action Card Component with Modal
+interface ActionCardProps {
+  title: string
+  subtitle: string
+  description: string
+  image1: string
+  image2: string
+}
+
+const ActionCard: React.FC<ActionCardProps> = ({ title, subtitle, description, image1, image2 }) => {
+  const [showModal, setShowModal] = useState(false)
+  const [selectedImage, setSelectedImage] = useState<string>('')
+
+  const handleImageClick = (image: string) => {
+    setSelectedImage(image)
+    setShowModal(true)
+  }
+
+  return (
+    <>
+      <div className={styles.actionCard}>
+        <div className={styles.actionCardLeft}>
+          <h3 className={styles.actionTitle}>
+            {title} <span className={styles.actionSubtitle}>{subtitle}</span>
+          </h3>
+          <p className={styles.actionDescription}>{description}</p>
+        </div>
+        
+        <div className={styles.actionCardRight}>
+          <span className={styles.actionArrow}>(</span>
+
+          <button 
+            className={styles.actionImageButton}
+            onClick={() => handleImageClick(image1)}
+            aria-label={`View ${title} for the Planet - Image 1`}
+          >
+            <img src={image1} alt={`${title} for the Planet thumbnail 1`} className={styles.actionImage} />
+          </button>
+          
+          <button 
+            className={styles.actionImageButton}
+            onClick={() => handleImageClick(image2)}
+            aria-label={`View ${title} for the Planet - Image 2`}
+          >
+            <img src={image2} alt={`${title} for the Planet thumbnail 2`} className={styles.actionImage} />
+          </button>
+          
+          <span className={styles.actionArrow}>)</span>
+        </div>
+      </div>
+
+      {/* Modal */}
+      {showModal && (
+        <div className={styles.modalOverlay} onClick={() => setShowModal(false)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <img src={selectedImage} alt={`${title} for the Planet`} className={styles.modalImage} />
+            
+            <button 
+              className={styles.modalCloseButton}
+              onClick={() => setShowModal(false)}
+              aria-label="Close modal"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
+    </>
+  )
+}
 
 
 export const RecognizedGlobally: React.FC = () => {
@@ -259,7 +330,70 @@ export const RecognizedGlobally: React.FC = () => {
         </div>
       </section>
 
-      
+      {/* 4. You Can Do Something Section */}
+      <section className={styles.youCanDoSection}>
+        <div className={styles.youCanDoContent}>
+          
+          {/* Left Side - Text Content */}
+          <div className={styles.youCanDoLeft}>
+            <div className={styles.youCanDoIcons}>
+              <img src={Youcandosomethinglogo} alt="Nature Icons" className={styles.natureIcons} />
+            </div>
+
+            <h2 className={styles.youCanDoHeading}>
+              You can do something positive<br />
+              for nature every day.
+            </h2>
+
+            <p className={styles.youCanDoDescription}>
+              Every choice you make, from how you bank to<br />
+              what you buy, shapes the world we share.
+            </p>
+
+            <p className={styles.youCanDoDescription}>
+              We partner with brands that share this vision,<br />
+              making it easy to live your values and let your<br />
+              everyday actions give back to nature.
+            </p>
+          </div>
+
+          {/* Right Side - Action Cards */}
+          <div className={styles.youCanDoRight}>
+            <ActionCard
+              title="Invest"
+              subtitle="for the Planet"
+              description="Your everyday banking can protect real forests. Ruya Bank's NatureProtect has already safeguarded over 100,000 sq ft of habitats with Sacred Groves, proof that deposits can serve a higher purpose."
+              image1={InvestforthePlanet}
+              image2={InvestforthePlanet_1}
+            />
+            
+            <ActionCard
+              title="Shop"
+              subtitle="for the Planet"
+              description="With just a piece you owned kept a tree alive in the wild. K. Salampoot's Forest Splendors, unveiled at Paris Fashion Week 2024, draws its spirit from the wild, with every purchase directly financing forest conservation."
+              image1={ShopforthePlanet}
+              image2={ShopforthePlanet_1}
+            />
+            
+            <ActionCard
+              title="Learn"
+              subtitle="for the Planet"
+              description="Because education can plant deep roots. Eaton Business School and Mitchell & Sabarti's Offset Boxset are conserving real habitats globally through our Sacred Groves Clusters."
+              image1={LearnforthePlanet}
+              image2={LearnforthePlanet_1}
+            />
+            
+            <ActionCard
+              title="Joy"
+              subtitle="for the Planet"
+              description="Discover the art of conservation with Pyaarmation—an online art store where every square foot of art sold protects a square foot of habitat, transforming creativity into traceable climate impact."
+              image1={JoyforthePlanet}
+              image2={JoyforthePlanet_1}
+            />
+          </div>
+
+        </div>
+      </section>
       
 
     </>

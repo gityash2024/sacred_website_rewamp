@@ -539,6 +539,195 @@
 }
 
 /* ========================================
+ * SECTION 4: You Can Do Something Section
+ * ========================================*/
+
+.youCanDoSection {
+  background-color: #BACFA5;
+  padding: 80px 40px;
+  overflow: hidden;
+}
+
+.youCanDoContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 80px;
+  align-items: center; /* Changed to center to vertically center left side */
+  min-height: 600px; /* Added min-height for proper centering */
+}
+
+/* Left Side - Text Content */
+.youCanDoLeft {
+  flex: 0 0 40%;
+  padding-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+}
+
+.youCanDoIcons {
+  margin-bottom: 30px;
+}
+
+.natureIcons {
+  height: 70px;
+  width: auto;
+}
+
+.youCanDoHeading {
+  font-size: 32px;
+  font-weight: 500;
+  color: #03303D;
+  line-height: 36px;
+  font-style: medium;
+  margin-bottom: 30px;
+  font-family: Montserrat;
+}
+
+.youCanDoDescription {
+  font-size: 18px;
+  line-height: 130%;
+  font-weight: 500;
+  font-style: medium;
+  color: #03303D;
+  margin-bottom: 20px;
+  font-family: Montserrat;
+}
+
+/* Right Side - Action Cards */
+.youCanDoRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.actionCard {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  background: transparent;
+}
+
+.actionCardLeft {
+  flex: 1;
+}
+
+.actionTitle {
+  font-size: 32px;
+  font-weight: 400;
+  color: #000000;
+  margin-bottom: 15px;
+  font-style: italic;
+  font-family: Montserrat;
+  line-height: 100%;
+}
+
+.actionSubtitle {
+  font-style: italic;
+  font-weight: 700;
+}
+
+.actionDescription {
+  font-size: 16px;
+  line-height: 100%;
+  color: #000000;
+  font-weight: 500;
+  font-family: Montserrat;
+  font-style: regular;
+}
+
+.actionCardRight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.actionImageButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+}
+
+.actionImageButton:hover {
+  transform: scale(1.05);
+}
+
+.actionImage {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.actionArrow {
+  font-size: 48px;
+  color: #333;
+  font-weight: 300;
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: rgba(0, 0, 0, 0.9); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
+}
+
+.modalCloseButton {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 36px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: background 0.3s ease;
+}
+
+.modalCloseButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
  * RESPONSIVE DESIGN
  * ========================================*/
 
@@ -635,6 +824,37 @@
   .wildTechItem {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
-
   
+  /* Section 4 Responsiveness */
+  .youCanDoContent {
+    flex-direction: column;
+    gap: 40px;
+    min-height: auto;
+  }
+  
+  .youCanDoLeft {
+    padding-right: 0;
+  }
+  
+  .youCanDoHeading {
+    font-size: 32px;
+  }
+  
+  .actionCard {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .actionTitle {
+    font-size: 28px;
+  }
+  
+  .modalContent {
+    padding: 40px 20px;
+  }
+  
+  .modalCloseButton {
+    top: 10px;
+    right: 10px;
+  }
 }

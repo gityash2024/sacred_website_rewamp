@@ -38,13 +38,15 @@ import LearnforthePlanet_1 from '@/assets/LearnforthePlanet_1.svg'
 import JoyforthePlanet from '@/assets/JoyforthePlanet.svg'
 import JoyforthePlanet_1 from '@/assets/JoyforthePlanet_1.svg'
 
-// 5 section images : 
+// 5section images : 
 import align_1 from '@/assets/align_1.svg'
 import align_2 from '@/assets/align_2.svg'
 import align_3 from '@/assets/align_3.svg'
 import align_4 from '@/assets/align_4.svg'
 import scaradelogo from '@/assets/scaradelogo.svg'
 import linkedln from '@/assets/linkedln.svg'
+import silderleftarrow from '@/assets/silderleftarrow.svg'
+import silderrightside from '@/assets/silderrightside.svg'
 
 // Next Arrow Component 
 const NextArrowIcon: React.FC = () => (
@@ -130,6 +132,130 @@ const ActionCard: React.FC<ActionCardProps> = ({ title, subtitle, description, i
   )
 }
 
+// LinkedIn Posts Slider Component
+const LinkedInPostsSlider: React.FC = () => {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // LinkedIn posts data
+  const posts = [
+    {
+      id: 1,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: ShopforthePlanet,
+      likes: 101,
+      comments: 50,
+    },
+    {
+      id: 2,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: ShopforthePlanet_1,
+      likes: 101,
+      comments: 50,
+    },
+    {
+      id: 3,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: LearnforthePlanet,
+      likes: 101,
+      comments: 50,
+    },
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % posts.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + posts.length) % posts.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
+  // Calculate visible posts (show 3 at a time, loop around)
+  const getVisiblePosts = () => {
+    const visible = []
+    for (let i = 0; i < 3; i++) {
+      const index = (currentSlide + i) % posts.length
+      visible.push(posts[index])
+    }
+    return visible
+  }
+
+  return (
+    <div className={styles.sliderContainer}>
+      {/* Navigation Arrows */}
+      <button 
+        className={`${styles.sliderArrow} ${styles.sliderArrowLeft}`}
+        onClick={prevSlide}
+        aria-label="Previous posts"
+      >
+        <img src={silderrightside} alt="Previous" />
+      </button>
+
+      {/* Posts Grid */}
+      <div className={styles.postsGrid}>
+        {getVisiblePosts().map((post, index) => (
+          <div key={`${post.id}-${index}`} className={styles.postCard}>
+            {/* Post Header */}
+            <div className={styles.postHeader}>
+              <img src={scaradelogo} alt="Sacred Groves Logo" className={styles.postLogo} />
+              <div className={styles.postMeta}>
+              </div>
+              <img src={linkedln} alt="LinkedIn" className={styles.linkedinIcon} />
+            </div>
+
+            {/* Post Content */}
+            <div className={styles.postContent}>
+              <p className={styles.postTitle}>{post.title}</p>
+              <a href="#" className={styles.readMore}>Read more</a>
+            </div>
+
+            {/* Post Image */}
+            <div className={styles.postImageContainer}>
+              <img src={post.image} alt={post.title} className={styles.postImage} />
+              {index === 1 && (
+                <div className={styles.newBadge}>NEW</div>
+              )}
+            </div>
+
+            {/* Post Footer */}
+            <div className={styles.postFooter}>
+              <div className={styles.postStats}>
+                <span className={styles.postLikes}>♥ {post.likes}</span>
+                <span className={styles.postComments}>💬 {post.comments}</span>
+              </div>
+              <button className={styles.shareButton}>
+                <span>🔗</span> Share
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <button 
+        className={`${styles.sliderArrow} ${styles.sliderArrowRight}`}
+        onClick={nextSlide}
+        aria-label="Next posts"
+      >
+        <img src={silderleftarrow} alt="Next" />
+      </button>
+
+      {/* Pagination Dots */}
+      <div className={styles.sliderDots}>
+        {posts.map((_, index) => (
+          <button
+            key={index}
+            className={`${styles.sliderDot} ${index === currentSlide ? styles.sliderDotActive : ''}`}
+            onClick={() => goToSlide(index)}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export const RecognizedGlobally: React.FC = () => {
   
@@ -402,8 +528,41 @@ export const RecognizedGlobally: React.FC = () => {
         </div>
       </section>
 
-      
-      
+      {/* 5. Aligned with UN Sustainable Development Goals Section */}
+      <section className={styles.alignedSection}>
+        <div className={styles.alignedContainer}>
+          
+          {/* Top Row - Heading and SDG Icons */}
+          <div className={styles.alignedTopRow}>
+            {/* Left Side - Heading */}
+            <div className={styles.alignedLeft}>
+              <h2 className={styles.alignedHeading}>
+                Aligned with<br />
+                the UN<br />
+                Sustainable<br />
+                Development<br />
+                Goals.
+              </h2>
+            </div>
+
+            {/* Right Side - SDG Icons */}
+            <div className={styles.alignedTopRight}>
+              <div className={styles.sdgIcons}>
+                <img src={align_1} alt="SDG 12: Responsible Consumption" className={styles.sdgIcon} />
+                <img src={align_2} alt="SDG 13: Climate Action" className={styles.sdgIcon} />
+                <img src={align_3} alt="SDG 15: Life on Land" className={styles.sdgIcon} />
+                <img src={align_4} alt="SDG 17: Partnerships" className={styles.sdgIcon} />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Row - LinkedIn Posts Slider (Full Width) */}
+          <div className={styles.alignedBottomRow}>
+            <LinkedInPostsSlider />
+          </div>
+
+        </div>
+      </section>
 
     </>
   )

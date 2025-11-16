@@ -174,16 +174,14 @@
 }
 
 .sealBackground {
-position: absolute;
-    top: 0;
-    left: -287px;
-    width: 91%;
-    height: 97%;
-    /* object-fit: cover; */
-    z-index: 0;
-    opacity: 1;
+  position: absolute;
+  top: 0;
+  left: -287px;
+  width: 91%;
+  height: 97%;
+  z-index: 0;
+  opacity: 1;
 }
-
 
 .sealContent {
   position: relative;
@@ -239,10 +237,10 @@ position: absolute;
 }
 
 .sealLogo {
-     width: 500px;
-    height: auto;
-    object-fit: contain;
-    margin-left: -67px;
+  width: 500px;
+  height: auto;
+  object-fit: contain;
+  margin-left: -67px;
 }
 
 .sealRight {
@@ -554,8 +552,8 @@ position: absolute;
   margin: 0 auto;
   display: flex;
   gap: 80px;
-  align-items: center; /* Changed to center to vertically center left side */
-  min-height: 600px; /* Added min-height for proper centering */
+  align-items: center;
+  min-height: 600px;
 }
 
 /* Left Side - Text Content */
@@ -564,7 +562,7 @@ position: absolute;
   padding-right: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Center content vertically */
+  justify-content: center;
 }
 
 .youCanDoIcons {
@@ -678,7 +676,6 @@ position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
-  /* background-color: rgba(0, 0, 0, 0.9); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -726,6 +723,279 @@ position: absolute;
 
 .modalCloseButton:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+ * SECTION 5: Aligned with UN SDGs Section
+ * ========================================*/
+
+.alignedSection {
+  background-color: #ffffff;
+  padding: 100px 40px;
+  overflow: hidden;
+}
+
+.alignedContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Top Row - Heading and SDG Icons (Facing Each Other) */
+.alignedTopRow {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 64px;
+  gap: 80px;
+}
+
+/* Left Side - Heading */
+.alignedLeft {
+  flex: 0 0 auto;
+}
+
+.alignedHeading {
+  font-size: 36px;
+  font-weight: 500;
+  color: #03303D;
+  line-height: 100%;
+  font-family: Montserrat;
+  font-style: medium;
+}
+
+/* Right Side - SDG Icons */
+.alignedTopRight {
+  flex: 0 0 auto;
+}
+
+.sdgIcons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.sdgIcon {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* Bottom Row - LinkedIn Slider (Full Width) */
+.alignedBottomRow {
+  width: 100%;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  padding: 0 60px;
+}
+
+.sliderArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.3s ease;
+  padding: 10px;
+}
+
+.sliderArrow img {
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+
+.sliderArrow:hover {
+  transform: translateY(-50%) scale(1.2);
+}
+
+.sliderArrowLeft {
+  left: 0;
+}
+
+.sliderArrowRight {
+  right: 0;
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Individual Post Card */
+.postCard {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.postHeader {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* .postLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+} */
+
+.postMeta {
+  flex: 1;
+}
+
+.postAuthor {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+  font-family: Montserrat;
+}
+
+.postTime {
+  font-size: 12px;
+  color: #666;
+  margin: 2px 0 0 0;
+  font-family: Montserrat;
+}
+
+.linkedinIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.postContent {
+  padding: 15px;
+}
+
+.postTitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #333;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  font-family: Montserrat;
+}
+
+.readMore {
+  font-size: 14px;
+  color: #0077b5;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: Montserrat;
+}
+
+.readMore:hover {
+  text-decoration: underline;
+}
+
+.postImageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.postImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.newBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4444;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Montserrat;
+}
+
+.postFooter {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.postStats {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.postLikes,
+.postComments {
+  font-size: 13px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: Montserrat;
+}
+
+.shareButton {
+  background: none;
+  border: none;
+  color: #0077b5;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: Montserrat;
+  transition: opacity 0.3s ease;
+}
+
+.shareButton:hover {
+  opacity: 0.7;
+}
+
+/* Pagination Dots */
+.sliderDots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.sliderDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d0d0d0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 0;
+}
+
+.sliderDotActive {
+  background-color: #0077b5;
+}
+
+.sliderDot:hover {
+  background-color: #a0a0a0;
 }
 
 /* ========================================
@@ -859,5 +1129,50 @@ position: absolute;
     right: 10px;
   }
 
+  /* Section 5 Responsiveness */
+  .alignedTopRow {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    gap: 30px;
+  }
+
+  .alignedHeading {
+    font-size: 28px;
+  }
+
+  .sdgIcons {
+    justify-content: center;
+  }
+
+  .sdgIcon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .sliderContainer {
+    padding: 0 40px;
+  }
+
+  .postsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sliderArrow {
+    font-size: 36px;
+  }
   
+  .sliderArrow img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .sliderArrowLeft {
+    left: -10px;
+  }
+
+  .sliderArrowRight {
+    right: -10px;
+  }
 }

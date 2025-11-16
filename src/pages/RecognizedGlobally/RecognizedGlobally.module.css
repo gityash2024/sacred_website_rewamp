@@ -295,7 +295,7 @@ position: absolute;
 
 .wildTechSection {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   background-color: #1a3d3d;
   min-height: 700px;
   padding: 0;
@@ -307,6 +307,7 @@ position: absolute;
   max-width: 100%;
   height: 100%;
   min-height: 700px;
+  position: relative;
 }
 
 /* Left Side - Forest Image */
@@ -314,7 +315,7 @@ position: absolute;
   position: relative;
   flex: 1;
   width: 50%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .wildTechImage {
@@ -332,19 +333,21 @@ position: absolute;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 2;
 }
 
 .techBubble {
   position: absolute;
-  background-color: white;
+  background-color: #FFFFFF;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 15px;
+  padding: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-  z-index: 2;
+  z-index: 3;
+  pointer-events: auto;
 }
 
 .techBubble:hover {
@@ -352,82 +355,112 @@ position: absolute;
 }
 
 .techBubble img {
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
+  filter: brightness(0);
+  display: block;
 }
 
-/* Individual Bubble Positions - Bottom section aligned with list items */
+/* Individual Bubble Positions - Aligned with technology list items */
 .bubble1 {
   bottom: 28%;
   left: 25%;
-  width: 120px;
-  height: 120px;
+  width: 108px;
+  height: 63px;
 }
 
 .bubble1::after {
   content: '';
   position: absolute;
-  right: -120%;
+  left: 100%;
   top: 50%;
-  width: 300px;
-  height: 2px;
-  background-color: white;
+  width: 350px;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .bubble2 {
   bottom: 35%;
   left: 15%;
-  width: 130px;
-  height: 130px;
+  width: 108px;
+  height: 63px;
 }
 
 .bubble2::after {
   content: '';
   position: absolute;
-  right: -100%;
+  left: 100%;
   top: 50%;
-  width: 280px;
-  height: 2px;
-  background-color: white;
+  width: 350px;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
   transform: translateY(-50%);
+  z-index: 1;
+}
+
+.bubble3 {
+  bottom: 22%;
+  left: 20%;
+  width: 108px;
+  height: 63px;
+}
+
+.bubble3::after {
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  width: 350px;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
 .bubble4 {
   bottom: 15%;
   left: 22%;
-  width: 140px;
-  height: 140px;
+  width: 108px;
+  height: 63px;
 }
 
 .bubble4::after {
   content: '';
   position: absolute;
-  right: -90%;
+  left: 100%;
   top: 50%;
-  width: 270px;
-  height: 2px;
-  background-color: white;
+  width: 350px;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .bubble5 {
   bottom: 5%;
   left: 30%;
-  width: 150px;
-  height: 150px;
+  width: 108px;
+  height: 63px;
 }
 
 .bubble5::after {
   content: '';
   position: absolute;
-  right: -80%;
+  left: 100%;
   top: 50%;
-  width: 250px;
-  height: 2px;
-  background-color: white;
+  width: 350px;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  opacity: 0.9;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 /* Right Side - Content */
@@ -518,6 +551,18 @@ position: absolute;
   justify-content: flex-start;
   padding: 18px 0;
   position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.wildTechItem:hover {
+  transform: translateX(5px);
+}
+
+.wildTechItem.active {
+  background-color: rgba(89, 192, 154, 0.1);
+  padding-left: 10px;
+  border-radius: 4px;
 }
 
 .wildTechItem:last-child {
@@ -531,12 +576,135 @@ position: absolute;
   line-height: 100%;
   font-family: Montserrat;
   color: #59C09A;
+  user-select: none;
 }
 
 .techIcon {
   width: 30px;
   height: 30px;
   filter: brightness(0) invert(1);
+}
+
+/* Technology Modal Styles */
+.techModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+  padding: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.techModalContent {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.techCard {
+  background-color: #1a3d3d;
+  border: 2px solid #59C09A;
+  border-radius: 16px;
+  padding: 40px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.techCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.techCardTitle {
+  font-family: Montserrat;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.techCardSubtitle {
+  font-weight: 400;
+  font-style: italic;
+  color: #7dd3c0;
+}
+
+.techCardClose {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+}
+
+.techCardClose:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: rotate(90deg);
+}
+
+.techCardIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  min-height: 100px;
+}
+
+.techCardIconImage {
+  max-width: 150px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.techCardDescription {
+  font-family: Montserrat;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0;
 }
 
 /* ========================================
@@ -824,6 +992,36 @@ position: absolute;
   
   .wildTechItem {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .techModalOverlay {
+    padding: 10px;
+  }
+
+  .techModalContent {
+    max-width: 100%;
+  }
+
+  .techCard {
+    padding: 25px;
+  }
+
+  .techCardTitle {
+    font-size: 22px;
+  }
+
+  .techCardDescription {
+    font-size: 16px;
+  }
+
+  .techCardIcon {
+    min-height: 80px;
+    margin-bottom: 20px;
+  }
+
+  .techCardIconImage {
+    max-width: 120px;
+    max-height: 80px;
   }
   
   /* Section 4 Responsiveness */

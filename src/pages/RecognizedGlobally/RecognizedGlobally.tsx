@@ -21,6 +21,7 @@ import Blockchain from '@/assets/Blockchain.svg'
 import PartlyCloudylogo from '@/assets/PartlyCloudylogo.svg'
 import AdvancedAnalytic from '@/assets/AdvancedAnalytic.svg'
 import Satellites from '@/assets/Satellites.svg'
+import VirtualVisits from '@/assets/VirtualVisits.svg'
 
 // --- Seal of Trust Assets ---
 import SacredGrovesbackgroud from '@/assets/SacredGrovesbackgroud.svg' 
@@ -132,6 +133,7 @@ const ActionCard: React.FC<ActionCardProps> = ({ title, subtitle, description, i
 
 
 export const RecognizedGlobally: React.FC = () => {
+  const [selectedTech, setSelectedTech] = useState<string | null>(null)
   
   // Data for the Seal of Trust list items
   const trustPoints = [
@@ -143,6 +145,48 @@ export const RecognizedGlobally: React.FC = () => {
     "ALL PAYMENTS ARE SECURE",
     "ALL TRANSACTIONS ARE TRACEABLE",
   ];
+
+  // Technology card data
+  const techCards = {
+    blockchain: {
+      title: "Blockchain",
+      subtitle: "Built on Trust",
+      description: "Protected habitats, traceable transactions, and an energy-efficient private blockchain that ensures every contribution is secure, transparent, and permanent.",
+      icon: Blockchain,
+    },
+    cloud: {
+      title: "Cloud",
+      subtitle: "Where Nature Lives Online",
+      description: "Our cloud infrastructure connects people, data, and habitats seamlessly, enabling real-time monitoring and protection for planet protection.",
+      icon: PartlyCloudylogo,
+    },
+    virtualVisits: {
+      title: "Virtual Visits",
+      subtitle: "Nature, Within Reach",
+      description: "Experience your protected habitat from anywhere. Virtual visits let you see your impact, explore the ecosystem, and connect with nature through immersive technology.",
+      icon: VirtualVisits,
+    },
+    advancedAnalytics: {
+      title: "Advanced Analytics",
+      subtitle: "Turning Data into Action",
+      description: "AI, machine learning, and image analytics work quietly behind the scenes—revealing insights that guide protection, growth, and restoration.",
+      icon: AdvancedAnalytic,
+    },
+    satellites: {
+      title: "Satellites",
+      subtitle: "Watching Over the Wild",
+      description: "From space, satellites track forests and wetlands, ensuring habitat health, detecting changes, and providing the data needed for effective conservation.",
+      icon: Satellites,
+    },
+  }
+
+  const handleTechClick = (tech: string) => {
+    if (selectedTech === tech) {
+      setSelectedTech(null)
+    } else {
+      setSelectedTech(tech)
+    }
+  }
 
   return (
     <>
@@ -275,6 +319,9 @@ export const RecognizedGlobally: React.FC = () => {
               <div className={`${styles.techBubble} ${styles.bubble2}`}>
                 <img src={PartlyCloudylogo} alt="Cloud" />
               </div>
+              <div className={`${styles.techBubble} ${styles.bubble3}`}>
+                <img src={VirtualVisits} alt="Virtual Visits" />
+              </div>
               <div className={`${styles.techBubble} ${styles.bubble4}`}>
                 <img src={AdvancedAnalytic} alt="Advanced Analytics" />
               </div>
@@ -316,22 +363,72 @@ export const RecognizedGlobally: React.FC = () => {
 
             {/* Tech List */}
             <ul className={styles.wildTechList}>
-              <li className={styles.wildTechItem}>
+              <li 
+                className={`${styles.wildTechItem} ${selectedTech === 'blockchain' ? styles.active : ''}`}
+                onClick={() => handleTechClick('blockchain')}
+              >
                 <span className={styles.techLabel}>Blockchain</span>
               </li>
-              <li className={styles.wildTechItem}>
+              <li 
+                className={`${styles.wildTechItem} ${selectedTech === 'cloud' ? styles.active : ''}`}
+                onClick={() => handleTechClick('cloud')}
+              >
                 <span className={styles.techLabel}>Cloud</span>
               </li>
-              <li className={styles.wildTechItem}>
+              <li 
+                className={`${styles.wildTechItem} ${selectedTech === 'virtualVisits' ? styles.active : ''}`}
+                onClick={() => handleTechClick('virtualVisits')}
+              >
                 <span className={styles.techLabel}>Virtual Visits</span>
               </li>
-              <li className={styles.wildTechItem}>
+              <li 
+                className={`${styles.wildTechItem} ${selectedTech === 'advancedAnalytics' ? styles.active : ''}`}
+                onClick={() => handleTechClick('advancedAnalytics')}
+              >
                 <span className={styles.techLabel}>Advanced Analytics</span>
               </li>
-              <li className={styles.wildTechItem}>
+              <li 
+                className={`${styles.wildTechItem} ${selectedTech === 'satellites' ? styles.active : ''}`}
+                onClick={() => handleTechClick('satellites')}
+              >
                 <span className={styles.techLabel}>Satellites</span>
               </li>
             </ul>
+
+            {/* Technology Description Modal */}
+            {selectedTech && (
+              <div className={styles.techModalOverlay} onClick={() => setSelectedTech(null)}>
+                <div className={styles.techModalContent} onClick={(e) => e.stopPropagation()}>
+                  <div className={styles.techCard}>
+                    <div className={styles.techCardHeader}>
+                      <h3 className={styles.techCardTitle}>
+                        {techCards[selectedTech as keyof typeof techCards].title}
+                        <span className={styles.techCardSubtitle}>
+                          {' - ' + techCards[selectedTech as keyof typeof techCards].subtitle}
+                        </span>
+                      </h3>
+                      <button 
+                        className={styles.techCardClose}
+                        onClick={() => setSelectedTech(null)}
+                        aria-label="Close modal"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <div className={styles.techCardIcon}>
+                      <img 
+                        src={techCards[selectedTech as keyof typeof techCards].icon} 
+                        alt={techCards[selectedTech as keyof typeof techCards].title}
+                        className={styles.techCardIconImage}
+                      />
+                    </div>
+                    <p className={styles.techCardDescription}>
+                      {techCards[selectedTech as keyof typeof techCards].description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
         </div>

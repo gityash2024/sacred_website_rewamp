@@ -166,23 +166,24 @@
 .sealOfTrustSection {
   position: relative;
   overflow: hidden; 
-  background-color: #d8ede7; 
+  background-color: #B8E0D3; 
   min-height: 600px; 
-  padding: 80px 0;
+  padding: 123px 0;
   display: flex;
   justify-content: center;
 }
 
 .sealBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 50%;
-  height: 50%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 1;
+position: absolute;
+    top: 0;
+    left: -287px;
+    width: 91%;
+    height: 97%;
+    /* object-fit: cover; */
+    z-index: 0;
+    opacity: 1;
 }
+
 
 .sealContent {
   position: relative;
@@ -238,10 +239,10 @@
 }
 
 .sealLogo {
-  width: 450px; 
-  height: auto;
-  object-fit: contain;
-  margin-left: -50px; 
+     width: 500px;
+    height: auto;
+    object-fit: contain;
+    margin-left: -67px;
 }
 
 .sealRight {

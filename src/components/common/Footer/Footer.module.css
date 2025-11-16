@@ -1,5 +1,5 @@
 .footer {
-  background: #f7f7f7;
+  background: #FFFFFF;
   color: #111;
   padding: 60px 0 20px;
   font-family: 'Inter', sans-serif;
@@ -121,7 +121,7 @@
 .footerBottom {
   margin-top: 60px;
   text-align: center;
-  border-top: 1px solid #ddd;
+  /* border-top: 1px solid #ddd; */
   padding-top: 25px;
   font-size: 13px;
   color: #666;

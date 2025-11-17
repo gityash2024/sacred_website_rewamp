@@ -1,1160 +1,1372 @@
-/* Home Page Styles */
-
-.home {
-  width: 100%;
-  overflow-x: hidden;
-}
+/* ============================================ */
+/* ORIGINAL HERO SECTION (PRESERVED) */
+/* ============================================ */
 
 /* Hero Section */
 .heroSection {
+  position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a4d5e 0%, #0d2833 100%);
-  position: relative;
-  padding: 2rem 1.5rem;
-  display: flex;
-  align-items: center;
-}
-
-.heroContent {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 4rem;
   width: 100%;
-}
-
-.heroLeft {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.habitatCard {
-  background: white;
-  border-radius: 24px;
-  padding: 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.cardIcons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.cardIcons img {
-  width: 32px;
-  height: 32px;
-}
-
-.cardInfo h3 {
-  font-size: 1.25rem;
-  margin: 0 0 1rem 0;
-  color: #1a4d5e;
-}
-
-.cardInfo p {
-  font-size: 0.875rem;
-  margin: 0.5rem 0;
-  color: #333;
-  line-height: 1.5;
-}
-
-.indicatorsCard {
-  background: white;
-  border-radius: 24px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-}
-
-.mapView {
-  width: 100%;
-  height: 200px;
-  border-radius: 16px;
   overflow: hidden;
-  margin-bottom: 1.5rem;
 }
 
-.mapView img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.indicatorsCard h4 {
-  font-size: 1.125rem;
-  margin: 0 0 1rem 0;
-  color: #1a4d5e;
-}
-
-.indicators {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.indicator {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.indicator img {
-  width: 24px;
-  height: 24px;
-}
-
-.value {
-  display: block;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1a4d5e;
-}
-
-.label {
-  display: block;
-  font-size: 0.75rem;
-  color: #666;
-}
-
-.weather {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  grid-column: span 2;
-  padding: 0.75rem;
-  background: #f5f5f5;
-  border-radius: 12px;
-}
-
-.weather img {
-  width: 24px;
-  height: 24px;
-}
-
-.dataNote {
-  font-size: 0.75rem;
-  color: #666;
-  margin: 1rem 0 0 0;
-  text-align: center;
-}
-
-.heroRight {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-}
-
-.globeContainer {
+/* Background Earth Image */
+.earthBackground {
   position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 600px;
-  height: 600px;
-  z-index: 0;
-}
-
-.globe {
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  animation: rotate 60s linear infinite;
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.heroTitle {
-  font-size: 4rem;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 1.5rem 0;
-  line-height: 1.1;
-  text-align: right;
-  position: relative;
-  z-index: 1;
-}
-
-.heroSubtitle {
-  font-size: 1.5rem;
-  color: white;
-  margin: 0;
-  text-align: right;
-  position: relative;
-  z-index: 1;
-}
-
-/* Mission Section */
-.missionSection {
-  background: linear-gradient(135deg, #7fe5cc 0%, #6dd9be 100%);
-  padding: 6rem 1.5rem;
-}
-
-.missionContent {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.missionIcons {
+  z-index: 0;
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.missionIcons img {
-  width: 36px;
-  height: 36px;
-}
-
-.missionTitle {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  color: #1a4d5e;
-  margin: 0 0 2rem 0;
-  font-weight: 400;
-}
-
-.missionTitle strong {
-  font-weight: 700;
-}
-
-.missionText p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #1a4d5e;
-  margin: 0 0 1.5rem 0;
-}
-
-.missionRight {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  align-items: start;
-}
-
-.locationCard {
-  background: white;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
-.locationCard img {
+.earthImage {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
 }
 
-.locationName {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1a4d5e;
-  margin: 1rem 1.5rem 0.5rem;
+/* Container */
+.container {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
 }
 
-.locationCoords {
-  font-size: 0.875rem;
-  color: #666;
-  margin: 0 1.5rem 1.5rem;
+/* Left Section - Cards Container */
+.leftSection {
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+  position: relative;
+  align-items: flex-start;
 }
 
-.networkBadge {
-  grid-column: span 2;
-  text-align: center;
-  padding: 1.5rem;
+/* Guardian Card */
+.guardianCard {
+  background:#B8E0D3;
+  border-radius: 20px;
+  padding: 30px;
+  width: 240px;
+  margin-top: 0;
 }
 
-.networkBadge img {
-  max-width: 200px;
+.logoSection {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.guardianLogo {
+  width: 100px;
   height: auto;
 }
 
-.networkText {
-  grid-column: span 2;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #1a4d5e;
-  text-align: center;
+.guardianName {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #03303D;
+  margin-bottom: 18px;
+}
+
+.infoSection {
+  margin-bottom: 10px;
+}
+
+.infoLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #03303D;
+  margin: 0 0 2px 0;
+}
+
+.infoValue {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #03303D;
   margin: 0;
 }
 
-/* Stats Section */
-.statsSection {
-  background: linear-gradient(135deg, #4a90a4 0%, #2d5f6f 100%);
-  padding: 6rem 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 4rem;
-  position: relative;
+/* Indicators Card */
+.indicatorsCard {
+  background: #B8E0D3;
+  border-radius: 20px;
+  padding: 20px;
+  width: 240px;
+  margin-top: 100px;
 }
 
-.statsCard {
-  background: #2d5f6f;
-  border-radius: 32px;
-  padding: 3rem;
-  max-width: 400px;
-  color: white;
+.mapSection {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-.statsIcon {
-  margin-bottom: 2rem;
+.mapImage {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.statsIcon img {
-  width: 80px;
-  height: 80px;
-}
-
-.statsNumber {
-  font-size: 6rem;
-  font-weight: 700;
-  margin: 0 0 1.5rem 0;
-  color: white;
-}
-
-.statsText {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  margin: 0 0 2rem 0;
-  color: white;
-}
-
-.statsSource {
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0;
-}
-
-.ctaContainer {
-  flex: 1;
-  text-align: center;
-}
-
-.ctaTitle {
-  font-size: 3rem;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 3rem 0;
-  line-height: 1.2;
-}
-
-.ctaButtons {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.ctaButton {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 2.5rem;
-  background: #7fe5cc;
-  color: #1a4d5e;
-  border: none;
-  border-radius: 50px;
-  font-size: 1rem;
+.indicatorsTitle {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 15px;
+  color: #03303D;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+.indicatorsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 8px;
 }
 
-.ctaButtonSecondary {
-  background: white;
+.indicator {
+  background: #03303E;
+  border-radius: 28px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.ctaButton img {
+.indicatorIcon {
   width: 20px;
   height: 20px;
 }
 
-.locationFooter {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+.indicatorContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.indicatorValue {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.indicatorLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.weatherSection {
+  background: #03303E;
+  border-radius: 28px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.weatherIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.weatherContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.weatherValue {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.weatherLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.densitySection {
+  background: #03303E;
+  border-radius: 28px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.densityIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.densityContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.densityValue {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #ffffff;
+}
+
+.densityLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dataTimestamp {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  color: #000000;
+  text-align: center;
+  margin: 8px 0 0 0;
+}
+
+/* Heading Section */
+.headingSection {
+  text-align: right;
+  z-index: 10;
+  position: relative;
+}
+
+.mainHeading {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headingLine {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 55px;
+  color: #ffffff;
+  line-height: 1.2;
+  display: block;
+}
+
+.tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  color: #ffffff;
+  margin-top: 24px;
+}
+
+/* Responsive Design for Original Section */
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 60px;
+  }
+
+  .headingLine {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 40px;
+  }
+
+  .leftSection {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .indicatorsCard {
+    margin-top: 0;
+  }
+
+  .headingSection {
+    text-align: center;
+  }
+
+  .headingLine {
+    font-size: 40px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .guardianCard,
+  .indicatorsCard {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .headingLine {
+    font-size: 32px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+}
+
+/* ============================================ */
+/* NEW SPLIT BACKGROUND SECTION */
+/* ============================================ */
+
+.splitSection {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat';
+}
+
+.splitContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Side - Green Background (#44D09F) */
+.greenSection {
+  flex: 1;
+  background-color: #44D09F;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 35px;
+}
+
+.iconRow {
+  margin-bottom: 10px;
+}
+
+.technologyIcons {
+  width: 280px;
+  height: auto;
+}
+
+.contentBlock {
+  margin-bottom: 15px;
+}
+
+.splitHeading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 36px;
+  color: #03303D;
   margin: 0;
 }
 
-/* People Section */
-.peopleSection {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
+.boldText {
+  font-weight: 700;
+  display: block;
 }
 
-.peopleLeft {
-  background: #1a4d5e;
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 560px;
+}
+
+.paragraph {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #03303D;
+  margin: 0;
+}
+
+.paragraph strong {
+  font-weight: 700;
+}
+
+/* Right Side - Dark Background (#03303D) */
+.darkSection {
+  flex: 1;
+  background-color: #03303D;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.forestLogoWrapper {
+  margin-bottom: 50px;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px;
+}
+
+.forestLogo {
+  width: 71.81px;
+  height: auto;
+}
+
+.forestLogoText {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.forestLogoTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.forestLogoSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Habitat Cards Grid - 1 left, 2 right */
+.habitatCardsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.habitatCard:first-child {
+  grid-row: 1 / 3;
+  grid-column: 1;
+}
+
+.habitatCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1a4a5a;
+}
+
+.habitatMapWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.habitatMapImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.habitatOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(3, 48, 61, 0.95) 0%, rgba(3, 48, 61, 0.7) 70%, transparent 100%);
+}
+
+.habitatInfo {
+  color: #ffffff;
+}
+
+.habitatTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+}
+
+.habitatSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.habitatCoordinates {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.forestDescription {
+  max-width: 900px;
+  width: 100%;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.forestText {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+}
+
+/* Responsive Design for Split Section */
+@media (max-width: 1400px) {
+  .greenSection,
+  .darkSection {
+    padding: 50px 60px;
+  }
+
+  .splitHeading {
+    font-size: 38px;
+  }
+
+  .habitatTitle {
+    font-size: 18px;
+  }
+
+  .habitatSubtitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .splitContainer {
+    flex-direction: column;
+  }
+
+  .greenSection,
+  .darkSection {
+    padding: 50px 60px;
+  }
+
+  .splitHeading {
+    font-size: 34px;
+  }
+
+  .darkSection {
+    align-items: center;
+  }
+
+  .forestLogoWrapper {
+    justify-content: center;
+  }
+
+  .habitatCardsGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .habitatCard:first-child {
+    grid-row: auto;
+  }
+
+  .forestDescription {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .greenSection,
+  .darkSection {
+    padding: 40px 30px;
+  }
+
+  .technologyIcons,
+  .forestLogo {
+    width: 220px;
+  }
+
+  .splitHeading {
+    font-size: 28px;
+  }
+
+  .paragraph,
+  .forestText {
+    font-size: 14px;
+  }
+
+  .habitatMapWrapper {
+    min-height: 200px;
+  }
+
+  .habitatTitle {
+    font-size: 16px;
+  }
+
+  .habitatSubtitle {
+    font-size: 13px;
+  }
+
+  .habitatCoordinates {
+    font-size: 10px;
+  }
+}
+
+/* ============================================ */
+/* THIRD SECTION - GUARDIAN OF THE WILD */
+/* ============================================ */
+
+.guardianSection {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.guardianBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.guardianBgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guardianContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1400px;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Soccer Card */
+.soccerCard {
+  background: #03303D;
+  border-radius: 24px;
+  padding: 30px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.soccerIconWrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.soccerIcon {
+  width: 120px;
+  height: auto;
+}
+
+.soccerNumber {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 10px 0;
+  line-height: 1;
+}
+
+.soccerText {
+  font-family: 'Montserrat';
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 100%;
+  color: #ffffff;
+  margin: 15px 0 20px 0;
+}
+
+.soccerSource {
+  width: 100%;
+  text-align: left;
+  margin-top: auto;
+}
+
+.sourceLabel {
+  font-family: 'Montserrat';
+  font-size: 22px;
+  font-weight: 900;
+  color: #ffffff;
+  margin: 0 0 3px 0;
+}
+
+.sourceValue {
+  font-family: 'Montserrat';
+  font-size: 21px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 100%;
+}
+
+/* Guardian Text Section */
+.guardianTextWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.guardianHeading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 40px 0;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.guardianButtons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.guardianBtn {
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 70px;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 800;
+  color: #03303D;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 65px;
+  transition: all 0.3s ease;
+}
+
+.guardianBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btnArrow {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Location Text */
+.locationText {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+.locationText p {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design for Guardian Section */
+@media (max-width: 1400px) {
+  .guardianContent {
+    padding: 50px 60px;
+  }
+
+  .guardianHeading {
+    font-size: 46px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .guardianHeading {
+    font-size: 40px;
+  }
+
+  .guardianButtons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .guardianBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .guardianContent {
+    padding: 40px 30px;
+    gap: 30px;
+  }
+
+  .soccerCard {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .guardianTextWrapper {
+    margin-top: 60px;
+  }
+
+  .guardianHeading {
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+
+  .guardianBtn {
+    padding: 14px 28px;
+    font-size: 13px;
+  }
+
+  .locationText {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .locationText p {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .soccerNumber {
+    font-size: 64px;
+  }
+
+  .guardianHeading {
+    font-size: 28px;
+  }
+}
+
+/* ============================================ */
+/* FOURTH SECTION - PEOPLE FOR THE PLANET */
+/* ============================================ */
+
+.peopleSection {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat';
+}
+
+.peopleContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Side - Image */
+.peopleImageSection {
+  flex: 0 0 50%;
+  width: 50%;
+  overflow: hidden;
 }
 
 .peopleImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
-.peopleRight {
-  background: #1a4d5e;
-  padding: 4rem 3rem;
+/* Right Side - Content */
+.peopleContentSection {
+  flex: 0 0 50%;
+  width: 50%;
+  background-color: #03303D;
+  padding: 80px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: white;
+  gap: 30px;
 }
 
-.peopleIcons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+.wildlifeIcons {
+  margin-bottom: 10px;
 }
 
-.peopleIcons img {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) invert(1);
+.wildlifeIconsImage {
+  height: 60px;
+  width: auto;
 }
 
-.sectionTitle {
-  font-size: 3.5rem;
-  line-height: 1.1;
-  margin: 0 0 1.5rem 0;
-  font-weight: 700;
+.peopleHeading {
+  font-family: 'Montserrat';
+  font-size: 64px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 64px;
 }
 
-.sectionTitle em {
+.peopleHeadingItalic {
   font-style: italic;
   font-weight: 400;
 }
 
-.sectionSubtitle {
-  font-size: 1.5rem;
-  line-height: 1.4;
-  margin: 0 0 2rem 0;
+.peopleSubheading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 100%;
 }
 
-.sectionDescription {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin: 0 0 2rem 0;
-}
-
-.featureList {
+.benefitsList {
   list-style: none;
   padding: 0;
-  margin: 0 0 2.5rem 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.featureList li {
-  font-size: 1.125rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+.benefitsList li {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  padding-left: 25px;
+  position: relative;
+  line-height: 38px;
 }
 
-.featureList li:before {
-  content: "• ";
-  margin-right: 0.5rem;
+.benefitsList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-size: 24px;
 }
 
 .joinButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 3rem;
-  background: white;
-  color: #1a4d5e;
+  background: #ffffff;
   border: none;
   border-radius: 50px;
-  font-size: 1.125rem;
-  font-weight: 600;
+  padding: 18px 71px;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 700;
+  color: #03303D;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 55px;
   transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
 }
 
 .joinButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.joinButton img {
+.joinArrow {
   width: 20px;
   height: 20px;
 }
 
-/* Business Section */
-.businessSection {
-  background: #7fe5cc;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-}
-
-.businessLeft {
-  padding: 4rem 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.businessIcons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.businessIcons img {
-  width: 32px;
-  height: 32px;
-}
-
-.businessRight {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-}
-
-.businessImage {
-  max-width: 500px;
-  width: 100%;
-  height: auto;
-}
-
-/* Recognition Section */
-.recognitionSection {
-  background: white;
-  padding: 6rem 1.5rem;
-  position: relative;
-}
-
-.recognitionHeader {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.recognitionIcons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.recognitionIcons img {
-  width: 36px;
-  height: 36px;
-}
-
-.recognitionTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a4d5e;
-  margin: 0;
-}
-
-.recognitionGrid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-}
-
-.recognitionCard {
-  text-align: center;
-  padding: 2rem;
-  border: 2px solid transparent;
-  border-radius: 24px;
-  transition: all 0.3s ease;
-}
-
-.recognitionCard:hover {
-  border-color: #7fe5cc;
-  transform: translateY(-4px);
-}
-
-.recognitionLogo {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.recognitionLogo img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.recognitionCard p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-  margin: 0;
-}
-
-.arrowButton {
-  position: absolute;
-  right: 2rem;
-  bottom: 2rem;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #7fe5cc;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.arrowButton:hover {
-  transform: scale(1.1);
-}
-
-.arrowButton img {
-  width: 24px;
-  height: 24px;
-}
-
-/* Trust Section */
-.trustSection {
-  background: linear-gradient(135deg, #e8f8f5 0%, #d4f1ea 100%);
-  padding: 6rem 1.5rem;
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  gap: 6rem;
-  align-items: center;
-}
-
-.trustLeft {
-  text-align: center;
-}
-
-.trustIcons {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin-bottom: 2rem;
-}
-
-.trustIcons img {
-  width: 40px;
-  height: 40px;
-}
-
-.trustSeal {
-  margin: 3rem 0;
-}
-
-.sealImage {
-  max-width: 350px;
-  width: 100%;
-  height: auto;
-}
-
-.trustTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1a4d5e;
-  margin: 0;
-  line-height: 1.2;
-}
-
-.trustList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.trustList li {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2rem;
-  margin-bottom: 1rem;
-  background: white;
-  border-radius: 16px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #1a4d5e;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.trustList li:hover {
-  background: #7fe5cc;
-  transform: translateX(8px);
-}
-
-.trustList li img {
-  width: 24px;
-  height: 24px;
-}
-
-/* Wild Tech Section */
-.wildTechSection {
-  background: linear-gradient(135deg, #1a4d5e 0%, #0d2833 100%);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-}
-
-.wildTechLeft {
-  position: relative;
-}
-
-.wildTechImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.techBadges {
-  position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.techBadge {
-  width: 80px;
-  height: 80px;
-  background: white;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-.techBadge img {
-  width: 40px;
-  height: 40px;
-}
-
-.wildTechRight {
-  padding: 4rem 3rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: white;
-}
-
-.wildTechIcons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.wildTechIcons img {
-  width: 32px;
-  height: 32px;
-  filter: brightness(0) invert(1);
-}
-
-.wildTechTitle {
-  font-size: 3.5rem;
-  line-height: 1.1;
-  margin: 0 0 1.5rem 0;
-  font-weight: 700;
-}
+/* Responsive Design for People Section */
+@media (max-width: 1400px) {
+  .peopleContentSection {
+    padding: 60px 80px;
+  }
 
-.wildTechTitle em {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.wildTechSubtitle {
-  font-size: 1.75rem;
-  line-height: 1.4;
-  margin: 0 0 2rem 0;
-}
-
-.wildTechDescription {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  margin: 0 0 1.5rem 0;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.techList {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 0 0;
-}
-
-.techList li {
-  font-size: 1.125rem;
-  padding: 0.5rem 0;
-  color: #7fe5cc;
-}
-
-/* Daily Actions Section */
-.dailyActionsSection {
-  background: white;
-  padding: 6rem 1.5rem;
-  display: grid;
-  grid-template-columns: 500px 1fr;
-  gap: 4rem;
-}
-
-.dailyIcons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.dailyIcons img {
-  width: 36px;
-  height: 36px;
-}
-
-.dailyTitle {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  color: #1a4d5e;
-  margin: 0 0 2rem 0;
-  font-weight: 700;
-}
-
-.dailyDescription {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 1.5rem 0;
-}
-
-.dailyActionsRight {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.actionCard {
-  background: #f8f8f8;
-  padding: 2rem;
-  border-radius: 24px;
-  display: flex;
-  flex-direction: column;
-}
-
-.actionCard h3 {
-  font-size: 1.5rem;
-  color: #1a4d5e;
-  margin: 0 0 1rem 0;
-  font-weight: 700;
-}
-
-.actionCard h3 em {
-  font-style: italic;
-  font-weight: 400;
-}
-
-.actionCard p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #333;
-  margin: 0 0 1.5rem 0;
-  flex: 1;
-}
-
-.actionImages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.actionImages img {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 12px;
-}
-
-/* Social Section */
-.socialSection {
-  background: #f5f5f5;
-  padding: 6rem 1.5rem 4rem;
-}
-
-.socialHeader {
-  max-width: 1200px;
-  margin: 0 auto 3rem;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-}
-
-.sdgBadges {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.sdgBadges img {
-  width: 120px;
-  height: 120px;
-}
-
-.sdgText {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: #1a4d5e;
-  margin: 0;
-}
-
-.followButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 3rem;
-  background: #7fe5cc;
-  color: #1a4d5e;
-  border: none;
-  border-radius: 50px;
-  font-size: 1.125rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0 auto 3rem;
-  display: flex;
-  width: fit-content;
-}
-
-.followButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-}
-
-.followButton img {
-  width: 20px;
-  height: 20px;
-}
-
-.socialFeed {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.feedArrow {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
-}
-
-.feedArrow:hover {
-  background: #7fe5cc;
-  border-color: #7fe5cc;
-  transform: scale(1.1);
-}
-
-.feedArrow img {
-  width: 24px;
-  height: 24px;
-}
-
-.feedCards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  flex: 1;
-}
-
-.feedCard {
-  background: white;
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.feedHeader {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.feedHeader img:first-child {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.feedHeader span {
-  font-weight: 600;
-  flex: 1;
-}
-
-.feedHeader time {
-  font-size: 0.875rem;
-  color: #666;
-}
-
-.feedHeader img:last-child {
-  width: 24px;
-  height: 24px;
-}
-
-.feedCard h4 {
-  font-size: 1rem;
-  line-height: 1.4;
-  margin: 0 0 0.75rem 0;
-  color: #1a4d5e;
-}
-
-.readMore {
-  background: none;
-  border: none;
-  color: #1a4d5e;
-  font-weight: 600;
-  cursor: pointer;
-  padding: 0;
-  margin-bottom: 1rem;
-}
-
-.feedImage {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
-
-.feedActions {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.feedActions button {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: none;
-  border: none;
-  color: #666;
-  cursor: pointer;
-  font-size: 0.875rem;
-}
+  .peopleHeading {
+    font-size: 56px;
+  }
 
-.feedActions button img {
-  width: 18px;
-  height: 18px;
+  .peopleSubheading {
+    font-size: 24px;
+  }
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
-  .heroContent,
-  .missionContent,
-  .dailyActionsSection {
-    grid-template-columns: 1fr;
+  .peopleContainer {
+    flex-direction: column;
   }
 
-  .heroLeft {
-    order: 2;
+  .peopleImageSection {
+    min-height: 50vh;
   }
 
-  .heroRight {
-    order: 1;
-    align-items: center;
+  .peopleContentSection {
+    padding: 60px 60px;
   }
 
-  .heroTitle {
-    text-align: center;
+  .peopleHeading {
+    font-size: 48px;
   }
 
-  .heroSubtitle {
-    text-align: center;
+  .peopleSubheading {
+    font-size: 22px;
   }
 
-  .recognitionGrid {
-    grid-template-columns: 1fr;
+  .benefitsList li {
+    font-size: 18px;
   }
 
-  .feedCards {
-    grid-template-columns: 1fr;
+  .joinButton {
+    padding: 16px 50px;
+    font-size: 18px;
   }
 }
 
 @media (max-width: 768px) {
-  .heroTitle {
-    font-size: 2.5rem;
+  .peopleImageSection {
+    min-height: 40vh;
   }
 
-  .missionTitle,
-  .sectionTitle,
-  .wildTechTitle,
-  .dailyTitle {
-    font-size: 2rem;
+  .peopleContentSection {
+    padding: 40px 30px;
+    gap: 20px;
   }
 
-  .ctaTitle {
-    font-size: 2rem;
+  .wildlifeIconsImage {
+    height: 45px;
   }
 
-  .ctaButtons {
+  .peopleHeading {
+    font-size: 36px;
+  }
+
+  .peopleSubheading {
+    font-size: 18px;
+  }
+
+  .benefitsList {
+    margin: 15px 0;
+    gap: 10px;
+  }
+
+  .benefitsList li {
+    font-size: 16px;
+  }
+
+  .joinButton {
+    padding: 14px 40px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .joinArrow {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .peopleHeading {
+    font-size: 28px;
+  }
+
+  .peopleSubheading {
+    font-size: 16px;
+  }
+
+  .benefitsList li {
+    font-size: 14px;
+  }
+}
+
+/* ============================================ */
+/* FIFTH SECTION - BUSINESS FOR THE PLANET */
+/* ============================================ */
+
+.businessSection {
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'Montserrat';
+  background-color: #59C09A;
+}
+
+.businessContainer {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Left Side - Content */
+.businessContentSection {
+    flex: 0 0 46%;
+    width: 45%;
+    background-color: #59C09A;
+    padding: 80px 60px 80px 80px;
+    display: flex;
     flex-direction: column;
-  }
-
-  .peopleSection,
-  .businessSection,
-  .wildTechSection {
-    grid-template-columns: 1fr;
-  }
-
-  .trustSection {
-    grid-template-columns: 1fr;
-  }
-
-  .missionRight {
-    grid-template-columns: 1fr;
-  }
-
-  .dailyActionsRight {
-    grid-template-columns: 1fr;
-  }
-
-  .socialHeader {
-    flex-direction: column;
-  }
-
-  .sdgBadges {
-    flex-wrap: wrap;
     justify-content: center;
+    gap: 30px;
+    padding-left: 19%;
+}
+
+.businessIcons {
+  margin-bottom: 10px;
+}
+
+.businessIconsImage {
+  height: 60px;
+  width: auto;
+}
+
+.businessHeading {
+  font-family: 'Montserrat';
+  font-size: 64px;
+  font-weight: 600;
+  color: #03303D;
+  margin: 0;
+  line-height: 64px;
+}
+
+.businessHeadingItalic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.businessSubheading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 600;
+  color: #03303D;
+  margin: 0;
+  line-height: 100%;
+}
+
+.businessList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.businessList li {
+  font-family: 'Montserrat';
+  font-size: 24px;
+  font-weight: 500;
+  color: #03303D;
+  padding-left: 25px;
+  position: relative;
+  line-height: 27px;
+}
+
+.businessList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  font-size: 24px;
+  color: #03303D;
+}
+
+.businessJoinButton {
+  background: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 18px 71px;
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 700;
+  color: #03303D;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 55px;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.businessJoinButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.businessJoinArrow {
+  width: 20px;
+  height: 20px;
+}
+
+/* Right Side - Image */
+.businessImageSection {
+  flex: 0 0 55%;
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 80px 100px 80px 40px;
+}
+
+.businessImage {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive Design for Business Section */
+@media (max-width: 1400px) {
+  .businessContentSection {
+    padding: 60px 80px;
+  }
+
+  .businessHeading {
+    font-size: 56px;
+  }
+
+  .businessSubheading {
+    font-size: 24px;
+  }
+
+  .businessImageSection {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .businessContainer {
+    flex-direction: column;
+  }
+
+  .businessContentSection,
+  .businessImageSection {
+    flex: 1;
+    width: 100%;
+  }
+
+  .businessContentSection {
+    padding: 60px 60px;
+  }
+
+  .businessImageSection {
+    min-height: 50vh;
+    padding: 40px;
+  }
+
+  .businessHeading {
+    font-size: 48px;
+  }
+
+  .businessSubheading {
+    font-size: 22px;
+  }
+
+  .businessList li {
+    font-size: 18px;
+  }
+
+  .businessJoinButton {
+    padding: 16px 50px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .businessContentSection {
+    padding: 40px 30px;
+    gap: 20px;
+  }
+
+  .businessIconsImage {
+    height: 45px;
+  }
+
+  .businessHeading {
+    font-size: 36px;
+  }
+
+  .businessSubheading {
+    font-size: 18px;
+  }
+
+  .businessList {
+    margin: 15px 0;
+    gap: 10px;
+  }
+
+  .businessList li {
+    font-size: 16px;
+  }
+
+  .businessJoinButton {
+    padding: 14px 40px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .businessJoinArrow {
+    width: 16px;
+    height: 16px;
+  }
+
+  .businessImageSection {
+    padding: 30px;
+    min-height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .businessHeading {
+    font-size: 28px;
+  }
+
+  .businessSubheading {
+    font-size: 16px;
+  }
+
+  .businessList li {
+    font-size: 14px;
   }
 }

@@ -228,14 +228,14 @@ export const Home: React.FC = () => {
             <h2 className={styles.guardianHeading}>Become a Guardian of the Wild.</h2>
             
             <div className={styles.guardianButtons}>
-              <button className={styles.guardianBtn}>
+              <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
                 PEOPLE FOR THE PLANET
                 <span className={styles.btnArrow}>↗</span>
-              </button>
-              <button className={styles.guardianBtn}>
+              </a>
+              <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
                 BUSINESS FOR THE PLANET
                 <span className={styles.btnArrow}>↗</span>
-              </button>
+              </a>
             </div>
           </div>
 
@@ -281,10 +281,10 @@ export const Home: React.FC = () => {
             </ul>
 
             {/* CTA Button */}
-            <button className={styles.joinButton}>
+            <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.joinButton}>
               JOIN US
               <img src={arrow} alt="Arrow" className={styles.joinArrow} />
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -322,10 +322,10 @@ export const Home: React.FC = () => {
             </ul>
 
             {/* CTA Button */}
-            <button className={styles.businessJoinButton}>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.businessJoinButton}>
               JOIN US
               <img src={arrow} alt="Arrow" className={styles.businessJoinArrow} />
-            </button>
+            </a>
           </div>
 
           {/* Right Side - Image */}

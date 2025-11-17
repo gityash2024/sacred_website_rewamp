@@ -6,22 +6,19 @@ import styles from './RecognizedGlobally.module.css'
 
 // Imported assets 
 import Alexandrelogo from '@/assets/Alexandrelogo.svg' // Used in the top decoration
-import bracte from '@/assets/bracte.svg' // Used for the Seal of Trust decoration (Trees/Deer)
 import CGC_1 from '@/assets/CGC_1.svg' 
 import CGC_2 from '@/assets/CGC_2.svg'
 import CGC_3 from '@/assets/CGC_3.svg'
-import CGC_4 from '@/assets/CGC_4.svg'
-import CGC_5 from '@/assets/CGC_5.svg'
-import CGC_6 from '@/assets/CGC_6.svg'
+
 
 // Wild Tech
 import Builtwith from '@/assets/Builtwith.png'
 import BusinesforthePlanet from '@/assets/BusinesforthePlanet.svg'
-import Blockchain from '@/assets/Blockchain.svg'
-import PartlyCloudylogo from '@/assets/PartlyCloudylogo.svg'
-import AdvancedAnalytic from '@/assets/AdvancedAnalytic.svg'
-import Satellites from '@/assets/Satellites.svg'
-import VirtualVisits from '@/assets/VirtualVisits.svg'
+import Blockchain from '@/assets/blockchain_1.svg'
+import PartlyCloudylogo from '@/assets/cloud_2.svg'
+import AdvancedAnalytic from '@/assets/advance_analytics_4.svg'
+import Satellites from '@/assets/settelites_5.svg'
+import VirtualVisits from '../../assets/virtual_visit_3.png'
 
 // --- Seal of Trust Assets ---
 import SacredGrovesbackgroud from '@/assets/SacredGrovesbackgroud.svg' 
@@ -170,10 +167,6 @@ const LinkedInPostsSlider: React.FC = () => {
     setCurrentSlide((prev) => (prev - 1 + posts.length) % posts.length)
   }
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
-
   // Calculate visible posts (show 3 at a time, loop around)
   const getVisiblePosts = () => {
     const visible = []
@@ -243,17 +236,6 @@ const LinkedInPostsSlider: React.FC = () => {
         <img src={silderleftarrow} alt="Next" />
       </button>
 
-      {/* Pagination Dots */}
-      <div className={styles.sliderDots}>
-        {posts.map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.sliderDot} ${index === currentSlide ? styles.sliderDotActive : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
-      </div>
     </div>
   )
 }
@@ -439,19 +421,34 @@ export const RecognizedGlobally: React.FC = () => {
             
             {/* Interactive Tech Bubbles */}
             <div className={styles.techBubbles}>
-              <div className={`${styles.techBubble} ${styles.bubble1}`}>
+              <div 
+                className={`${styles.techBubble} ${styles.bubble1} ${selectedTech === 'blockchain' ? styles.bubbleActive : ''}`}
+                onClick={() => handleTechClick('blockchain')}
+              >
                 <img src={Blockchain} alt="Blockchain" />
               </div>
-              <div className={`${styles.techBubble} ${styles.bubble2}`}>
+              <div 
+                className={`${styles.techBubble} ${styles.bubble2} ${selectedTech === 'cloud' ? styles.bubbleActive : ''}`}
+                onClick={() => handleTechClick('cloud')}
+              >
                 <img src={PartlyCloudylogo} alt="Cloud" />
               </div>
-              <div className={`${styles.techBubble} ${styles.bubble3}`}>
+              <div 
+                className={`${styles.techBubble} ${styles.bubble3} ${selectedTech === 'virtualVisits' ? styles.bubbleActive : ''}`}
+                onClick={() => handleTechClick('virtualVisits')}
+              >
                 <img src={VirtualVisits} alt="Virtual Visits" />
               </div>
-              <div className={`${styles.techBubble} ${styles.bubble4}`}>
+              <div 
+                className={`${styles.techBubble} ${styles.bubble4} ${selectedTech === 'advancedAnalytics' ? styles.bubbleActive : ''}`}
+                onClick={() => handleTechClick('advancedAnalytics')}
+              >
                 <img src={AdvancedAnalytic} alt="Advanced Analytics" />
               </div>
-              <div className={`${styles.techBubble} ${styles.bubble5}`}>
+              <div 
+                className={`${styles.techBubble} ${styles.bubble5} ${selectedTech === 'satellites' ? styles.bubbleActive : ''}`}
+                onClick={() => handleTechClick('satellites')}
+              >
                 <img src={Satellites} alt="Satellites" />
               </div>
             </div>

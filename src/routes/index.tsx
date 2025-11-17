@@ -10,6 +10,8 @@ import { Loading } from '@/components/common/Loading'
 
 // Lazy load pages for code splitting
 const Home = lazy(() => import('@/pages/Home').then((module) => ({ default: module.Home })))
+const PeopleForPlanet = lazy(() => import('@/pages/PeopleForPlanet').then((module) => ({ default: module.PeopleForPlanet })))
+const BusinessForPlanet = lazy(() => import('@/pages/BusinessForPlanet').then((module) => ({ default: module.BusinessForPlanet })))
 
 /**
  * Application routes configuration
@@ -24,6 +26,22 @@ const router = createBrowserRouter([
         element: (
           <Suspense fallback={<Loading />}>
             <Home />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'people-for-the-planet',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <PeopleForPlanet />
+          </Suspense>
+        ),
+      },
+      {
+        path: 'business-for-the-planet',
+        element: (
+          <Suspense fallback={<Loading />}>
+            <BusinessForPlanet />
           </Suspense>
         ),
       },

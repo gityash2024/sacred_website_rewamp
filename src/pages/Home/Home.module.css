@@ -787,8 +787,9 @@
   color: #03303D;
   cursor: pointer;
   display: flex;
+  text-decoration: none;
   align-items: center;
-  gap: 65px;
+  gap: 10px;
   transition: all 0.3s ease;
 }
 
@@ -1003,6 +1004,7 @@
   color: #03303D;
   cursor: pointer;
   display: inline-flex;
+  text-decoration: none;
   align-items: center;
   gap: 55px;
   transition: all 0.3s ease;
@@ -1223,6 +1225,7 @@
   color: #03303D;
   cursor: pointer;
   display: inline-flex;
+  text-decoration: none;
   align-items: center;
   gap: 55px;
   transition: all 0.3s ease;

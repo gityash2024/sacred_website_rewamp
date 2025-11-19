@@ -59,11 +59,20 @@ export const PeopleForPlanet: React.FC = () => {
         keywords="protect habitat, gift habitat, guardian, nature conservation"
       />
       
-      <div className={styles.container}>
-        <h1>People for the Planet</h1>
-        <p>This page is under construction.</p>
+      <div className={styles.pageWrapper}>
+        {/* Hero Section - Using PeopleforthePlanetlogo as background */}
+        <section 
+          className={styles.heroSection}
+          style={{ backgroundImage: `url(${PeopleforthePlanetlogo})` }}
+        >
+          <div className={styles.heroOverlay}></div>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>
+              What if protecting a habitat was as easy as sending a text?
+            </h1>
+          </div>
+        </section>
       </div>
     </>
   )
 }
-

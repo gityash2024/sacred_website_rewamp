@@ -1,24 +1,162 @@
 /* People For The Planet Page Styles */
 
-.container {
+.pageWrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: rgba(0, 0, 0, 0.35); */
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 40px;
+  padding: 0 40px;
   text-align: center;
+  width: 100%;
 }
 
-.container h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 48px;
-  font-weight: 600;
-  color: #03303D;
-  margin-bottom: 20px;
+.heroTitle {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 55px;
+  line-height: 111%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0;
+  /* text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); */
 }
 
-.container p {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  color: #333;
-  line-height: 1.8;
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Desktop */
+@media (min-width: 1440px) {
+  .heroTitle {
+    font-size: 65px;
+  }
 }
 
+/* Desktop */
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 50px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .heroTitle {
+    font-size: 45px;
+  }
+  
+  .heroContent {
+    padding: 0 60px;
+  }
+}
+
+/* Tablet Small */
+@media (max-width: 768px) {
+  .heroSection {
+    height: 80vh;
+    min-height: 500px;
+  }
+  
+  .heroTitle {
+    font-size: 36px;
+    line-height: 115%;
+  }
+  
+  .heroContent {
+    padding: 0 40px;
+  }
+}
+
+/* Mobile Large */
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: 32px;
+    line-height: 120%;
+  }
+  
+  .heroContent {
+    padding: 0 30px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .heroSection {
+    height: 70vh;
+    min-height: 450px;
+  }
+  
+  .heroTitle {
+    font-size: 28px;
+    line-height: 125%;
+  }
+  
+  .heroContent {
+    padding: 0 24px;
+  }
+  
+  .heroOverlay {
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+/* Mobile Small */
+@media (max-width: 375px) {
+  .heroTitle {
+    font-size: 24px;
+    line-height: 130%;
+  }
+  
+  .heroContent {
+    padding: 0 20px;
+  }
+}
+
+/* Mobile Extra Small */
+@media (max-width: 320px) {
+  .heroSection {
+    height: 60vh;
+    min-height: 400px;
+  }
+  
+  .heroTitle {
+    font-size: 22px;
+    line-height: 135%;
+  }
+  
+  .heroContent {
+    padding: 0 16px;
+  }
+}

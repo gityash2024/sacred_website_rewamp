@@ -9,10 +9,10 @@ import PeopleforthePlanetlogo from '@/assets/PeopleforthePlanetlogo.png'
 import BecomeaGuardian_1 from '@/assets/BecomeaGuardian_1.png'
 import BecomeaGuardian_2 from '@/assets/BecomeaGuardian_2.png'
 import BecomeaGuardianlogo from '@/assets/BecomeaGuardianlogo.svg'
+import connection from '@/assets/connection.svg'
+import frog from '@/assets/frog.svg'
 import sun from '@/assets/sun.svg'
 import butterfly from '@/assets/butterfly.svg'
-import frog from '@/assets/frog.svg'
-import connection from '@/assets/connection.svg'
 import arrow from '@/assets/arrow.svg'
 // 3 section
 import Wesecurebiodi from '@/assets/Wesecurebiodi.svg'
@@ -58,10 +58,9 @@ export const PeopleForPlanet: React.FC = () => {
         description="Protect a biodiverse habitat in your name. Become a Guardian and make a positive impact on nature."
         keywords="protect habitat, gift habitat, guardian, nature conservation"
       />
-      
+
       <div className={styles.pageWrapper}>
-        {/* Hero Section - Using PeopleforthePlanetlogo as background */}
-        <section 
+        <section
           className={styles.heroSection}
           style={{ backgroundImage: `url(${PeopleforthePlanetlogo})` }}
         >
@@ -70,6 +69,57 @@ export const PeopleForPlanet: React.FC = () => {
             <h1 className={styles.heroTitle}>
               What if protecting a habitat was as easy as sending a text?
             </h1>
+          </div>
+        </section>
+
+        <section className={styles.guardianSection}>
+          <div className={styles.guardianGrid}>
+            <div className={styles.guardianLeft}>
+              <div className={styles.imgWrapper}>
+                <img src={BecomeaGuardian_1} className={styles.mainImg} />
+                <img src={connection} className={styles.iconTop} />
+                <img src={frog} className={styles.iconBottom} />
+              </div>
+
+              <div className={styles.imgWrapper}>
+                <img src={BecomeaGuardian_2} className={styles.mainImg} />
+                <img src={sun} className={styles.iconTop} />
+                <img src={butterfly} className={styles.iconBottom} />
+              </div>
+            </div>
+
+            <div className={styles.guardianRight}>
+              <img src={BecomeaGuardianlogo} className={styles.guardianLogo} />
+
+              <h2 className={styles.guardianTitle}>
+                Become a Guardian<br />of the Wild.
+              </h2>
+
+              <p className={styles.guardianText}>
+                Doing something positive for nature is easier than we think. With a simple click, you can protect a habitat — or even gift one.
+              </p>
+
+              <p className={styles.guardianText}>
+                With Guardians in over 30 countries, we’re protecting biodiverse forests in the UK and Canada, proof that when people come together, the planet thrives.
+              </p>
+
+              <p className={styles.guardianText}>
+                A small step can truly make a big difference.
+              </p>
+
+              <div className={styles.btnGroup}>
+               <button className={styles.guardianBtn}>
+  <span>GIFT A HABITAT</span>
+  <img src={arrow} />
+</button>
+
+<button className={styles.guardianBtn}>
+  <span>PROTECT A HABITAT</span>
+  <img src={arrow} />
+</button>
+
+              </div>
+            </div>
           </div>
         </section>
       </div>

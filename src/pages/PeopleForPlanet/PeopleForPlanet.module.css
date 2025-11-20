@@ -729,3 +729,142 @@
   .sideIcons { display: none; }
   .giftMainImage, .giftPiece { position: relative; left: 0; top: 0; transform: none; width: 100%; height: auto; }
 }
+/* SECTION 6 — Sacred Deeds */
+.sacredSection {
+  width: 100%;
+  padding: 110px 0 140px;
+  background: #59C09A;
+}
+
+.sacredWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 40px;
+}
+
+.sacredLogo {
+  width: 180px;
+  margin: 0 auto 30px;
+}
+
+.sacredTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 52px;
+  color: #03303D;
+  margin-bottom: 10px;
+}
+
+.sacredSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #003B3A;
+  margin-bottom: 80px;
+}
+
+.sacredGrid {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 140px;
+}
+
+.sacredCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.sacredCardImageWrapper {
+  position: relative;
+  width: 420px;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.braceLeft,
+.braceRight {
+position: absolute;
+    /* top: -26%; */
+    width: 50px;
+}
+
+.braceLeft {
+  left: -90px;
+}
+
+.braceRight {
+  right: -140px;
+}
+
+.virtualScreen {
+  width: 420px;
+  height: auto;
+  position: relative;
+  z-index: 3;
+}
+
+.virtualImageInside {
+  position: absolute;
+  top: 22px;
+  left: 28px;
+  width: 364px;
+  height: 205px;
+  object-fit: cover;
+  border-radius: 4px;
+  z-index: 2;
+}
+
+
+.sacredCardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.sacredCardIcon {
+  width: 56px;
+  height: 56px;
+  margin-top: 10px;
+}
+
+.sacredCardLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #003B3A;
+}
+
+.sacredBtnWrapper {
+  margin-top: 70px;
+}
+
+.sacredBtn {
+  width: 260px;
+  height: 56px;
+  border-radius: 50px;
+  background: #fff;
+  color: #03303D;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.sacredBtnArrow {
+  width: 18px;
+  height: 18px;
+}
+
+

@@ -42,6 +42,13 @@ import GiftaHabitat_5 from '@/assets/GiftaHabitat_5.svg'
 import GiftaHabitat_6 from '@/assets/GiftaHabitat_6.svg'
 import GiftaHabitat_7 from '@/assets/GiftaHabitat_7.svg'
 // 6 section
+import Sacreddeedsmust from '@/assets/Sacreddeedsmust.svg'
+import Certificateimage from '@/assets/Certificateimage.svg'
+import certificateimagelogo from '@/assets/certificateimagelogo.svg'
+import VirtualBackground from '@/assets/VirtualBackground.svg'
+import virtualbacklogo from '@/assets/virtualbacklogo.png'
+import bracit1 from '@/assets/bracit1.png'
+import bracit2 from '@/assets/bracit2.png'
 
 export const PeopleForPlanet: React.FC = () => {
   return (
@@ -284,43 +291,91 @@ export const PeopleForPlanet: React.FC = () => {
         </section>
       </div>
       {/* SECTION 5 — GIFT A HABITAT */}
-<section className={styles.giftSection}>
-  <div className={styles.giftWrapper}>
-    <div className={styles.giftLeft}>
-      <img src={GiftaHabitatilogo} className={styles.giftLogo} alt="Gift a Habitat logo" />
-      <h2 className={styles.giftTitle}>Gift a Habitat</h2>
-      <p className={styles.giftText}>
-        Mark life’s special moments with a gift that lasts. A Sacred Groves Cluster is a thoughtful, planet-positive way to celebrate friends, family, and colleagues.
-      </p>
-     <button className={styles.giftBtn}>
+      <section className={styles.giftSection}>
+        <div className={styles.giftWrapper}>
+          <div className={styles.giftLeft}>
+            <img src={GiftaHabitatilogo} className={styles.giftLogo} alt="Gift a Habitat logo" />
+            <h2 className={styles.giftTitle}>Gift a Habitat</h2>
+            <p className={styles.giftText}>
+              Mark life’s special moments with a gift that lasts. A Sacred Groves Cluster is a
+              thoughtful, planet-positive way to celebrate friends, family, and colleagues.
+            </p>
+            <button className={styles.giftBtn}>
               <span>GIFT NOW</span>
               {/* Arrow logo added as requested */}
               <img src={arrow} className={styles.giftBtnArrow} alt="Arrow" />
             </button>
-    </div>
+          </div>
 
-    <div className={styles.giftRight}>
-      <img src={dotdotbox} className={styles.dotGrid} alt="dot grid" />
-      <div className={styles.giftImageContainer}>
-        <img src={GiftaHabitatimage} className={styles.giftMainImage} alt="Gift image main" />
-      </div>
+          <div className={styles.giftRight}>
+            <img src={dotdotbox} className={styles.dotGrid} alt="dot grid" />
+            <div className={styles.giftImageContainer}>
+              <img src={GiftaHabitatimage} className={styles.giftMainImage} alt="Gift image main" />
+            </div>
 
-      <div className={styles.sideIcons}>
-        <img src={GiftaHabitat_1} alt="icon1" className={styles.iconItem} />
-        <img src={GiftaHabitat_2} alt="icon2" className={styles.iconItem} />
-        <img src={GiftaHabitat_3} alt="icon3" className={styles.iconItem} />
-        <img src={GiftaHabitat_4} alt="icon4" className={styles.iconItem} />
-        <img src={GiftaHabitat_5} alt="icon5" className={styles.iconItem} />
-        <img src={GiftaHabitat_6} alt="icon6" className={styles.iconItem} />
-        <img src={GiftaHabitat_7} alt="icon7" className={styles.iconItem} />
-        <img src={GiftaHabitat_2} alt="icon2" className={styles.iconItem} />
+            <div className={styles.sideIcons}>
+              <img src={GiftaHabitat_1} alt="icon1" className={styles.iconItem} />
+              <img src={GiftaHabitat_2} alt="icon2" className={styles.iconItem} />
+              <img src={GiftaHabitat_3} alt="icon3" className={styles.iconItem} />
+              <img src={GiftaHabitat_4} alt="icon4" className={styles.iconItem} />
+              <img src={GiftaHabitat_5} alt="icon5" className={styles.iconItem} />
+              <img src={GiftaHabitat_6} alt="icon6" className={styles.iconItem} />
+              <img src={GiftaHabitat_7} alt="icon7" className={styles.iconItem} />
+              <img src={GiftaHabitat_2} alt="icon2" className={styles.iconItem} />
+            </div>
+          </div>
+        </div>
+      </section>
 
-      
-      </div>
-    </div>
-  </div>
-</section>
+      {/* SECTION 6 — SACRED DEEDS */}
+      <section className={styles.sacredSection}>
+        <div className={styles.sacredWrapper}>
+          <img src={Sacreddeedsmust} className={styles.sacredLogo} alt="Sacred deeds logo" />
 
+          <h2 className={styles.sacredTitle}>Sacred deeds must be shared with others.</h2>
+          <p className={styles.sacredSubtitle}>
+            You’ve taken real action for nature, let it speak for itself.
+          </p>
+
+          <div className={styles.sacredGrid}>
+            {/* CERTIFICATE CARD (unchanged layout but corrected brace positioning) */}
+            <div className={styles.sacredCard}>
+              <div className={styles.sacredCardImageWrapper}>
+                <img src={bracit1} className={styles.braceLeft} />
+                <img src={bracit1} className={styles.braceRight} />
+                <img src={Certificateimage} className={styles.sacredCardImage} />
+              </div>
+              <img src={certificateimagelogo} className={styles.sacredCardIcon} />
+              <div className={styles.sacredCardLabel}>Certificate</div>
+            </div>
+
+            {/* VIRTUAL BACKGROUND CARD — FIXED EXACTLY LIKE THE SAMPLE */}
+            <div className={styles.sacredCard}>
+              <div className={styles.sacredCardImageWrapper}>
+                <img src={bracit2} className={styles.braceLeft} />
+                <img src={bracit2} className={styles.braceRight} />
+
+                <img src={VirtualBackground} className={styles.virtualScreen} />
+
+                <img
+                  src={'/mnt/data/2ea46dd4-41c0-4d50-a10e-52be31801c6d.png'}
+                  className={styles.virtualImageInside}
+                />
+              </div>
+
+              <img src={virtualbacklogo} className={styles.sacredCardIcon} />
+              <div className={styles.sacredCardLabel}>Virtual Background</div>
+            </div>
+          </div>
+
+          <div className={styles.sacredBtnWrapper}>
+            <button className={styles.sacredBtn}>
+              <span>VIEW COLLECTIBLES</span>
+              <img src={arrow} className={styles.sacredBtnArrow} alt="Arrow" />
+            </button>
+          </div>
+        </div>
+      </section>
     </>
   )
 }

@@ -12,9 +12,10 @@ import { useTypewriter } from '@/hooks/useTypewriter'
 import styles from './Home.module.css'
 import earth from '@/assets/earth.png'
 import Alexandrelogo from '@/assets/Alexandrelogo.svg'
-import ForestIndicatorsmap from '@/assets/ForestIndicatorsmap.svg'
+import guardian_button_arrow from '@/assets/gaurdian_button_arrow.svg'
+
 import temp from '@/assets/temp.svg'
-import cloud from '@/assets/cloud.svg'
+
 import coedwing from '@/assets/coedwing.svg'
 import Usingtechnology from '@/assets/Usingtechnology.svg'
 import map from '@/assets/map.png'
@@ -25,7 +26,10 @@ import hathi from '@/assets/hathi.svg'
 import arrow from '@/assets/arrow.svg'
 import BusinesforthePlanet from '@/assets/BusinesforthePlanet.svg'
 import plantbox from '@/assets/plantbox.png'
-
+import HeroMap1 from '@/assets/hero_section_map_1.svg'
+import HeroMap2 from '@/assets/hero_section_map_2.svg'
+import HeroMap3 from '@/assets/hero_section_map_3.svg'
+import PartyCloudy from '@/assets/hero_section_party_cloud_weather.svg'
 interface HabitatData {
   guardianName: string
   location: string
@@ -38,12 +42,41 @@ interface HabitatData {
   weather: string
   greenCoverDensity: string
   dataTimestamp: string
+  mapImage: string
 }
 
 const HABITAT_DATA: HabitatData[] = [
   {
     guardianName: 'Alexandre Dupont',
-    location: '(52.291995, -3.49713)',
+    location: '(51.70079, -4.274005)',
+    elevation: '72.37 Meter',
+    habitatName: 'Coed Rhyal, UK',
+    habitatType: 'Ancient Oak Woodland',
+    supportingFrom: 'Aug 04, 2023',
+    temperature: '9.2°C',
+    humidity: '80%',
+    weather: 'Cloudy',
+    greenCoverDensity: '99.25%',
+    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC',
+    mapImage: HeroMap1
+  },
+  {
+    guardianName: 'Alexandre Dupont',
+    location: '(51.70079, -4.274005)',
+    elevation: '25.26 Meter',
+    habitatName: 'Ocean Sanctuary, Canada',
+    habitatType: 'Rocky Lakeshore',
+    supportingFrom: 'Sep 15, 2025',
+    temperature: '3.7°C',
+    humidity: '79%',
+    weather: 'Clear',
+    greenCoverDensity: '80.0%',
+    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC',
+    mapImage: HeroMap2
+  },
+  {
+    guardianName: 'Alexandre Dupont',
+    location: '(52.291995, -3.49735)',
     elevation: '225.0 Meter',
     habitatName: 'Gigrin Prysg, UK',
     habitatType: 'Ancient Oak Woodland',
@@ -52,33 +85,8 @@ const HABITAT_DATA: HabitatData[] = [
     humidity: '90%',
     weather: 'Partly Cloudy',
     greenCoverDensity: '98.64%',
-    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC'
-  },
-  {
-    guardianName: 'Coed Rhyal',
-    location: '(52.707945, -3.702876)',
-    elevation: '180.5 Meter',
-    habitatName: 'Coed Rhyal, Wales',
-    habitatType: 'Ancient Oak Woodland',
-    supportingFrom: 'Mar 15, 2021',
-    temperature: '5.2°C',
-    humidity: '85%',
-    weather: 'Partly Cloudy',
-    greenCoverDensity: '96.32%',
-    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC'
-  },
-  {
-    guardianName: 'Ocean Sanctuary',
-    location: '(43.839260, -64.978444)',
-    elevation: '45.0 Meter',
-    habitatName: 'Ocean Sanctuary, Nova Scotia',
-    habitatType: 'Coastal Woodland',
-    supportingFrom: 'May 20, 2021',
-    temperature: '8.9°C',
-    humidity: '78%',
-    weather: 'Clear',
-    greenCoverDensity: '94.18%',
-    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC'
+    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC',
+    mapImage: HeroMap3
   }
 ]
 
@@ -152,31 +160,31 @@ export const Home: React.FC = () => {
                 </div>
                 <h3 className={styles.guardianName}>{currentData.guardianName}</h3>
                 <div className={styles.infoSection}>
-                  <p className={styles.infoLabel}>Location:</p>
-                  <p className={styles.infoValue}>{currentData.location}</p>
+                  <span className={styles.infoLabel}>Location: </span>
+                  <span className={styles.infoValue}>{currentData.location}</span>
                 </div>
                 <div className={styles.infoSection}>
-                  <p className={styles.infoLabel}>Elevation:</p>
-                  <p className={styles.infoValue}>{currentData.elevation}</p>
+                  <span className={styles.infoLabel}>Elevation: </span>
+                  <span className={styles.infoValue}>{currentData.elevation}</span>
                 </div>
                 <div className={styles.infoSection}>
-                  <p className={styles.infoLabel}>Habitat Name:</p>
-                  <p className={styles.infoValue}>{currentData.habitatName}</p>
+                  <span className={styles.infoLabel}>Habitat Name: </span>
+                  <span className={styles.infoValue}>{currentData.habitatName}</span>
                 </div>
                 <div className={styles.infoSection}>
-                  <p className={styles.infoLabel}>Habitat Type:</p>
-                  <p className={styles.infoValue}>{currentData.habitatType}</p>
+                  <span className={styles.infoLabel}>Habitat Type: </span>
+                  <span className={styles.infoValue}>{currentData.habitatType}</span>
                 </div>
                 <div className={styles.infoSection}>
-                  <p className={styles.infoLabel}>Supporting From:</p>
-                  <p className={styles.infoValue}>{currentData.supportingFrom}</p>
+                  <span className={styles.infoLabel}>Supporting From: </span>
+                  <span className={styles.infoValue}>{currentData.supportingFrom}</span>
                 </div>
               </div>
 
               {/* Forest Indicators Card */}
               <div className={styles.indicatorsCard} key={`indicators-${currentCardIndex}`}>
                 <div className={styles.mapSection}>
-                  <img src={ForestIndicatorsmap} alt="Forest Map" className={styles.mapImage} />
+                  <img src={currentData.mapImage} alt="Forest Map" className={styles.mapImage} />
                 </div>
                 <h4 className={styles.indicatorsTitle}>Forest Indicators</h4>
 
@@ -198,7 +206,7 @@ export const Home: React.FC = () => {
                 </div>
 
                 <div className={styles.weatherSection}>
-                  <img src={cloud} alt="Weather" className={styles.weatherIcon} />
+                  <img src={PartyCloudy} alt="Weather" className={styles.weatherIcon} />
                   <div className={styles.weatherContent}>
                     <span className={styles.weatherValue}>{currentData.weather}</span>
                     <span className={styles.weatherLabel}>Weather</span>
@@ -212,7 +220,7 @@ export const Home: React.FC = () => {
                   </div>
                 </div>
 
-                <p className={styles.dataTimestamp}>{currentData.dataTimestamp}</p>
+
               </div>
             </div>
 
@@ -277,7 +285,7 @@ export const Home: React.FC = () => {
               {/* Bottom Description */}
               <div className={styles.forestDescription}>
                 <p className={styles.forestText}>
-                  Once marked for private sale, <br /> these forests are now a part of <br /> the 'National Forest for Wales' <br /> network, helping build a <br /> contiguous green corridor <br /> across the Welsh country.
+                  Once marked for private sale, these forests are now a part of the 'National Forest for Wales' network, helping build a contiguous green corridor across the Welsh country.
                 </p>
               </div>
             </div>
@@ -326,11 +334,11 @@ export const Home: React.FC = () => {
                 <div className={styles.guardianButtons}>
                   <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
                     PEOPLE FOR THE PLANET
-                    <span className={styles.btnArrow}>↗</span>
+                    <img src={guardian_button_arrow} style={{marginLeft: '20px'}} alt="Arrow" className={styles.joinArrow} />
                   </a>
                   <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
                     BUSINESS FOR THE PLANET
-                    <span className={styles.btnArrow}>↗</span>
+                    <img src={guardian_button_arrow} style={{marginLeft: '20px'}} alt="Arrow" className={styles.joinArrow} />
                   </a>
                 </div>
               </div>

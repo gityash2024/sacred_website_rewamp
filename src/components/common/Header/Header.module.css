@@ -48,24 +48,24 @@
 .logoImage {
   height: 50px;
   width: auto;
-  max-width: 100%;
+  max-width: 147.27px;
 }
 
 .navRight {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 10px;
 }
 
 .signUpButton,
 .loginButton {
-  padding: 0.75rem 2rem;
+  padding: 4px 50px;
   border-radius: 50px;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid #44D09F;
+  border: 1px solid #59c09a;
   background: transparent;
   color: #1a4d5e;
   white-space: nowrap;
@@ -75,9 +75,10 @@
 .signUpButton:active,
 .loginButton:hover,
 .loginButton:active {
-  background: #03303D;
+  background: #59C09A;
   color: white;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .searchWrap {
@@ -108,8 +109,8 @@
 
 .searchButton svg {
   color: #1a4d5e;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
 }
 
 .menuButton {
@@ -119,7 +120,7 @@
 }
 
 .menuButton span {
-  width: 24px;
+  width: 20px;
   height: 2px;
   background: #1a4d5e;
   border-radius: 2px;
@@ -147,12 +148,12 @@
   width: 220px;
   opacity: 1;
   padding: 0.5rem 0.75rem;
-  border-color: #44D09F;
+  border-color: #59c09a;
 }
 
 .searchInput:focus {
   outline: none;
-  border-color: #44D09F;
+  border-color: #59c09a;
 }
 
 /* Sidebar Styles */
@@ -218,7 +219,8 @@
   border: none;
   font-size: 30px;
   cursor: pointer;
-  color: #333;
+  color: #03303D
+;
   padding: 0;
   line-height: 1;
   width: 40px;
@@ -230,7 +232,7 @@
 }
 
 .closeButton:hover {
-  color: #44D09F;
+  color: #59c09a;
 }
 
 .sidebarContent {
@@ -352,7 +354,7 @@
 }
 
 .submenuItem:hover {
-  color: #44D09F;
+  color: #59c09a;
 }
 
 .submenuItemLocation {
@@ -418,9 +420,9 @@
 }
 
 .mobileSignUpButton {
-  background-color: #44D09F;
+  background-color: #59c09a;
   color: white;
-  border: 2px solid #44D09F;
+  border: 2px solid #59c09a;
 }
 
 .mobileSignUpButton:hover {

@@ -80,9 +80,10 @@ export const Footer = () => {
             <a href="mailto:connect@sacredgroves.earth" className={styles.mail}>
               connect@sacredgroves.earth
             </a>
+            <h3 className={styles.downloadHeading}>Download our App</h3>
             <div className={styles.appButtons}>
-              <img src={alogo} alt="App Store" />
-              <img src={PlayStoreLogo} alt="Play Store" />
+              <img src={alogo} alt="App Store" className={styles.appStoreIcon} />
+              <img src={PlayStoreLogo} alt="Play Store" className={styles.playStoreIcon} />
             </div>
           </div>
         </div>
@@ -90,8 +91,9 @@ export const Footer = () => {
         <div className={styles.footerBottom}>
           <img src={footerlogo_1} alt="" className={styles.leftIcons} />
           <p>
-            © 2020–{currentYear} The Sacred Groves. All rights reserved.<br />
-            SACRED GROVES and the SG Sacred Groves Logo are registered trade mark belonging to The Sacred Groves C.I.C.
+            <span className={styles.copyrightFirst}>© 2020–{currentYear} The Sacred Groves. All rights reserved.</span>
+            <br />
+            <span className={styles.copyrightSecond}>SACRED GROVES and the SG Sacred Groves Logo are registered trade mark belonging to The Sacred Groves C.I.C.</span>
           </p>
           <img src={footerlogo_2} alt="" className={styles.rightIcons} />
         </div>

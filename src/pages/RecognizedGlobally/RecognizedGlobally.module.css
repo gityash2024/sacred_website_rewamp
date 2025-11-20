@@ -6,12 +6,16 @@
 
 /* Main Section Styles */
 .container {
+  min-height: 100vh;
   padding: 80px 20px;
   background-color: #ffffff;
   overflow: hidden;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .content {
@@ -19,7 +23,7 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
-  /* padding-bottom: 20px; */
+  width: 100%;
 }
 
 /* Top Decoration (Trees and Deer) */
@@ -27,7 +31,7 @@
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .treeIcon,
@@ -38,18 +42,23 @@
 
 /* Heading */
 .heading {
+  font-family: 'Montserrat', sans-serif;
   font-size: 40px;
-  font-weight: 700;
-  color: #333;
+  font-weight: 600;
+  color: #03303D;
   margin-bottom: 60px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 /* Cards Layout */
 .recognitionCards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  text-align: left;
+  gap: 40px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Individual Card */
@@ -57,17 +66,20 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0;
+  padding: 30px 20px;
   position: relative;
+  justify-content: flex-start;
+  min-height: 400px;
 }
 
 /* Card Header (Logo Area) */
 .cardHeader {
-  height: 200px;
+  height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  width: 100%;
 }
 
 /* Logo Container (The Curved Bracket/Parentheses) */
@@ -77,9 +89,9 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 180px;
-  height: 180px;
-  padding: 10px;
+  width: 200px;
+  height: 250px;
+  padding: 20px;
 }
 
 /* Curved Brackets using SVG Background Images */
@@ -89,7 +101,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 20px;
+  width: 40px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -97,33 +109,37 @@
 
 /* Left Curve - Using left_border.svg */
 .logoContainer::before {
-  left: -20px;
+  left: -40px;
   background-image: url('/src/assets/left_border.svg');
 }
 
 /* Right Curve - Using right_border.svg */
 .logoContainer::after {
-  right: -20px;
+  right: -40px;
   background-image: url('/src/assets/right_border.svg');
 }
 
 .mainLogo {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 85%;
+  max-height: 85%;
   object-fit: contain;
 }
 
 /* Card Description */
 .cardDescription {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #666;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 100%;
+  color: #03303D;
   text-align: center;
-  max-width: 300px;
+  max-width: 280px;
+  margin: 0 auto;
+  letter-spacing: 0%;
 }
 
 .cardDescription strong {
-  color: #333;
+  color: #03303D;
 }
 
 /* Carousel Navigation Container */
@@ -131,7 +147,8 @@
   display: flex;
   gap: 20px;
   justify-content: flex-end;
-  margin-top: 40px;
+  margin-top: 60px;
+  padding-right: 20px;
 }
 
 /* Carousel Navigation Buttons */
@@ -152,15 +169,15 @@
 
 .prevButton svg,
 .nextButton svg {
-  width: 50px;
-  height: 50px;
-  color: #3b5998;
+  width: 40px;
+  height: 40px;
+  color: #03303D;
 }
 
 .nextArrow {
   width: 50px;
   height: 50px;
-  color: #3b5998;
+  color: #03303D;
   transition: transform 0.2s ease;
 }
 
@@ -172,18 +189,20 @@
   position: relative;
   overflow: hidden;
   background-color: #B8E0D3;
-  min-height: 600px;
-  padding: 123px 0;
+  min-height: 100vh;
+  padding: 80px 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .sealBackground {
   position: absolute;
-  top: 0;
-  left: -287px;
+  top: 50%;
+  left: -240px;
+  transform: translateY(-50%);
   width: 91%;
-  height: 97%;
+  height: 88%;
   z-index: 0;
   opacity: 1;
 }
@@ -194,7 +213,7 @@
   width: 100%;
   max-width: 1200px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   padding: 0 40px;
 }
 
@@ -204,7 +223,9 @@
   padding-right: 40px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
 }
 
 .sealDecoration {
@@ -225,17 +246,17 @@
 .sealLogoArea {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   position: relative;
-  padding-top: 50px;
   justify-content: center;
   height: 100%;
+  width: 100%;
 }
 
 .sealTitle {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #333;
+  color: #03303D;
   line-height: 1.1;
   margin-bottom: 50px;
   padding-left: 20px;
@@ -243,9 +264,10 @@
 
 .sealLogo {
   width: 500px;
-  height: auto;
+  height: 60%;
+  max-height: 60vh;
   object-fit: contain;
-  margin-left: -67px;
+  margin-left: -100px;
 }
 
 .sealRight {
@@ -263,75 +285,85 @@
   padding: 0;
   margin: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
 }
 
 .trustPointItem {
   display: flex;
   flex-direction: column;
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  border-bottom: none;
   cursor: pointer;
   transition: all 0.3s ease;
   overflow: visible;
+  max-width: 100%;
+  width: 100%;
   /* Ensure arrow is not cut off */
-}
-
-.trustPointItem:last-child {
-  border-bottom: none;
 }
 
 /* Removed hover background */
 
 .trustItemHeader {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-end;
   width: 100%;
-  gap: 20px;
+  max-width: 100%;
+  gap: 12px;
   /* Add gap to prevent arrow cutoff */
 }
 
 .trustText {
-  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   font-weight: 400;
-  /* Normal weight */
-  /* Changed from 500 to 400 for normal weight */
-  letter-spacing: 0.1em;
-  color: #333;
-  text-transform: uppercase;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #000000;
+  text-transform: none;
+  font-variant: small-caps;
+  text-align: right;
   flex: 1;
+  display: inline-block;
   /* Allow text to take available space */
 }
 
 .trustArrow {
-  width: 24px;
-  /* Slightly larger for better visibility */
-  height: 24px;
+  width: auto;
+  height: 1.2em;
+  min-height: 20px;
+  max-height: 40px;
   flex-shrink: 0;
   /* Prevent arrow from shrinking */
-  filter: brightness(0) invert(0);
+  filter: none;
   transition: transform 0.3s ease;
-}
-
-/* Ensure SVG arrows render with normal stroke */
-.trustArrow svg {
-  stroke-width: 1.5;
+  align-self: flex-start;
+  margin-top: 2px;
 }
 
 .trustItemDescription {
   margin-top: 15px;
   padding-top: 15px;
-  font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 100%;
+  letter-spacing: 0%;
   color: #555;
   animation: fadeIn 0.3s ease-out;
   background: transparent;
-  /* No background */
+  max-width: 320px;
+  width: 100%;
+  text-align: right;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin-left: auto;
 }
 
 .trustPointItem.expanded {
-  padding: 20px 0;
+  padding: 0;
   background: transparent;
   /* No background when expanded */
 }
@@ -356,11 +388,13 @@
   position: relative;
   overflow: visible;
   background-color: #03303D;
-  min-height: 700px;
+  min-height: 100vh;
   padding: 0;
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
 
 .wildTechContent {
@@ -441,10 +475,10 @@
 
 /* Bubble 1 - Blockchain (Top) */
 .bubble1 {
-  bottom: calc(29.3% - 31.5px);
+  bottom: calc(32.6% - 31.5px);
   left: 35%;
   width: 108px;
-  height: 63px;
+  /* height: 63px; */
 }
 
 .bubble1::after {
@@ -471,10 +505,10 @@
 
 /* Bubble 2 - Cloud (Zigzag - positioned between 1 and 3) */
 .bubble2 {
-  bottom: calc(25.0% - 31.5px);
+  bottom: calc(28.3% - 31.5px);
   left: 20%;
   width: 108px;
-  height: 63px;
+  /* height: 63px; */
 }
 
 .bubble2::after {
@@ -501,10 +535,10 @@
 
 /* Bubble 3 - Virtual Visits */
 .bubble3 {
-  bottom: calc(20.7% - 31.5px);
+  bottom: calc(24.0% - 31.5px);
   left: 35%;
   width: 108px;
-  height: 63px;
+  /* height: 63px; */
 }
 
 .bubble3::after {
@@ -530,10 +564,10 @@
 
 /* Bubble 4 - Advanced Analytics (Zigzag - positioned between 3 and 5) */
 .bubble4 {
-  bottom: calc(16.3% - 31.5px);
+  bottom: calc(19.6% - 31.5px);
   left: 20%;
   width: 108px;
-  height: 63px;
+  /* height: 63px; */
 }
 
 .bubble4::after {
@@ -559,10 +593,10 @@
 
 /* Bubble 5 - Satellites (Bottom) */
 .bubble5 {
-  bottom: calc(12.0% - 31.5px);
+  bottom: calc(15.3% - 31.5px);
   left: 35%;
   width: 108px;
-  height: 63px;
+  /* height: 63px; */
 }
 
 .bubble5::after {
@@ -623,45 +657,50 @@
 }
 
 .wildTechSubheading {
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   font-weight: 700;
-  color: #7dd3c0;
-  margin-bottom: 5px;
-
   font-style: italic;
+  color: #44D09F;
+  margin-bottom: 5px;
   line-height: 32px;
+  letter-spacing: 0%;
 }
 
 .wildTechTitle {
+  font-family: 'Montserrat', sans-serif;
   font-size: 55px;
   font-weight: 700;
-
+  color: #FFFFFF;
   line-height: 60px;
   margin-bottom: 10px;
-  font-style: bold;
+  letter-spacing: 0%;
 }
 
 .wildTechTagline {
+  font-family: 'Montserrat', sans-serif;
   font-size: 30px;
   font-weight: 700;
-
+  color: #FFFFFF;
   margin-bottom: 30px;
   line-height: 37px;
+  letter-spacing: 0%;
 }
 
 .wildTechDescription {
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-
-  line-height: 1.6;
-  margin-bottom: 20px;
-  color: #FFFFFF;
   font-weight: 500;
-  font-style: bold;
+  line-height: 130%;
+  margin-bottom: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0%;
+  max-width: 550px;
 }
 
 .wildTechDescription strong {
-  color: white;
-  font-weight: 600;
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 /* Tech List */
@@ -700,14 +739,14 @@
 }
 
 .techLabel {
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 700;
-  font-style: bold;
   line-height: 100%;
-
-  color: #59C09A;
+  color: #44D09F;
   user-select: none;
   transition: color 0.3s ease;
+  letter-spacing: 0%;
 }
 
 .techIcon {
@@ -799,14 +838,16 @@
   backdrop-filter: blur(2px);
   padding: 20px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .detailCard {
-  background-color: #44D09F;
+  background-color: #59C09A;
   border-radius: 40px;
-  padding: 40px;
+  padding: 60px 50px;
   width: 100%;
-  max-width: 450px;
+  max-width: 600px;
+  min-height: 650px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -814,6 +855,7 @@
   text-align: center;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   animation: scaleIn 0.3s ease-out;
+  cursor: default;
 }
 
 @keyframes scaleIn {
@@ -828,28 +870,7 @@
   }
 }
 
-.closeButton {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  background: none;
-  border: none;
-  font-size: 36px;
-  color: #03303D;
-  cursor: pointer;
-  line-height: 1;
-  padding: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease;
-}
-
-.closeButton:hover {
-  transform: rotate(90deg);
-}
+/* Close button removed - card closes on outside click */
 
 .cardContent {
   display: flex;
@@ -859,28 +880,33 @@
 }
 
 .cardTitle {
-  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
   font-weight: 700;
   color: #03303D;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   line-height: 1.2;
+  letter-spacing: 0%;
 }
 
 .cardSubtitle {
-  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
   font-weight: 500;
-  color: #03303D;
   font-style: italic;
-  margin-bottom: 30px;
+  color: #03303D;
+  margin-bottom: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .cardIconWrapper {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 140px;
-  height: 140px;
+  width: 280px;
+  height: 280px;
 }
 
 .cardMainIcon {
@@ -891,11 +917,14 @@
 }
 
 .cardDescription {
-  font-size: 16px;
-  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 130%;
   color: #03303D;
   margin: 0;
-  max-width: 90%;
+  max-width: 100%;
+  letter-spacing: 0%;
 }
 
 /* ========================================
@@ -904,8 +933,12 @@
 
 .youCanDoSection {
   background-color: #BACFA5;
-  padding: 80px 40px;
+  padding: 0;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .youCanDoContent {
@@ -914,7 +947,9 @@
   display: flex;
   gap: 80px;
   align-items: center;
-  min-height: 600px;
+  width: 100%;
+  padding: 80px 40px;
+  box-sizing: border-box;
 }
 
 /* Left Side - Text Content */
@@ -936,23 +971,23 @@
 }
 
 .youCanDoHeading {
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   font-weight: 500;
   color: #03303D;
   line-height: 36px;
-  font-style: medium;
   margin-bottom: 30px;
-  font-family: Montserrat;
+  letter-spacing: 0%;
 }
 
 .youCanDoDescription {
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
-  line-height: 130%;
   font-weight: 500;
-  font-style: medium;
+  line-height: 130%;
   color: #03303D;
-  margin-bottom: 20px;
-  font-family: Montserrat;
+  margin-bottom: 12px;
+  letter-spacing: 0%;
 }
 
 /* Right Side - Action Cards */
@@ -975,27 +1010,28 @@
 }
 
 .actionTitle {
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   font-weight: 400;
-  color: #000000;
-  margin-bottom: 15px;
+  color: #03303D;
+  margin-bottom: 8px;
   font-style: italic;
-  font-family: Montserrat;
   line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .actionSubtitle {
   font-style: italic;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .actionDescription {
-  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
   line-height: 100%;
-  color: #000000;
-  font-weight: 500;
-  font-family: Montserrat;
-  font-style: regular;
+  color: #03303D;
+  letter-spacing: 0%;
 }
 
 .actionCardRight {
@@ -1026,7 +1062,7 @@
 
 .actionArrow {
   font-size: 48px;
-  color: #333;
+  color: #03303D;
   font-weight: 300;
 }
 
@@ -1072,7 +1108,7 @@
  * ========================================*/
 
 .alignedSection {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   padding: 50px 20px;
   overflow: hidden;
   width: 100%;
@@ -1093,22 +1129,27 @@
   margin-bottom: 64px;
   gap: 80px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* Left Side - Heading */
 .alignedLeft {
   flex: 0 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .alignedHeading {
-  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20.21px;
   font-weight: 500;
   color: #03303D;
   line-height: 100%;
-  font-family: Montserrat;
-  font-style: medium;
-  text-align: center;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
 }
 
 /* Right Side - SDG Icons */
@@ -1138,6 +1179,8 @@
   position: relative;
   width: 100%;
   padding: 0 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .sliderArrow {
@@ -1176,15 +1219,19 @@
 .postsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 15px;
   margin-bottom: 0;
+  width: 100%;
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Individual Post Card */
 .postCard {
-  background: #ffffff;
+  background: #F8FBFB;
   border: none;
-  border-radius: 0;
+  border-radius: 21.32px;
   overflow: hidden;
   box-shadow: none;
   display: flex;
@@ -1213,7 +1260,7 @@
 .postAuthor {
   font-size: 14px;
   font-weight: 600;
-  color: #333;
+  color: #03303D;
   margin: 0;
   font-family: Montserrat;
 }
@@ -1235,20 +1282,23 @@
 }
 
 .postTitle {
-  font-size: 14px;
-  font-weight: 400;
-  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.59px;
+  font-weight: 600;
+  color: #1C1B1F;
   margin: 0 0 4px 0;
-  line-height: 1.4;
-  font-family: Montserrat;
+  line-height: 130%;
+  letter-spacing: 0%;
 }
 
 .readMore {
-  font-size: 13px;
-  color: #0077b5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.59px;
+  font-weight: 600;
+  color: #4E4E4E;
   text-decoration: none;
-  font-weight: 400;
-  font-family: Montserrat;
+  line-height: 130%;
+  letter-spacing: 0%;
 }
 
 .readMore:hover {
@@ -1306,29 +1356,35 @@
   gap: 4px;
   font-family: Montserrat;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .shareButton {
   background: none;
   border: none;
-  color: #333;
-  font-size: 13px;
-  font-weight: 400;
+  color: #4E4E4E;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.59px;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
-  font-family: Montserrat;
   transition: opacity 0.3s ease;
   padding: 0;
+  line-height: 130%;
+  letter-spacing: 0%;
 }
 
 .shareButton:hover {
   opacity: 0.7;
 }
 
-.shareButton span {
-  font-size: 14px;
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
 }
 
 
@@ -1474,7 +1530,12 @@
   }
 
   .youCanDoHeading {
-    font-size: 30px;
+    font-size: 28px;
+    line-height: 32px;
+  }
+
+  .youCanDoDescription {
+    font-size: 16px;
   }
 
   .actionCard {
@@ -1483,7 +1544,11 @@
   }
 
   .actionTitle {
-    font-size: 28px;
+    font-size: 24px;
+  }
+
+  .actionDescription {
+    font-size: 11px;
   }
 
   .modalContent {
@@ -1497,29 +1562,30 @@
 
   /* Detail Card Mobile Styles */
   .detailCard {
-    padding: 30px 20px;
+    padding: 40px 30px;
     width: 90%;
+    max-width: 550px;
     max-height: 80vh;
     overflow-y: auto;
   }
 
   .cardTitle {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .cardSubtitle {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
   }
 
   .cardIconWrapper {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 20px;
+    width: 220px;
+    height: 220px;
+    margin-bottom: 30px;
   }
 
   .cardDescription {
-    font-size: 14px;
+    font-size: 16px;
   }
 
   /* Section 5 Responsiveness */

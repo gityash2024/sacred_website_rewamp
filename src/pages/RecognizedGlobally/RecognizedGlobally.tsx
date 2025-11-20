@@ -5,7 +5,7 @@ import styles from './RecognizedGlobally.module.css'
 import { FadeInSection } from '@/components/common/FadeInSection/FadeInSection'
 
 // Imported assets 
-import Alexandrelogo from '@/assets/Alexandrelogo.svg'
+import Alexandrelogo from '@/assets/Alexandrelogo_2.svg'
 import CGC_1 from '@/assets/CGC_1.svg'
 import CGC_2 from '@/assets/CGC_2.svg'
 import CGC_3 from '@/assets/CGC_3.svg'
@@ -14,25 +14,33 @@ import cardIcon from '@/assets/Builtwithlogo.svg' // Trying Builtwithlogo as car
 // Wild Tech Assets
 import Builtwith from '@/assets/Builtwith.png'
 
-import Blockchain from '@/assets/Blockchain.svg' // Changed to Blockchain.svg (non-circle)
-import Cloud from '@/assets/cloud.svg' // Changed to cloud.svg (non-circle)
-import VirtualVisits from '@/assets/virtual_visit_3.png'
-import AdvancedAnalytic from '@/assets/advance_analytics_4.svg'
-import Satellites from '@/assets/settelites_5.svg'
+// Card icons (used in detail card)
+import Blockchain2 from '@/assets/blockchain_card_bubble.svg'
+import Cloud2 from '@/assets/cloud_card_bubble.svg'
+import VirtualVisits from '@/assets/virtual_card_bubble.svg'
+import AdvancedAnalytic2 from '@/assets/advance_card_bubble.svg'
+import Satellites2 from '@/assets/sattelite_card_bubble.svg'
+
+// Bubble icons (used in clickable bubbles)
+import BlockchainBubble from '@/assets/blockchain_bubble_11.svg'
+import CloudBubble from '@/assets/cloud_bubble_22.svg'
+import VirtualBubble from '@/assets/Virtual_bubble_33.svg'
+import AdvanceBubble from '@/assets/advance_bubble_44.svg'
+import SatellitesBubble from '@/assets/sattelite_bubble_55.svg'
 
 // Seal of Trust Assets
 import SacredGrovesbackgroud from '@/assets/SacredGrovesbackgroud.svg'
 import SacredGrovesSealofTrustlogo from '@/assets/SacredGrovesSealofTrustlogo.png'
-import arrow from '@/assets/arrow.svg'
-import arrowOpen from '@/assets/arrow-open.svg'
+import closeArrow from '@/assets/arrow_seal.svg'
+import openArrow from '@/assets/close_trust_point_arrow.svg'
 
 // Action Section Images
 import Youcandosomethinglogo from '@/assets/Youcandosomethinglogo.svg'
 import InvestforthePlanet from '@/assets/InvestforthePlanet.svg'
 import InvestforthePlanet_1 from '@/assets/InvestforthePlanet_1.svg'
-import ShopforthePlanet from '@/assets/ShopforthePlanet.svg'
-import ShopforthePlanet_1 from '@/assets/ShopforthePlanet_1.svg'
-import LearnforthePlanet from '@/assets/LearnforthePlanet.svg'
+import ShopforthePlanet from '@/assets/linked_in_post.png'
+import ShopforthePlanet_1 from '@/assets/linked_in_post.png'
+import LearnforthePlanet from '@/assets/linked_in_post.png'
 import LearnforthePlanet_1 from '@/assets/LearnforthePlanet_1.svg'
 import JoyforthePlanet from '@/assets/JoyforthePlanet.svg'
 import JoyforthePlanet_1 from '@/assets/JoyforthePlanet_1.svg'
@@ -46,6 +54,9 @@ import scaradelogo from '@/assets/scaradelogo.svg'
 import linkedln from '@/assets/linkedln.svg'
 import silderleftarrow from '@/assets/silderleftarrow.svg'
 import silderrightside from '@/assets/silderrightside.svg'
+import likeIcon from '@/assets/like_icon.svg'
+import commentIcon from '@/assets/comment_icon.svg'
+import shareIcon from '@/assets/share_icon.svg'
 
 // Interfaces
 interface RecognitionCard {
@@ -59,7 +70,8 @@ interface RecognitionCard {
 interface TechItem {
   id: number
   label: string
-  icon: string
+  icon: string // Icon for the detail card
+  bubbleIcon: string // Icon for the clickable bubble
   title: string
   subtitle: string
   description: string
@@ -77,7 +89,8 @@ const techItems: TechItem[] = [
   {
     id: 1,
     label: 'Blockchain',
-    icon: Blockchain,
+    icon: Blockchain2, // Card icon
+    bubbleIcon: BlockchainBubble, // Bubble icon
     title: 'Blockchain',
     subtitle: 'Built on Trust',
     description: 'Every habitat protected, every transaction traceable. Our energy-efficient private blockchain keeps every contribution transparent and secure - where integrity is part of the ecosystem.',
@@ -86,7 +99,8 @@ const techItems: TechItem[] = [
   {
     id: 2,
     label: 'Cloud',
-    icon: Cloud,
+    icon: Cloud2, // Card icon
+    bubbleIcon: CloudBubble, // Bubble icon
     title: 'Cloud',
     subtitle: 'Where Nature Lives Online',
     description: 'Fast, scalable, and always on - our cloud connects people, data, and habitats seamlessly. Because protecting the planet needs the speed of tech and the heart of community.',
@@ -95,7 +109,8 @@ const techItems: TechItem[] = [
   {
     id: 3,
     label: 'Virtual Visits',
-    icon: VirtualVisits,
+    icon: VirtualVisits, // Card icon
+    bubbleIcon: VirtualBubble, // Bubble icon
     title: 'Virtual Visits',
     subtitle: 'Nature, Within Reach',
     description: 'Step into the wild, wherever you are. From ancient forests to flowing rivers - visit your habitat virtually, stay connected, and see your impact unfold in real time.',
@@ -104,7 +119,8 @@ const techItems: TechItem[] = [
   {
     id: 4,
     label: 'Advanced Analytics',
-    icon: AdvancedAnalytic,
+    icon: AdvancedAnalytic2, // Card icon
+    bubbleIcon: AdvanceBubble, // Bubble icon
     title: 'Advanced Analytics',
     subtitle: 'Turning Data into Action',
     description: 'AI, machine learning, and image analytics work quietly behind the scenes - revealing insights that guide protection, growth, and restoration.',
@@ -113,7 +129,8 @@ const techItems: TechItem[] = [
   {
     id: 5,
     label: 'Satellites',
-    icon: Satellites,
+    icon: Satellites2, // Card icon
+    bubbleIcon: SatellitesBubble, // Bubble icon
     title: 'Satellites',
     subtitle: 'Watching Over the Wild',
     description: 'From miles above, satellites help us track the pulse of every forest and wetland. Ensuring habitats stay healthy, and every promise made to nature is kept.',
@@ -135,12 +152,12 @@ const trustPoints: TrustPoint[] = [
   },
   {
     id: 3,
-    title: "WE'RE PART OF THE 'NATIONAL FOREST FOR WALES' NETWORK",
+    title: "WE'RE PART OF THE\n'NATIONAL FOREST FOR WALES' NETWORK",
     description: "We are proud members of the National Forest for Wales network, contributing to the preservation and expansion of woodlands across Wales and supporting national biodiversity goals."
   },
   {
     id: 4,
-    title: "WE'RE TRUSTED BY GUARDIANS FROM 30+ COUNTRIES",
+    title: "WE'RE TRUSTED BY GUARDIANS\nFROM 30+ COUNTRIES",
     description: "Our community of Guardians spans over 30 countries, uniting people globally in the mission to protect and restore our planet's natural habitats."
   },
   {
@@ -245,6 +262,27 @@ const LinkedInPostsSlider: React.FC = () => {
       likes: 101,
       comments: 50,
     },
+    {
+      id: 4,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: ShopforthePlanet,
+      likes: 101,
+      comments: 50,
+    },
+    {
+      id: 5,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: ShopforthePlanet_1,
+      likes: 101,
+      comments: 50,
+    },
+    {
+      id: 6,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: LearnforthePlanet,
+      likes: 101,
+      comments: 50,
+    },
   ]
 
   const nextSlide = () => {
@@ -297,19 +335,23 @@ const LinkedInPostsSlider: React.FC = () => {
             {/* Post Image */}
             <div className={styles.postImageContainer}>
               <img src={post.image} alt={post.title} className={styles.postImage} />
-              {index === 1 && (
-                <div className={styles.newBadge}>NEW</div>
-              )}
             </div>
 
             {/* Post Footer */}
             <div className={styles.postFooter}>
               <div className={styles.postStats}>
-                <span className={styles.postLikes}>♥ {post.likes}</span>
-                <span className={styles.postComments}>💬 {post.comments}</span>
+                <span className={styles.postLikes}>
+                  <img src={likeIcon} alt="Like" className={styles.icon} />
+                  {post.likes}
+                </span>
+                <span className={styles.postComments}>
+                  <img src={commentIcon} alt="Comment" className={styles.icon} />
+                  {post.comments}
+                </span>
               </div>
               <button className={styles.shareButton}>
-                <span>🔗</span> Share
+                <img src={shareIcon} alt="Share" className={styles.icon} />
+                Share
               </button>
             </div>
           </div>
@@ -522,9 +564,16 @@ export const RecognizedGlobally: React.FC = () => {
                       onClick={() => handleTrustItemClick(point.id)}
                     >
                       <div className={styles.trustItemHeader}>
-                        <span className={styles.trustText}>{point.title}</span>
+                        <span className={styles.trustText}>
+                          {point.title.split('\n').map((line, index, array) => (
+                            <span key={index}>
+                              {line}
+                              {index < array.length - 1 && <br />}
+                            </span>
+                          ))}
+                        </span>
                         <img
-                          src={isExpanded ? arrowOpen : arrow}
+                          src={isExpanded ? openArrow : closeArrow}
                           alt="Arrow icon"
                           className={styles.trustArrow}
                         />
@@ -553,16 +602,14 @@ export const RecognizedGlobally: React.FC = () => {
               <img src={Builtwith} alt="Forest background" className={styles.wildTechImage} />
 
               {selectedTech ? (
-                <div className={styles.detailCardOverlay}>
-                  <div className={styles.detailCard}>
-                    <button
-                      className={styles.closeButton}
+                <div 
+                  className={styles.detailCardOverlay}
                       onClick={handleCloseTech}
-                      aria-label="Close detail card"
+                >
+                  <div 
+                    className={styles.detailCard}
+                    onClick={(e) => e.stopPropagation()}
                     >
-                      ×
-                    </button>
-
                     <div className={styles.cardContent}>
                       <h3 className={styles.cardTitle}>{selectedTech.title}</h3>
                       <span className={styles.cardSubtitle}>{selectedTech.subtitle}</span>
@@ -590,7 +637,7 @@ export const RecognizedGlobally: React.FC = () => {
                         onMouseEnter={() => setHoveredTech(item.id)}
                         onMouseLeave={() => setHoveredTech(null)}
                       >
-                        <img src={item.icon} alt={item.label} />
+                        <img src={item.bubbleIcon} alt={item.label} />
                       </div>
                     )
                   })}
@@ -620,15 +667,14 @@ export const RecognizedGlobally: React.FC = () => {
 
               <p className={styles.wildTechDescription}>
                 Our technology learns from nature itself,<br />
-                the world's most brilliant engineer.
+                the world's most brilliant designer.
               </p>
 
               <p className={styles.wildTechDescription}>
-                Our approach unites art, science, and technology<br />
-                to build ecosystems where every living thing can<br />
-                thrive, from vast rivers to the smallest fungi<br />
-                through our <strong>Assisted Natural Regeneration</strong><br />
-                conservation model.
+                Our approach unites art, science, and technology to build<br />
+                ecosystems where every living thing can thrive, from vast<br />
+                rivers to the smallest fungi. Wild Tech powers our <strong>Assisted Natural Regeneration</strong><br />
+                conservation model enabling real on-ground recovery.
               </p>
 
               <ul className={styles.wildTechList}>

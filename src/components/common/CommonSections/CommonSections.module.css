@@ -5,7 +5,7 @@
 
 /* Aligned with UN SDGs Section */
 .alignedSection {
-  background-color: #f7f7f7;
+  background-color: #ffffff;
   padding: 50px 20px;
   overflow: hidden;
   width: 100%;
@@ -26,22 +26,27 @@
   margin-bottom: 64px;
   gap: 80px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* Left Side - Heading */
 .alignedLeft {
   flex: 0 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .alignedHeading {
-  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20.21px;
   font-weight: 500;
   color: #03303D;
   line-height: 100%;
-
-  font-style: medium;
-  text-align: center;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
 }
 
 /* Right Side - SDG Icons */
@@ -72,6 +77,8 @@
   position: relative;
   width: 100%;
   padding: 0 60px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .sliderArrow {
@@ -110,15 +117,19 @@
 .postsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 15px;
   margin-bottom: 0;
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Individual Post Card */
 .postCard {
-  background: #ffffff;
+  background: #F8FBFB;
   border: none;
-  border-radius: 0;
+  border-radius: 21.32px;
   overflow: hidden;
   box-shadow: none;
   display: flex;
@@ -155,18 +166,23 @@
 }
 
 .postTitle {
-  font-size: 14px;
-  font-weight: 500;
-  color: #333;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.59px;
+  font-weight: 600;
+  color: #1C1B1F;
   margin: 0 0 4px 0;
-  line-height: 1.4;
+  line-height: 130%;
+  letter-spacing: 0%;
 }
 
 .readMore {
-  font-size: 13px;
-  font-weight: 400;
-  color: #0066cc;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.59px;
+  font-weight: 600;
+  color: #4E4E4E;
   text-decoration: none;
+  line-height: 130%;
+  letter-spacing: 0%;
 }
 
 .readMore:hover {
@@ -220,19 +236,30 @@
   font-size: 13px;
   font-weight: 400;
   color: #666;
+  cursor: pointer;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
 }
 
 .shareButton {
   background: none;
   border: none;
-  color: #333;
-  font-size: 13px;
-  font-weight: 400;
+  color: #4E4E4E;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9.59px;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 4px;
   padding: 0;
+  line-height: 130%;
+  letter-spacing: 0%;
 }
 
 .shareButton:hover {
@@ -261,11 +288,21 @@
 
   .sliderContainer {
     padding: 0 40px;
+    max-width: 100%;
   }
 
   .postsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .sliderArrowLeft {
+    left: 10px;
+  }
+
+  .sliderArrowRight {
+    right: 10px;
   }
 }
 
@@ -294,11 +331,21 @@
 
   .sliderContainer {
     padding: 0 20px;
+    max-width: 100%;
   }
 
   .postsGrid {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .sliderArrowLeft {
+    left: 10px;
+  }
+
+  .sliderArrowRight {
+    right: 10px;
   }
 
   .sliderArrow {

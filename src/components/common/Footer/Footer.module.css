@@ -2,7 +2,11 @@
   background: #FFFFFF;
   color: #111;
   padding: 60px 0 20px;
-  font-family: 'Inter', sans-serif;
+
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .followContainer {
@@ -29,7 +33,7 @@
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 30px;
 }
@@ -115,7 +119,10 @@
 }
 
 .appButtons img {
-  width: 110px;
+  height: 35px;
+  /* Fixed height for consistency */
+  width: auto;
+  /* Maintain aspect ratio */
 }
 
 .footerBottom {
@@ -140,5 +147,54 @@
 .leftIcons,
 .rightIcons {
   width: 120px;
+  /* Ensure both have the same width */
   height: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 20px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .contactSection {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socialIcons {
+    justify-content: center;
+  }
+
+  .appButtons {
+    justify-content: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .leftIcons,
+  .rightIcons {
+    width: 100px;
+  }
+
+  .footerBottom p {
+    order: -1;
+    /* Put text above icons if desired, or remove this line to keep order */
+    width: 100%;
+  }
 }

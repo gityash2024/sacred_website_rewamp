@@ -48,18 +48,18 @@ export const Footer = () => {
 
           <div>
             <h3>People for the Planet</h3>
-            <a href="#">Protect a Habitat</a>
-            <a href="#">Gift a Habitat</a>
+            <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer">Protect a Habitat</a>
+            <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer">Gift a Habitat</a>
           </div>
 
           <div>
             <h3>Business for the Planet</h3>
-            <a href="#">Partnership for the Planet</a>
-            <a href="#">myEarth Point</a>
-            <a href="#">Junk to Jungles</a>
-            <a href="#">Seeds of Recognition</a>
-            <a href="#">Brand a Habitat</a>
-            <a href="#">Sacred Groves India</a>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Partnership for the Planet</a>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">myEarth Point</a>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Junk to Jungles</a>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Seeds of Recognition</a>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Brand a Habitat</a>
+            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Sacred Groves India</a>
           </div>
 
           <div>

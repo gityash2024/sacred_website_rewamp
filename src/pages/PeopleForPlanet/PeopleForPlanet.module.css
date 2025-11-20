@@ -36,9 +36,8 @@
 .guardianSection {
   width: 100%;
   padding-top: 0;
-  padding-bottom: 0;   /* UPDATED */
+  padding-bottom: 0; /* UPDATED */
 }
-
 
 .guardianGrid {
   max-width: 1400px;
@@ -95,7 +94,7 @@
 
 .guardianTitle {
   font-size: 38px;
-  color: #03303D;
+  color: #03303d;
   font-weight: 500;
   line-height: 36px;
 }
@@ -103,7 +102,7 @@
 .guardianText {
   font-size: 18px;
   line-height: 150%;
-  color: #003B3A;
+  color: #003b3a;
   margin-bottom: 20px;
 }
 
@@ -117,7 +116,7 @@
   width: 310px;
   height: 56px;
   border-radius: 50px;
-  border: 2px solid #44D09F;
+  border: 2px solid #44d09f;
   background: #fff;
   font-size: 17px;
   font-weight: 600;
@@ -136,7 +135,7 @@
 .wildSection {
   width: 100%;
   padding: 0;
-   margin-top: 0;
+  margin-top: 0;
 }
 
 .wildWrapper {
@@ -144,7 +143,7 @@
   grid-template-columns: 420px 420px auto;
   gap: 0;
   width: 100%;
-    margin-top: 0 !important;   
+  margin-top: 0 !important;
 }
 
 /* LEFT 2x2 GRID */
@@ -161,8 +160,8 @@
   height: 512px;
   padding: 40px;
   overflow: hidden;
-  border-right: 2px solid rgba(255,255,255,0.25);
-  border-bottom: 2px solid rgba(255,255,255,0.25);
+  border-right: 2px solid rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
 }
 
 .gridCard:nth-child(2),
@@ -182,7 +181,7 @@
 .cardIcon {
   position: relative;
   z-index: 3;
-  width: 85px;        /* increased size */
+  width: 85px; /* increased size */
 }
 
 .cardNum {
@@ -234,7 +233,7 @@
 }
 
 .wildTitle span {
-  color: #44D09F;
+  color: #44d09f;
 }
 
 /* Step Row */
@@ -246,7 +245,7 @@
 }
 
 .stepIcon {
-  width: 78px;       /* bigger icon */
+  width: 78px; /* bigger icon */
 }
 
 .stepNum {
@@ -286,4 +285,265 @@
 
 .playBtn img {
   width: 78px; /* bigger play button */
+}
+
+/* SECTION 4 — Protect a Habitat (IMPACT COMPASS) */
+.habitatSection {
+  width: 100%;
+  padding: 80px 0 160px 0;
+  background-color: #DAF5EC;
+  position: relative;
+}
+
+.habitatWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 40px;
+}
+
+.habitatLeft {
+  width: 60%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.impactCompassContainer {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+}
+
+.impactCompassGraphic {
+    /* Exact CSS requested from Figma */
+    position: relative;
+    width: 946.0665893554688px;
+    height: 849px;
+    left: 80px; 
+    object-fit: contain;
+}
+
+.habitatRight {
+  width: 40%;
+  max-width: 450px; 
+  padding-top: 100px;
+  padding-left: 50px;
+  
+  display: flex; 
+  flex-direction: column;
+  align-items: flex-end; 
+  text-align: right;
+}
+
+.habitatLogoContainer {
+  margin-bottom: 5px;
+}
+
+.habitatLogo {
+  width: 130px; 
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.habitatTitle {
+  /* Exact CSS requested */
+  font-size: 55px;
+  color: #03303d;
+  font-weight: 700;
+  line-height: 60px;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.habitatText {
+  /* Exact CSS requested */
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 130%;
+  color: #003b3a;
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+/* Avatars and Button Styles - ACT NOW Button */
+.actNowBtn {
+  width: 250px;
+  height: 56px;
+  border-radius: 50px;
+  border: none;
+  background: #44d09f;
+  color: #03303d;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 0 20px;
+  cursor: pointer;
+  margin-top: 10px; 
+}
+
+.actNowInnerContent {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.actNowAvatars {
+    display: flex;
+    align-items: center;
+}
+
+.actNowAvatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    margin-left: -5px; 
+}
+
+.actNowAvatar:first-child {
+    margin-left: 0; 
+}
+
+.actNowArrow {
+  width: 20px; 
+  height: 20px;
+}
+
+/* Controls at the bottom */
+.controlsSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    /* Adjusted bottom value to account for the overall section padding and visually align with the image */
+    bottom: 80px; 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controlsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  width: 100%;
+  max-width: 550px; /* Aligned with user's requested width of ~528 */
+  padding: 0 40px;
+}
+
+.controlBox {
+  width: 528px;
+  height: 75px;
+  background: #ffffff;
+  border-radius: 40px;
+  border: 1px solid #003B3A;
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+}
+
+
+
+.controlBox:first-child {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+/* NEW: Style for the dark circle around the pound logo */
+.poundLogoCircle {
+    width: 45px; 
+    height: 45px;
+    border-radius: 50%;
+    background-color: #03303D; /* FIXED: Dark background color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px; 
+    flex-shrink: 0;
+}
+
+.priceContent {
+  display: flex;
+  align-items: center;
+  font-size: 38px;
+  font-weight: 700;
+  color: #003b3a;
+  position: relative; 
+  z-index: 2;
+}
+
+.poundLogo {
+    /* Logo inside the dark circle */
+    width: 20px; 
+    height: 20px;
+    filter: brightness(0) invert(1); /* Makes the logo white */
+}
+
+.priceValue {
+    color: #03303D;
+}
+
+/* Quantity Box Specific (second controlBox) */
+.controlBox:nth-child(2) {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.qtyBoxCounter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 32px;
+  font-weight: 700;
+  color: #003B3A;
+}
+
+.qtyArrow {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+
+.qtyWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.qtyNumber {
+  font-size: 32px;
+  font-weight: 700;
+  color: #003B3A;
+}
+
+
+.qtyLabel {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 32px;
+  text-align: center;
+  color: #003B3A;
+  margin-top: 12px;
+}
+
+
+
+.qtyBoxText {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #003B3A;
+  margin-top: 10px;
 }

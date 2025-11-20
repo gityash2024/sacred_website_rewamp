@@ -20,6 +20,9 @@ import Cloud2 from '@/assets/cloud_card_bubble.svg'
 import VirtualVisits from '@/assets/virtual_card_bubble.svg'
 import AdvancedAnalytic2 from '@/assets/advance_card_bubble.svg'
 import Satellites2 from '@/assets/sattelite_card_bubble.svg'
+import canneslions from '@/assets/canneslions.svg'
+import cop_28 from '@/assets/cop_28.svg'
+import village_capital from '@/assets/village_capital.svg'
 
 // Bubble icons (used in clickable bubbles)
 import BlockchainBubble from '@/assets/blockchain_bubble_11.svg'
@@ -391,42 +394,42 @@ export const RecognizedGlobally: React.FC = () => {
       id: 1,
       logo: CGC_1,
       description: 'Gigrin Prysg and Coed Rhyai have been recognised by the Welsh Government for their rare temperate rainforests and vital role in local ecosystems.',
-      url: 'https://www.gov.wales/national-forest-wales',
+      url: 'https://www.gov.wales/visit-national-forest-wales',
       logoAlignment: 'left'
     },
     {
       id: 2,
       logo: CGC_2,
       description: 'Featured in PwC\'s Net Zero Future50 – Middle East report.',
-      url: 'https://www.pwc.com/m1/en/publications/net-zero-future50-middle-east.html',
+      url: 'https://www.pwc.com/m1/en/esg/images/future50/docs/PwC-Net-Zero-Future50-Middle-East-Report.pdf',
       logoAlignment: 'center'
     },
     {
       id: 3,
       logo: CGC_3,
       description: 'Part of the Microsoft Entrepreneurship for Positive Impact Accelerator.',
-      url: 'https://www.microsoft.com/en-us/corporate-responsibility/entrepreneurship-for-positive-impact',
+      url: 'https://www.microsoft.com/socialentrepreneurship/portfolio.aspx',
       logoAlignment: 'right'
     },
     {
       id: 4,
-      logo: CGC_1,
-      description: 'Gigrin Prysg and Coed Rhyai have been recognised by the Welsh Government for their rare temperate rainforests and vital role in local ecosystems.',
-      url: 'https://www.gov.wales/national-forest-wales',
+      logo: canneslions,
+      description: 'Honoured by the International Advertising Association at the Cannes Lions Festival of Creativity 2023.',
+      url: 'https://www.linkedin.com/feed/update/urn:li:activity:7080102554205921280/',
       logoAlignment: 'left'
     },
     {
       id: 5,
-      logo: CGC_2,
-      description: 'Featured in PwC\'s Net Zero Future50 – Middle East report.',
-      url: 'https://www.pwc.com/m1/en/publications/net-zero-future50-middle-east.html',
+      logo: cop_28,
+      description: 'Invited to the Business and Philanthropy Climate Forum at COP28 UAE.',
+      url: 'https://bpcforum.org/about/',
       logoAlignment: 'center'
     },
     {
       id: 6,
-      logo: CGC_3,
-      description: 'Part of the Microsoft Entrepreneurship for Positive Impact Accelerator.',
-      url: 'https://www.microsoft.com/en-us/corporate-responsibility/entrepreneurship-for-positive-impact',
+      logo: village_capital,
+      description: 'Selected for “Greentech Europe 2022 Emerging Futures Cohort”.',
+      url: 'https://vilcap.com/programs/greentech-europe-2022',
       logoAlignment: 'right'
     }
   ]

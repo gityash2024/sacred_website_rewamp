@@ -6,7 +6,7 @@
 /* Aligned with UN SDGs Section */
 .alignedSection {
   background-color: #f7f7f7;
-  padding: 100px 40px;
+  padding: 50px 20px;
   overflow: hidden;
   width: 100%;
   max-width: 100vw;
@@ -39,7 +39,7 @@
   font-weight: 500;
   color: #03303D;
   line-height: 100%;
-  font-family: Montserrat;
+
   font-style: medium;
   text-align: center;
 }
@@ -310,4 +310,3 @@
     height: 24px;
   }
 }
-

@@ -25,7 +25,7 @@
 }
 
 .nav {
-  padding: 1.6rem 0;
+  padding: 1rem 0;
   width: 100%;
 }
 
@@ -72,9 +72,12 @@
 }
 
 .signUpButton:hover,
-.loginButton:hover {
-  background: #1a4d5e;
+.signUpButton:active,
+.loginButton:hover,
+.loginButton:active {
+  background: #03303D;
   color: white;
+  text-decoration: none;
 }
 
 .searchWrap {
@@ -147,13 +150,293 @@
   border-color: #44D09F;
 }
 
+.searchInput:focus {
+  outline: none;
+  border-color: #44D09F;
+}
+
+/* Sidebar Styles */
+.sidebarOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.sidebarOverlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  /* Start off-screen to the right */
+  left: auto;
+  /* Reset left */
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 2001;
+  transition: right 0.3s ease;
+  /* Animate right property */
+  display: flex;
+  flex-direction: column;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  /* Shadow on left side */
+}
+
+.sidebar.open {
+  right: 0;
+  /* Slide in to 0 */
+  left: auto;
+}
+
+.sidebarHeader {
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #f0f0f0; */
+}
+
+.sidebarLogo {
+  height: 40px;
+  width: auto;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #333;
+  padding: 0;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.closeButton:hover {
+  color: #44D09F;
+}
+
+.sidebarContent {
+  flex: 1;
+  padding: 40px 30px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.menuList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.menuListItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.headerHidden {
+  background: transparent;
+  box-shadow: none;
+  height: 0;
+  overflow: visible;
+  /* Allow sidebar to be seen */
+}
+
+.headerHidden .headerContent {
+  display: none;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Align arrow left, text right */
+  gap: 15px;
+
+  font-size: 16px;
+  /* Reduced from 20px */
+  font-weight: 400;
+  /* Regular */
+  color: #03303D;
+  /* Requested color */
+  cursor: pointer;
+  text-transform: none;
+  /* Reset uppercase */
+  font-variant: small-caps;
+  /* Requested variant */
+  letter-spacing: 0%;
+  line-height: 100%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 10px 0;
+  width: 100%;
+}
+
+.menuItemSingle {
+  justify-content: flex-end;
+  /* Right align for items without arrow */
+}
+
+.menuItem:hover,
+.menuItem.active {
+  color: #03303D;
+  font-weight: 700;
+  /* Bold on active */
+}
+
+.menuArrow {
+  height: 24px;
+  /* Adjust size as needed */
+  width: auto;
+  /* No rotation needed as we swap icons */
+}
+
+/* Accordion Content */
+.accordionContent {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.accordionContent.expanded {
+  max-height: 500px;
+  /* Arbitrary large height */
+  transition: max-height 0.5s ease-in;
+}
+
+.submenuList {
+  list-style: none;
+  padding: 10px 0 20px 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-end;
+  /* Align items to the right */
+  text-align: right;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.submenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.submenuItem:hover {
+  color: #44D09F;
+}
+
+.submenuItemLocation {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.sidebarFooter {
+  padding: 30px;
+  /* border-top: 1px solid #f0f0f0; */
+}
+
+.footerIcons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+}
+
+.footerIcon {
+  height: auto;
+  width: 80%;
+  /* 80% width of sidebar */
+  margin: 0 10px;
+  /* 10px margin left and right */
+  opacity: 1;
+  /* Ensure full visibility */
+}
+
 @media (max-width: 1024px) {
   .container {
     padding: 0 1rem;
   }
+
   .searchInput.visible {
     width: 180px;
   }
+}
+
+/* Mobile Auth Buttons Styles */
+.mobileAuthButtons {
+  display: none;
+  /* Hidden by default, shown on mobile */
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.mobileSignUpButton,
+.mobileLoginButton {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobileSignUpButton {
+  background-color: #44D09F;
+  color: white;
+  border: 2px solid #44D09F;
+}
+
+.mobileSignUpButton:hover {
+  background-color: #3bb58a;
+  border-color: #3bb58a;
+}
+
+.mobileLoginButton {
+  background-color: transparent;
+  color: #1a4d5e;
+  border: 2px solid #1a4d5e;
+}
+
+.mobileLoginButton:hover {
+  background-color: #1a4d5e;
+  color: white;
 }
 
 @media (max-width: 768px) {
@@ -161,10 +444,15 @@
     gap: 0.75rem;
   }
 
+  /* Hide desktop buttons on mobile */
   .signUpButton,
   .loginButton {
-    padding: 0.5rem 1.25rem;
-    font-size: 0.875rem;
+    display: none;
+  }
+
+  /* Show mobile buttons in sidebar */
+  .mobileAuthButtons {
+    display: flex;
   }
 
   .logoImage {
@@ -174,24 +462,23 @@
   .searchInput.visible {
     width: 150px;
   }
+
+  .sidebar {
+    max-width: 100%;
+    /* Full width on mobile */
+  }
 }
 
 @media (max-width: 600px) {
   .container {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+    /* Keep row direction to align logo and buttons */
+    flex-direction: row;
+    align-items: center;
   }
 
   .navRight {
-    width: 100%;
+    /* width: auto; */
     justify-content: flex-end;
-  }
-
-  .signUpButton,
-  .loginButton {
-    padding: 0.4rem 1rem;
-    font-size: 0.85rem;
   }
 
   .searchInput.visible {
@@ -202,25 +489,6 @@
 @media (max-width: 480px) {
   .logoImage {
     height: 32px;
-  }
-
-  .signUpButton,
-  .loginButton {
-    width: 42px;
-    height: 42px;
-    padding: 0;
-    font-size: 0;
-    border-radius: 50%;
-  }
-
-  .signUpButton:before {
-    content: "↑";
-    font-size: 1.1rem;
-  }
-
-  .loginButton:before {
-    content: "→";
-    font-size: 1.1rem;
   }
 
   .searchInput.visible {

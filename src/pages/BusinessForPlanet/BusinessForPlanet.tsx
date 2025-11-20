@@ -3,8 +3,8 @@
  */
 import { SEO } from '@/components/common/SEO'
 import styles from './BusinessForPlanet.module.css'
-import Whatisgoodfornaturecanbegoodforyourbusiess from '@/assets/Whatisgoodfornaturecanbegoodforyourbusiness.png' 
-import Ringboxcopy from '@/assets/Ringboxcopy.svg'
+// import Whatisgoodfornaturecanbegoodforyourbusiness from '@/assets/Whatisgoodfornaturecanbegoodforyourbusiness.png'
+// import Ringboxcopy from '@/assets/Ringboxcopy.svg'
 import dron from '@/assets/dron.svg'
 import fly from '@/assets/fly.svg'
 // 2 section 
@@ -23,8 +23,8 @@ import Imaginethepossibilitiessilder_4 from '@/assets/Imaginethepossibilitiessil
 import Imaginethepossibilitiessilder_5 from '@/assets/Imaginethepossibilitiessilder_5.png'
 import Imaginethepossibilitiessilder_6 from '@/assets/Imaginethepossibilitiessilder_6.png'
 // tabs
-import myEarthPoint from '@/assets/myEarthPoint.png'
-import myEarthPointlogo from '@/assets/myEarthPointlogo.svg'
+// import myEarthPoint from '@/assets/myEarthPoint.png'
+// import myEarthPointlogo from '@/assets/myEarthPointlogo.svg'
 import JunktoJungles from '@/assets/JunktoJungles.png'
 import Junktoungleslogo from '@/assets/Junktoungleslogo.svg'
 import SeedsofRecognition from '@/assets/SeedsofRecognition.png'
@@ -55,7 +55,7 @@ export const BusinessForPlanet: React.FC = () => {
         description="Co-create new economic models for People, Planet, Prosperity, and Purpose."
         keywords="business partnership, sustainability, ESG, climate action, business for planet"
       />
-      
+
       <div className={styles.container}>
         <h1>Business for the Planet</h1>
         <p>This page is under construction.</p>

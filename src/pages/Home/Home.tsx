@@ -2,9 +2,13 @@
  * Home Page Component
  * Main landing page for Sacred Groves
  */
+import { useState, useEffect } from 'react'
 import { SEO } from '@/components/common/SEO'
 import { DEFAULT_SEO } from '@/constants'
-import { RecognizedGlobally } from '@/pages/RecognizedGlobally'
+import { RecognizedGlobally } from '../RecognizedGlobally/RecognizedGlobally'
+import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop'
+import { FadeInSection } from '@/components/common/FadeInSection/FadeInSection'
+import { useTypewriter } from '@/hooks/useTypewriter'
 import styles from './Home.module.css'
 import earth from '@/assets/earth.png'
 import Alexandrelogo from '@/assets/Alexandrelogo.svg'
@@ -22,11 +26,84 @@ import arrow from '@/assets/arrow.svg'
 import BusinesforthePlanet from '@/assets/BusinesforthePlanet.svg'
 import plantbox from '@/assets/plantbox.png'
 
+interface HabitatData {
+  guardianName: string
+  location: string
+  elevation: string
+  habitatName: string
+  habitatType: string
+  supportingFrom: string
+  temperature: string
+  humidity: string
+  weather: string
+  greenCoverDensity: string
+  dataTimestamp: string
+}
+
+const HABITAT_DATA: HabitatData[] = [
+  {
+    guardianName: 'Alexandre Dupont',
+    location: '(52.291995, -3.49713)',
+    elevation: '225.0 Meter',
+    habitatName: 'Gigrin Prysg, UK',
+    habitatType: 'Ancient Oak Woodland',
+    supportingFrom: 'Apr 06, 2021',
+    temperature: '6.6°C',
+    humidity: '90%',
+    weather: 'Partly Cloudy',
+    greenCoverDensity: '98.64%',
+    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC'
+  },
+  {
+    guardianName: 'Coed Rhyal',
+    location: '(52.707945, -3.702876)',
+    elevation: '180.5 Meter',
+    habitatName: 'Coed Rhyal, Wales',
+    habitatType: 'Ancient Oak Woodland',
+    supportingFrom: 'Mar 15, 2021',
+    temperature: '5.2°C',
+    humidity: '85%',
+    weather: 'Partly Cloudy',
+    greenCoverDensity: '96.32%',
+    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC'
+  },
+  {
+    guardianName: 'Ocean Sanctuary',
+    location: '(43.839260, -64.978444)',
+    elevation: '45.0 Meter',
+    habitatName: 'Ocean Sanctuary, Nova Scotia',
+    habitatType: 'Coastal Woodland',
+    supportingFrom: 'May 20, 2021',
+    temperature: '8.9°C',
+    humidity: '78%',
+    weather: 'Clear',
+    greenCoverDensity: '94.18%',
+    dataTimestamp: 'Data recorded on 4 Nov 2025, 00:00 AM UTC'
+  }
+]
+
 /**
  * Home page component
  * @returns Home page JSX element
  */
 export const Home: React.FC = () => {
+  const [currentCardIndex, setCurrentCardIndex] = useState(0)
+  const currentData = HABITAT_DATA[currentCardIndex]
+
+  // Typewriter effects for climate numbers
+  const temperature = useTypewriter(currentData.temperature, 30)
+  const humidity = useTypewriter(currentData.humidity, 30)
+  const greenCoverDensity = useTypewriter(currentData.greenCoverDensity, 30)
+
+  // Cycle cards every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCardIndex((prev) => (prev + 1) % HABITAT_DATA.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <>
       <SEO
@@ -35,172 +112,164 @@ export const Home: React.FC = () => {
         keywords={DEFAULT_SEO.keywords}
         ogImage={DEFAULT_SEO.ogImage}
       />
-      
+
       {/* ORIGINAL Hero Section with Earth Background */}
-      <section className={styles.heroSection}>
-        {/* Background Earth Image */}
-        <div className={styles.earthBackground}>
-          <img src={earth} alt="Earth" className={styles.earthImage} />
-        </div>
+      <FadeInSection>
+        <section className={styles.heroSection}>
+          {/* Background Earth Image */}
+          <div className={styles.earthBackground}>
+            <img src={earth} alt="Earth" className={styles.earthImage} />
+          </div>
 
-        <div className={styles.container}>
-          {/* Left Side - Cards */}
-          <div className={styles.leftSection}>
-            {/* Guardian Card */}
-            <div className={styles.guardianCard}>
-              <div className={styles.logoSection}>
-                <img src={Alexandrelogo} alt="Alexandre Dupont" className={styles.guardianLogo} />
+          <div className={styles.container}>
+            {/* Left Side - Cards */}
+            <div className={styles.leftSection}>
+              {/* Guardian Card */}
+              <div className={styles.guardianCard} key={`guardian-${currentCardIndex}`}>
+                <div className={styles.logoSection}>
+                  <img src={Alexandrelogo} alt={currentData.guardianName} className={styles.guardianLogo} />
+                </div>
+                <h3 className={styles.guardianName}>{currentData.guardianName}</h3>
+                <div className={styles.infoSection}>
+                  <p className={styles.infoLabel}>Location:</p>
+                  <p className={styles.infoValue}>{currentData.location}</p>
+                </div>
+                <div className={styles.infoSection}>
+                  <p className={styles.infoLabel}>Elevation:</p>
+                  <p className={styles.infoValue}>{currentData.elevation}</p>
+                </div>
+                <div className={styles.infoSection}>
+                  <p className={styles.infoLabel}>Habitat Name:</p>
+                  <p className={styles.infoValue}>{currentData.habitatName}</p>
+                </div>
+                <div className={styles.infoSection}>
+                  <p className={styles.infoLabel}>Habitat Type:</p>
+                  <p className={styles.infoValue}>{currentData.habitatType}</p>
+                </div>
+                <div className={styles.infoSection}>
+                  <p className={styles.infoLabel}>Supporting From:</p>
+                  <p className={styles.infoValue}>{currentData.supportingFrom}</p>
+                </div>
               </div>
-              <h3 className={styles.guardianName}>Alexandre Dupont</h3>
-              <div className={styles.infoSection}>
-                <p className={styles.infoLabel}>Location:</p>
-                <p className={styles.infoValue}>(52.291995, -3.49713)</p>
-              </div>
-              <div className={styles.infoSection}>
-                <p className={styles.infoLabel}>Elevation:</p>
-                <p className={styles.infoValue}>225.0 Meter</p>
-              </div>
-              <div className={styles.infoSection}>
-                <p className={styles.infoLabel}>Habitat Name:</p>
-                <p className={styles.infoValue}>Gigrin Prysg, UK</p>
-              </div>
-              <div className={styles.infoSection}>
-                <p className={styles.infoLabel}>Habitat Type:</p>
-                <p className={styles.infoValue}>Ancient Oak Woodland</p>
-              </div>
-              <div className={styles.infoSection}>
-                <p className={styles.infoLabel}>Supporting From:</p>
-                <p className={styles.infoValue}>Apr 06, 2021</p>
-              </div>
-            </div>
 
-            {/* Forest Indicators Card */}
-            <div className={styles.indicatorsCard}>
-              <div className={styles.mapSection}>
-                <img src={ForestIndicatorsmap} alt="Forest Map" className={styles.mapImage} />
-              </div>
-              <h4 className={styles.indicatorsTitle}>Forest Indicators</h4>
-              
-              <div className={styles.indicatorsGrid}>
-                <div className={styles.indicator}>
-                  <img src={temp} alt="Temperature" className={styles.indicatorIcon} />
-                  <div className={styles.indicatorContent}>
-                    <span className={styles.indicatorValue}>6.6°C</span>
-                    <span className={styles.indicatorLabel}>Temperature</span>
+              {/* Forest Indicators Card */}
+              <div className={styles.indicatorsCard} key={`indicators-${currentCardIndex}`}>
+                <div className={styles.mapSection}>
+                  <img src={ForestIndicatorsmap} alt="Forest Map" className={styles.mapImage} />
+                </div>
+                <h4 className={styles.indicatorsTitle}>Forest Indicators</h4>
+
+                <div className={styles.indicatorsGrid}>
+                  <div className={styles.indicator}>
+                    <img src={temp} alt="Temperature" className={styles.indicatorIcon} />
+                    <div className={styles.indicatorContent}>
+                      <span className={styles.indicatorValue}>{temperature}</span>
+                      <span className={styles.indicatorLabel}>Temperature</span>
+                    </div>
                   </div>
-                </div>
-                
-                <div className={styles.indicator}>
-                  <div className={styles.indicatorContent}>
-                    <span className={styles.indicatorValue}>90%</span>
-                    <span className={styles.indicatorLabel}>Humidity</span>
-                  </div>
-                </div>
-              </div>
 
-              <div className={styles.weatherSection}>
-                <img src={cloud} alt="Weather" className={styles.weatherIcon} />
-                <div className={styles.weatherContent}>
-                  <span className={styles.weatherValue}>Partly Cloudy</span>
-                  <span className={styles.weatherLabel}>Weather</span>
-                </div>
-              </div>
-
-              <div className={styles.densitySection}>
-                <div className={styles.densityContent}>
-                  <span className={styles.densityValue}>98.64%</span>
-                  <span className={styles.densityLabel}>Green Cover Density</span>
-                </div>
-              </div>
-
-              <p className={styles.dataTimestamp}>Data recorded on 4 Nov 2025, 00:00 AM UTC</p>
-            </div>
-          </div>
-
-          {/* Right Side - Heading */}
-          <div className={styles.headingSection}>
-            <h1 className={styles.mainHeading}>
-              <span className={styles.headingLine}>One Planet</span>
-              <span className={styles.headingLine}>Many Guardians</span>
-              <span className={styles.headingLine}>One Sacred Promise</span>
-            </h1>
-            <p className={styles.tagline}>May the forest be with you.</p>
-          </div>
-        </div>
-      </section>
-
-      
-      {/* NEW Split Background Section */}
-      <section className={styles.splitSection}>
-        <div className={styles.splitContainer}>
-          {/* Left Side - Green Background */}
-          <div className={styles.greenSection}>
-            {/* Icons */}
-            <div className={styles.iconRow}>
-              <img src={Usingtechnology} alt="Technology Icons" className={styles.technologyIcons} />
-            </div>
-
-            {/* Main Heading */}
-            <div className={styles.contentBlock}>
-              <h2 className={styles.splitHeading}>
-                Using technology, economics,<br />
-                creativity, and science,<br />
-                <span className={styles.boldText}>to let forests grow wild.</span>
-              </h2>
-            </div>
-
-            {/* Description Text */}
-            <div className={styles.textBlock}>
-              <p className={styles.paragraph}>
-                Sacred Groves is a <strong>Community Interest Company</strong> <br /> incorporated in the United Kingdom, reimagining <br /> business in partnership with nature — our ultimate <br /> shareholder.
-              </p>
-              
-              <p className={styles.paragraph}>
-                With Guardians in over <strong>30 countries</strong>, we protect <br /> three biodiverse habitats in the UK and Canada.<br />
-                By 2030, our goal is to safeguard a million acres of <br /> critical ecosystems across the planet.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Side - Dark Background */}
-          <div className={styles.darkSection}>
-            {/* National Forest Logo with Text */}
-            <div className={styles.forestLogoWrapper}>
-              <img src={coedwing} alt="Coedwig Genedlaethol Cymru - National Forest for Wales" className={styles.forestLogo} />
-              <div className={styles.forestLogoText}>
-                <p className={styles.forestLogoTitle}>Coedwig<br />Genedlaethol Cymru</p>
-                <p className={styles.forestLogoSubtitle}>National Forest<br />for Wales</p>
-              </div>
-            </div>
-
-            {/* Three Habitat Cards - Grid Layout */}
-            <div className={styles.habitatCardsGrid}>
-              {/* Ocean Sanctuary Card - Left */}
-              <div className={styles.habitatCard}>
-                <div className={styles.habitatMapWrapper}>
-                  <img src={map} alt="Ocean Sanctuary" className={styles.habitatMapImage} />
-                  <div className={styles.habitatOverlay}>
-                    <div className={styles.habitatInfo}>
-                      <h3 className={styles.habitatTitle}>Ocean Sanctuary,</h3>
-                      <p className={styles.habitatSubtitle}>Nova Scotia, Canada</p>
-                      <p className={styles.habitatCoordinates}>Location: (43.839260304999996, -64.97844436)</p>
+                  <div className={styles.indicator}>
+                    <div className={styles.indicatorContent}>
+                      <span className={styles.indicatorValue}>{humidity}</span>
+                      <span className={styles.indicatorLabel}>Humidity</span>
                     </div>
                   </div>
                 </div>
+
+                <div className={styles.weatherSection}>
+                  <img src={cloud} alt="Weather" className={styles.weatherIcon} />
+                  <div className={styles.weatherContent}>
+                    <span className={styles.weatherValue}>{currentData.weather}</span>
+                    <span className={styles.weatherLabel}>Weather</span>
+                  </div>
+                </div>
+
+                <div className={styles.densitySection}>
+                  <div className={styles.densityContent}>
+                    <span className={styles.densityValue}>{greenCoverDensity}</span>
+                    <span className={styles.densityLabel}>Green Cover Density</span>
+                  </div>
+                </div>
+
+                <p className={styles.dataTimestamp}>{currentData.dataTimestamp}</p>
               </div>
             </div>
 
-            {/* Bottom Description */}
-            <div className={styles.forestDescription}>
-              <p className={styles.forestText}>
-                Once marked for private sale, <br /> these forests are now a part of <br /> the 'National Forest for Wales' <br /> network, helping build a <br /> contiguous green corridor <br /> across the Welsh country.
-              </p>
+            {/* Right Side - Heading */}
+            <div className={styles.headingSection}>
+              <h1 className={styles.mainHeading}>
+                <span className={styles.headingLine}>One Planet</span>
+                <span className={styles.headingLine}>Many Guardians</span>
+                <span className={styles.headingLine}>One Sacred Promise</span>
+              </h1>
+              <p className={styles.tagline}>May the forest be with you.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </FadeInSection>
 
-      
+
+      {/* NEW Split Background Section */}
+      <FadeInSection>
+        <section className={styles.splitSection}>
+          <div className={styles.splitContainer}>
+            {/* Left Side - Green Background */}
+            <div className={styles.greenSection}>
+              {/* Icons */}
+              <div className={styles.iconRow}>
+                <img src={Usingtechnology} alt="Technology Icons" className={styles.technologyIcons} />
+              </div>
+
+              {/* Main Heading */}
+              <div className={styles.contentBlock}>
+                <h2 className={styles.splitHeading}>
+                  Using technology, economics,<br />
+                  creativity, and science,<br />
+                  <span className={styles.boldText}>to let forests grow wild.</span>
+                </h2>
+              </div>
+
+              {/* Description Text */}
+              <div className={styles.textBlock}>
+                <p className={styles.paragraph}>
+                  Sacred Groves is a <strong>Community Interest Company</strong> <br /> incorporated in the United Kingdom, reimagining <br /> business in partnership with nature — our ultimate <br /> shareholder.
+                </p>
+
+                <p className={styles.paragraph}>
+                  With Guardians in over <strong>30 countries</strong>, we protect <br /> three biodiverse habitats in the UK and Canada.<br />
+                  By 2030, our goal is to safeguard a million acres of <br /> critical ecosystems across the planet.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Side - Dark Background */}
+            <div className={styles.darkSection}>
+              {/* National Forest Logo with Text */}
+              <div className={styles.forestLogoWrapper}>
+                <img src={coedwing} alt="Coedwig Genedlaethol Cymru - National Forest for Wales" className={styles.forestLogo} />
+                <div className={styles.forestLogoText}>
+                  <p className={styles.forestLogoTitle}>Coedwig<br />Genedlaethol Cymru</p>
+                  <p className={styles.forestLogoSubtitle}>National Forest<br />for Wales</p>
+                </div>
+              </div>
+
+              {/* Bottom Description */}
+              <div className={styles.forestDescription}>
+                <p className={styles.forestText}>
+                  Once marked for private sale, <br /> these forests are now a part of <br /> the 'National Forest for Wales' <br /> network, helping build a <br /> contiguous green corridor <br /> across the Welsh country.
+                </p>
+              </div>
+            </div>
+
+            {/* Single Map Image showing all 3 habitats - Positioned Absolute */}
+            <div className={styles.habitatMapContainer}>
+              <img src={map} alt="Sacred Groves Habitats" className={styles.habitatMapFull} />
+            </div>
+          </div>
+        </section>
+      </FadeInSection>
+
+
       {/* Third Section - Guardian of the Wild */}
       <section className={styles.guardianSection}>
         <div className={styles.guardianBackground}>
@@ -208,40 +277,48 @@ export const Home: React.FC = () => {
         </div>
 
         <div className={styles.guardianContent}>
-          {/* Left Card */}
-          <div className={styles.soccerCard}>
-            <div className={styles.soccerIconWrapper}>
-              <img src={Soccerlogo} alt="Soccer Field" className={styles.soccerIcon} />
-            </div>
-            <div className={styles.soccerNumber}>06</div>
-            <p className={styles.soccerText}>
-              Soccer pitches of tropical primary forest lost since you landed on our website.
-            </p>
-            <div className={styles.soccerSource}>
-              <p className={styles.sourceLabel}>Source:</p>
-              <p className={styles.sourceValue}>World Resources Institute, May 2025</p>
-            </div>
-          </div>
+          <div className={styles.guardianLayout}>
+            {/* Left Card */}
+            <FadeInSection delay="0.2s">
+              <div className={styles.soccerCard}>
+                <div className={styles.soccerIconWrapper}>
+                  <img src={Soccerlogo} alt="Soccer Field" className={styles.soccerIcon} />
+                </div>
+                <div className={styles.soccerNumber}>06</div>
+                <p className={styles.soccerText}>
+                  Soccer pitches of tropical primary forest lost since you landed on our website.
+                </p>
+                <div className={styles.soccerSource}>
+                  <p className={styles.sourceLabel}>Source:</p>
+                  <p className={styles.sourceValue}>World Resources Institute, May 2025</p>
+                </div>
+              </div>
+            </FadeInSection>
 
-          {/* Center Text */}
-          <div className={styles.guardianTextWrapper}>
-            <h2 className={styles.guardianHeading}>Become a Guardian of the Wild.</h2>
-            
-            <div className={styles.guardianButtons}>
-              <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
-                PEOPLE FOR THE PLANET
-                <span className={styles.btnArrow}>↗</span>
-              </a>
-              <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
-                BUSINESS FOR THE PLANET
-                <span className={styles.btnArrow}>↗</span>
-              </a>
-            </div>
-          </div>
+            {/* Middle Section - Heading and Buttons */}
+            <FadeInSection delay="0.4s">
+              <div className={styles.guardianMiddle}>
+                <h2 className={styles.guardianHeading}>Become a Guardian of the Wild.</h2>
 
-          {/* Bottom Location Text */}
-          <div className={styles.locationText}>
-            <p>Ocean Sanctuary, Nova Scotia, Canada - Location: (43.839260304999996, -64.978444436)</p>
+                <div className={styles.guardianButtons}>
+                  <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
+                    PEOPLE FOR THE PLANET
+                    <span className={styles.btnArrow}>↗</span>
+                  </a>
+                  <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
+                    BUSINESS FOR THE PLANET
+                    <span className={styles.btnArrow}>↗</span>
+                  </a>
+                </div>
+              </div>
+            </FadeInSection>
+
+            {/* Right Location Text */}
+            <FadeInSection delay="0.6s">
+              <div className={styles.locationText}>
+                <p>Ocean Sanctuary, Nova Scotia, Canada - Location: (43.839260304999996, -64.978444436)</p>
+              </div>
+            </FadeInSection>
           </div>
         </div>
       </section>
@@ -250,12 +327,12 @@ export const Home: React.FC = () => {
       <section className={styles.peopleSection}>
         <div className={styles.peopleContainer}>
           {/* Left Side - Image */}
-          <div className={styles.peopleImageSection}>
+          <FadeInSection className={styles.peopleImageSection} delay="0.2s">
             <img src={girl} alt="Person in nature" className={styles.peopleImage} />
-          </div>
+          </FadeInSection>
 
           {/* Right Side - Content */}
-          <div className={styles.peopleContentSection}>
+          <FadeInSection className={styles.peopleContentSection} delay="0.4s">
             {/* Wildlife Icons */}
             <div className={styles.wildlifeIcons}>
               <img src={hathi} alt="Wildlife icons" className={styles.wildlifeIconsImage} />
@@ -281,11 +358,11 @@ export const Home: React.FC = () => {
             </ul>
 
             {/* CTA Button */}
-            <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.joinButton}>
+            <a href="https://application.sacredgroves.earth/signup" target="_blank" rel="noopener noreferrer" className={styles.joinButton}>
               JOIN US
               <img src={arrow} alt="Arrow" className={styles.joinArrow} />
             </a>
-          </div>
+          </FadeInSection>
         </div>
       </section>
 
@@ -293,7 +370,7 @@ export const Home: React.FC = () => {
       <section className={styles.businessSection}>
         <div className={styles.businessContainer}>
           {/* Left Side - Content */}
-          <div className={styles.businessContentSection}>
+          <FadeInSection className={styles.businessContentSection} delay="0.2s">
             {/* Icons */}
             <div className={styles.businessIcons}>
               <img src={BusinesforthePlanet} alt="Technology Icons" className={styles.businessIconsImage} />
@@ -322,22 +399,24 @@ export const Home: React.FC = () => {
             </ul>
 
             {/* CTA Button */}
-            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.businessJoinButton}>
+            <a href="https://application.sacredgroves.earth/signup" target="_blank" rel="noopener noreferrer" className={styles.businessJoinButton}>
               JOIN US
               <img src={arrow} alt="Arrow" className={styles.businessJoinArrow} />
             </a>
-          </div>
+          </FadeInSection>
 
           {/* Right Side - Image */}
-          <div className={styles.businessImageSection}>
+          <FadeInSection className={styles.businessImageSection} delay="0.4s">
             <img src={plantbox} alt="Plant box" className={styles.businessImage} />
-          </div>
+          </FadeInSection>
         </div>
       </section>
+
 
       {/* Recognized Globally Section */}
       <RecognizedGlobally />
 
+      <ScrollToTop />
     </>
   )
 }

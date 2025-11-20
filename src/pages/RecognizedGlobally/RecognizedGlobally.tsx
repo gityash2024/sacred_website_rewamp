@@ -9,8 +9,6 @@ import Alexandrelogo from '@/assets/Alexandrelogo.svg'
 import CGC_1 from '@/assets/CGC_1.svg'
 import CGC_2 from '@/assets/CGC_2.svg'
 import CGC_3 from '@/assets/CGC_3.svg'
-import tree from '@/assets/tree.svg'
-import butterfly from '@/assets/butterfly.svg'
 import cardIcon from '@/assets/Builtwithlogo.svg' // Trying Builtwithlogo as cardIcon is missing
 
 // Wild Tech Assets
@@ -333,6 +331,11 @@ const LinkedInPostsSlider: React.FC = () => {
 export const RecognizedGlobally: React.FC = () => {
   const [selectedTech, setSelectedTech] = useState<TechItem | null>(null)
   const [hoveredTech, setHoveredTech] = useState<number | null>(null)
+  
+  // Helper to get selected tech ID
+  const getSelectedTechId = (): number | null => {
+    return selectedTech ? selectedTech.id : null
+  }
   const [currentCardSlide, setCurrentCardSlide] = useState(0)
   const [expandedTrustItem, setExpandedTrustItem] = useState<number | null>(null)
 
@@ -576,18 +579,21 @@ export const RecognizedGlobally: React.FC = () => {
                 </div>
               ) : (
                 <div className={styles.techBubbles}>
-                  {techItems.map((item) => (
-                    <div
-                      key={item.id}
-                      className={`${styles.techBubble} ${item.bubbleClass} ${selectedTech?.id === item.id || hoveredTech === item.id ? styles.bubbleActive : ''
-                        }`}
-                      onClick={() => handleTechClick(item)}
-                      onMouseEnter={() => setHoveredTech(item.id)}
-                      onMouseLeave={() => setHoveredTech(null)}
-                    >
-                      <img src={item.icon} alt={item.label} />
-                    </div>
-                  ))}
+                  {techItems.map((item) => {
+                    const selectedId = getSelectedTechId()
+                    const isActive = selectedId === item.id || hoveredTech === item.id
+                    return (
+                      <div
+                        key={item.id}
+                        className={`${styles.techBubble} ${item.bubbleClass} ${isActive ? styles.bubbleActive : ''}`}
+                        onClick={() => handleTechClick(item)}
+                        onMouseEnter={() => setHoveredTech(item.id)}
+                        onMouseLeave={() => setHoveredTech(null)}
+                      >
+                        <img src={item.icon} alt={item.label} />
+                      </div>
+                    )
+                  })}
                 </div>
               )}
             </div>
@@ -626,18 +632,21 @@ export const RecognizedGlobally: React.FC = () => {
               </p>
 
               <ul className={styles.wildTechList}>
-                {techItems.map((item) => (
-                  <li
-                    key={item.id}
-                    className={`${styles.wildTechItem} ${selectedTech?.id === item.id || hoveredTech === item.id ? styles.active : ''
-                      }`}
-                    onClick={() => handleTechClick(item)}
-                    onMouseEnter={() => setHoveredTech(item.id)}
-                    onMouseLeave={() => setHoveredTech(null)}
-                  >
-                    <span className={styles.techLabel}>{item.label}</span>
-                  </li>
-                ))}
+                {techItems.map((item) => {
+                  const selectedId = getSelectedTechId()
+                  const isActive = selectedId === item.id || hoveredTech === item.id
+                  return (
+                    <li
+                      key={item.id}
+                      className={`${styles.wildTechItem} ${isActive ? styles.active : ''}`}
+                      onClick={() => handleTechClick(item)}
+                      onMouseEnter={() => setHoveredTech(item.id)}
+                      onMouseLeave={() => setHoveredTech(null)}
+                    >
+                      <span className={styles.techLabel}>{item.label}</span>
+                    </li>
+                  )
+                })}
               </ul>
             </div>
           </div>

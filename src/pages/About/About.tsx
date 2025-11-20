@@ -1,6 +1,10 @@
 import React from 'react'
 import { SEO } from '@/components/common/SEO'
 import styles from './About.module.css'
+import earth from '@/assets/earth.png'
+import Alexandrelogo from '@/assets/Alexandrelogo.svg'
+import Usingtechnology from '@/assets/Usingtechnology.svg'
+import arrow from '@/assets/arrow.svg'
 
 export const About: React.FC = () => {
     return (
@@ -13,7 +17,14 @@ export const About: React.FC = () => {
             
             {/* Hero Section */}
             <section className={styles.heroSection}>
+                <div className={styles.heroBackground}>
+                    <img src={earth} alt="Earth" className={styles.heroBgImage} />
+                </div>
+                <div className={styles.heroOverlay}></div>
                 <div className={styles.heroContainer}>
+                    <div className={styles.heroDecoration}>
+                        <img src={Alexandrelogo} alt="Decoration" className={styles.heroIcon} />
+                    </div>
                     <h1 className={styles.heroTitle}>About Sacred Groves</h1>
                     <p className={styles.heroSubtitle}>
                         Reimagining business in partnership with nature – our ultimate shareholder.
@@ -24,20 +35,27 @@ export const About: React.FC = () => {
             {/* Mission Section */}
             <section className={styles.missionSection}>
                 <div className={styles.container}>
-                    <div className={styles.missionContent}>
-                        <h2 className={styles.sectionTitle}>Our Mission</h2>
-                        <p className={styles.missionText}>
-                            Sacred Groves is a Community Interest Company, incorporated in the United Kingdom, 
-                            dedicated to protecting and regenerating our planet's most vital biodiverse habitats. 
-                            We believe that what is good for nature can be good for business, and we're proving 
-                            it every day.
-                        </p>
-                        <p className={styles.missionText}>
-                            Our mission is to safeguard natural habitats while inspiring a global community of 
-                            Guardians to protect the wild. Through innovative technology, transparent governance, 
-                            and genuine partnerships, we're creating a sustainable future where people, planet, 
-                            prosperity, and purpose thrive together.
-                        </p>
+                    <div className={styles.missionGrid}>
+                        <div className={styles.missionVisual}>
+                            <div className={styles.missionIconWrapper}>
+                                <img src={Usingtechnology} alt="Technology" className={styles.missionIcon} />
+                            </div>
+                        </div>
+                        <div className={styles.missionContent}>
+                            <h2 className={styles.sectionTitle}>Our Mission</h2>
+                            <p className={styles.missionText}>
+                                Sacred Groves is a Community Interest Company, incorporated in the United Kingdom, 
+                                dedicated to protecting and regenerating our planet's most vital biodiverse habitats. 
+                                We believe that what is good for nature can be good for business, and we're proving 
+                                it every day.
+                            </p>
+                            <p className={styles.missionText}>
+                                Our mission is to safeguard natural habitats while inspiring a global community of 
+                                Guardians to protect the wild. Through innovative technology, transparent governance, 
+                                and genuine partnerships, we're creating a sustainable future where people, planet, 
+                                prosperity, and purpose thrive together.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -87,10 +105,17 @@ export const About: React.FC = () => {
             {/* Values Section */}
             <section className={styles.valuesSection}>
                 <div className={styles.container}>
-                    <h2 className={styles.sectionTitle}>Our Values</h2>
+                    <div className={styles.valuesHeader}>
+                        <h2 className={styles.sectionTitle}>Our Values</h2>
+                        <p className={styles.valuesSubtitle}>
+                            The principles that guide everything we do
+                        </p>
+                    </div>
                     <div className={styles.valuesGrid}>
                         <div className={styles.valueCard}>
-                            <div className={styles.valueIcon}>🌍</div>
+                            <div className={styles.valueIconWrapper}>
+                                <div className={styles.valueIcon}>🌍</div>
+                            </div>
                             <h3 className={styles.valueTitle}>Transparency</h3>
                             <p className={styles.valueText}>
                                 Every transaction is traceable, every impact is verified, and every Guardian 
@@ -98,7 +123,9 @@ export const About: React.FC = () => {
                             </p>
                         </div>
                         <div className={styles.valueCard}>
-                            <div className={styles.valueIcon}>🤝</div>
+                            <div className={styles.valueIconWrapper}>
+                                <div className={styles.valueIcon}>🤝</div>
+                            </div>
                             <h3 className={styles.valueTitle}>Partnership</h3>
                             <p className={styles.valueText}>
                                 We work in partnership with nature, local communities, businesses, and Guardians 
@@ -106,7 +133,9 @@ export const About: React.FC = () => {
                             </p>
                         </div>
                         <div className={styles.valueCard}>
-                            <div className={styles.valueIcon}>🔒</div>
+                            <div className={styles.valueIconWrapper}>
+                                <div className={styles.valueIcon}>🔒</div>
+                            </div>
                             <h3 className={styles.valueTitle}>Trust</h3>
                             <p className={styles.valueText}>
                                 Fully regulated, governed by English law, and part of the National Forest for 
@@ -114,7 +143,9 @@ export const About: React.FC = () => {
                             </p>
                         </div>
                         <div className={styles.valueCard}>
-                            <div className={styles.valueIcon}>💚</div>
+                            <div className={styles.valueIconWrapper}>
+                                <div className={styles.valueIcon}>💚</div>
+                            </div>
                             <h3 className={styles.valueTitle}>Impact</h3>
                             <p className={styles.valueText}>
                                 Measurable, verifiable, and meaningful. Every habitat protected contributes to 
@@ -128,9 +159,15 @@ export const About: React.FC = () => {
             {/* Impact Section */}
             <section className={styles.impactSection}>
                 <div className={styles.container}>
-                    <h2 className={styles.sectionTitle}>Our Impact</h2>
+                    <div className={styles.impactHeader}>
+                        <h2 className={styles.sectionTitle}>Our Impact</h2>
+                        <p className={styles.impactSubtitle}>
+                            Measurable results that make a real difference
+                        </p>
+                    </div>
                     <div className={styles.impactGrid}>
                         <div className={styles.impactCard}>
+                            <div className={styles.impactNumber}>47%</div>
                             <h3 className={styles.impactTitle}>Biodiversity Regeneration</h3>
                             <p className={styles.impactText}>
                                 We're seeing up to 47% increase in biodiversity regeneration across our protected 
@@ -138,6 +175,7 @@ export const About: React.FC = () => {
                             </p>
                         </div>
                         <div className={styles.impactCard}>
+                            <div className={styles.impactNumber}>2.11 Ton</div>
                             <h3 className={styles.impactTitle}>Carbon Sequestration</h3>
                             <p className={styles.impactText}>
                                 Our forests are actively sequestering carbon, with verified metrics showing significant 
@@ -145,6 +183,7 @@ export const About: React.FC = () => {
                             </p>
                         </div>
                         <div className={styles.impactCard}>
+                            <div className={styles.impactNumber}>4.2kg</div>
                             <h3 className={styles.impactTitle}>Pollution Removal</h3>
                             <p className={styles.impactText}>
                                 Each Sacred Groves Cluster actively removes pollutants from the air, improving air 
@@ -158,36 +197,63 @@ export const About: React.FC = () => {
             {/* Recognition Section */}
             <section className={styles.recognitionSection}>
                 <div className={styles.container}>
-                    <h2 className={styles.sectionTitle}>Recognition & Partnerships</h2>
+                    <div className={styles.recognitionHeader}>
+                        <h2 className={styles.sectionTitle}>Recognition & Partnerships</h2>
+                        <p className={styles.recognitionSubtitle}>
+                            Trusted by leaders in conservation and technology
+                        </p>
+                    </div>
                     <div className={styles.recognitionContent}>
-                        <p className={styles.recognitionText}>
-                            Our work has been recognized by the Welsh Government for our role in protecting rare 
-                            temperate rainforests and vital local ecosystems. We've been featured in PwC's Net Zero 
-                            Economy report and are part of Microsoft's Entrepreneurs for Positive Impact Accelerator.
-                        </p>
-                        <p className={styles.recognitionText}>
-                            These partnerships validate our approach and help us scale our impact globally, proving 
-                            that sustainable business models can drive both environmental and economic value.
-                        </p>
+                        <div className={styles.recognitionCard}>
+                            <div className={styles.recognitionIcon}>🏆</div>
+                            <h3 className={styles.recognitionCardTitle}>Welsh Government Recognition</h3>
+                            <p className={styles.recognitionText}>
+                                Our work has been recognized by the Welsh Government for our role in protecting rare 
+                                temperate rainforests and vital local ecosystems.
+                            </p>
+                        </div>
+                        <div className={styles.recognitionCard}>
+                            <div className={styles.recognitionIcon}>📊</div>
+                            <h3 className={styles.recognitionCardTitle}>PwC Net Zero Report</h3>
+                            <p className={styles.recognitionText}>
+                                Featured in PwC's Net Zero Economy report, highlighting our innovative approach to 
+                                sustainable business models.
+                            </p>
+                        </div>
+                        <div className={styles.recognitionCard}>
+                            <div className={styles.recognitionIcon}>💼</div>
+                            <h3 className={styles.recognitionCardTitle}>Microsoft Partnership</h3>
+                            <p className={styles.recognitionText}>
+                                Part of Microsoft's Entrepreneurs for Positive Impact Accelerator, helping us scale 
+                                our impact globally.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
             <section className={styles.ctaSection}>
+                <div className={styles.ctaBackground}>
+                    <div className={styles.ctaPattern}></div>
+                </div>
                 <div className={styles.container}>
-                    <h2 className={styles.ctaTitle}>Join Us in Protecting the Planet</h2>
-                    <p className={styles.ctaText}>
-                        Whether you're an individual Guardian or a business looking to make a positive impact, 
-                        there's a place for you in the Sacred Groves community.
-                    </p>
-                    <div className={styles.ctaButtons}>
-                        <a href="/people-for-the-planet" className={styles.ctaButton}>
-                            Become a Guardian
-                        </a>
-                        <a href="/business-for-the-planet" className={styles.ctaButtonSecondary}>
-                            Partner With Us
-                        </a>
+                    <div className={styles.ctaContent}>
+                        <h2 className={styles.ctaTitle}>Join Us in Protecting the Planet</h2>
+                        <p className={styles.ctaText}>
+                            Whether you're an individual Guardian or a business looking to make a positive impact, 
+                            there's a place for you in the Sacred Groves community.
+                        </p>
+                        <div className={styles.ctaButtons}>
+                            <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
+                                Become a Guardian
+                                <img src={arrow} alt="Arrow" className={styles.ctaArrow} />
+                            </a>
+                            <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.ctaButtonSecondary}>
+                                Partner With Us
+                                <img src={arrow} alt="Arrow" className={styles.ctaArrow} />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

@@ -1,4 +1,3 @@
-import React from 'react'
 import styles from './Footer.module.css'
 import footerlogo from '@/assets/footerlogo.svg'
 import linkedln from '@/assets/linkedln.svg'
@@ -9,12 +8,6 @@ import alogo from '@/assets/alogo.svg'
 import PlayStoreLogo from '@/assets/PlayStoreLogo.svg'
 import footerlogo_1 from '@/assets/footerlogo_1.svg'
 import footerlogo_2 from '@/assets/footerlogo_2.svg'
-import align_1 from '@/assets/align_1.svg'
-import align_2 from '@/assets/align_2.svg'
-import align_3 from '@/assets/align_3.svg'
-import align_4 from '@/assets/align_4.svg'
-import scaradelogo from '@/assets/scaradelogo.svg'
-import sildercardimage from '@/assets/sildercardimage.svg'
 export const Footer = () => {
   const currentYear = new Date().getFullYear()
 

@@ -154,12 +154,9 @@ export const Header: React.FC = () => {
       />
 
       {/* Sidebar */}
-      <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ''}`}>
+      <div className={`${styles.sidebar} ${sidebarOpen ? styles.open : ''}`} onClick={(e) => e.stopPropagation()}>
         <div className={styles.sidebarHeader}>
           <img src={logo} alt="Sacred Groves" className={styles.sidebarLogo} />
-          <button className={styles.closeButton} onClick={toggleSidebar}>
-            ×
-          </button>
         </div>
 
         <div className={styles.sidebarContent}>

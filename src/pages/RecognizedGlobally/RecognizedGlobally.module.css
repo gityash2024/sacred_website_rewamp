@@ -1129,6 +1129,10 @@
   margin-bottom: 64px;
   gap: 80px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 /* Left Side - Heading */
@@ -1218,7 +1222,7 @@
   gap: 15px;
   margin-bottom: 0;
   width: 100%;
-  max-width: 1000px;
+  max-width: 950px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1352,6 +1356,7 @@
   gap: 4px;
   font-family: Montserrat;
   font-weight: 400;
+  cursor: pointer;
 }
 
 .shareButton {

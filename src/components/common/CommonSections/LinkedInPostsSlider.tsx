@@ -41,6 +41,27 @@ export const LinkedInPostsSlider: React.FC = () => {
       likes: 101,
       comments: 50,
     },
+    {
+      id: 4,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: ShopforthePlanet,
+      likes: 101,
+      comments: 50,
+    },
+    {
+      id: 5,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: ShopforthePlanet_1,
+      likes: 101,
+      comments: 50,
+    },
+    {
+      id: 6,
+      title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+      image: LearnforthePlanet,
+      likes: 101,
+      comments: 50,
+    },
   ]
 
   const nextSlide = () => {

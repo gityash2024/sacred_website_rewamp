@@ -36,12 +36,7 @@
 .guardianSection {
   width: 100%;
   padding-top: 0;
-<<<<<<< HEAD
-  padding-bottom: 0;
-  /* UPDATED */
-=======
   padding-bottom: 0; /* UPDATED */
->>>>>>> 8b5b6f74bd2699e4fd9657eb9fd90c18c01ef9d2
 }
 
 .guardianGrid {

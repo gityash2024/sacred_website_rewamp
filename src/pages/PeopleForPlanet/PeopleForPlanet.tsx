@@ -28,7 +28,6 @@ import playbutton from '@/assets/playbutton.svg'
 // 4 section
 import ImpactCompass from '@/assets/ImpactCompass.png'
 import ProtectaHabitat from '@/assets/ProtectaHabitat.svg'
-import BritishPoundbackground from '@/assets/BritishPoundbackground.svg' // Note: This is now only a placeholder import as background is done via CSS color/div
 import BritishPoundlogo from '@/assets/BritishPoundlogo.svg'
 import Arrow1 from '@/assets/Arrow1.svg' // Used for quantity arrows
 // 5 section
@@ -43,13 +42,6 @@ import GiftaHabitat_5 from '@/assets/GiftaHabitat_5.svg'
 import GiftaHabitat_6 from '@/assets/GiftaHabitat_6.svg'
 import GiftaHabitat_7 from '@/assets/GiftaHabitat_7.svg'
 // 6 section
-import Sacreddeedsmust from '@/assets/Sacreddeedsmust.svg'
-import Certificateimage from '@/assets/Certificateimage.svg'
-import certificateimagelogo from '@/assets/certificateimagelogo.svg'
-import VirtualBackground from '@/assets/VirtualBackground.svg'
-import virtualbacklogo from '@/assets/virtualbacklogo.png'
-import virtualbackcenterlogo_1 from '@/assets/virtualbackcenterlogo_1.svg'
-import virtualbackcenterlogo_2 from '@/assets/virtualbackcenterlogo_2.svg'
 
 export const PeopleForPlanet: React.FC = () => {
   return (

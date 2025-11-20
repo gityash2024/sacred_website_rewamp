@@ -28,7 +28,6 @@ import playbutton from '@/assets/playbutton.svg'
 // 4 section
 import ImpactCompass from '@/assets/ImpactCompass.png'
 import ProtectaHabitat from '@/assets/ProtectaHabitat.svg'
-import BritishPoundbackground from '@/assets/BritishPoundbackground.svg' // Note: This is now only a placeholder import as background is done via CSS color/div
 import BritishPoundlogo from '@/assets/BritishPoundlogo.svg'
 import Arrow1 from '@/assets/Arrow1.svg' // Used for quantity arrows
 // 5 section

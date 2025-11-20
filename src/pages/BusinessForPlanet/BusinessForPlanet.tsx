@@ -25,6 +25,23 @@ import Imaginethepossibilitiessilder_6 from '@/assets/Imaginethepossibilitiessil
 // 4 section 
 import growyourbussion from '@/assets/growyourbussion.svg'
 
+// 5 section 
+import Sacreddeedsmust from '@/assets/Sacreddeedsmust.svg'
+import bracit1 from '@/assets/bracit1.png'
+import bracit2 from '@/assets/bracit2.png'
+import Businessesreimagined_1 from '@/assets/Businessesreimagined_1.svg'
+import Businessesreimagined_2 from '@/assets/Businessesreimagined_2.svg'
+import Businessesreimagined_3 from '@/assets/Businessesreimagined_3.svg'
+import Businessesreimagined_4 from '@/assets/Businessesreimagined_4.svg'
+import Businessesreimagined_5 from '@/assets/Businessesreimagined_5.svg'
+import Businessesreimagined_6 from '@/assets/Businessesreimagined_6.svg'
+import Businessesreimagined_7 from '@/assets/Businessesreimagined_7.svg'
+import Businessesreimagined_8 from '@/assets/Businessesreimagined_8.svg'
+import Businessesreimagined_9 from '@/assets/Businessesreimagined_9.svg'
+import Businessesreimagined_10 from '@/assets/Businessesreimagined_10.svg'
+import Businessesreimagined_11 from '@/assets/Businessesreimagined_11.svg'
+import arrow from '@/assets/arrow.svg'
+
 export const BusinessForPlanet: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0)
   const [slideIndex, setSlideIndex] = useState(0)
@@ -191,6 +208,39 @@ export const BusinessForPlanet: React.FC = () => {
       <li>Advocacy</li>
     </ul>
   </div>
+</section>
+
+{/* 5 section */}
+
+<section className={styles.section5}>
+  <img src={Sacreddeedsmust} className={styles.sec5Logo} />
+
+  <h2 className={styles.sec5Heading}>
+    Businesses we’ve reimagined with nature
+  </h2>
+
+
+  <div className={styles.sec5BraceWrapper}>
+    <img src={bracit1} className={styles.sec5BraceLeft} />
+    <div className={styles.sec5Grid}>
+      <img src={Businessesreimagined_1} />
+      <img src={Businessesreimagined_2} />
+      <img src={Businessesreimagined_3} />
+      <img src={Businessesreimagined_4} />
+      <img src={Businessesreimagined_5} />
+      <img src={Businessesreimagined_6} />
+      <img src={Businessesreimagined_7} />
+      <img src={Businessesreimagined_8} />
+      <img src={Businessesreimagined_9} />
+      <img src={Businessesreimagined_10} />
+      <img src={Businessesreimagined_11} />
+    </div>
+    <img src={bracit2} className={styles.sec5BraceRight} />
+  </div>
+
+  <button className={styles.sec5Button}>
+    CO CREATE WITH US <img src={arrow} />
+  </button>
 </section>
 
 

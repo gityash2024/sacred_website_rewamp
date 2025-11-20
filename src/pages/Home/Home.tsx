@@ -89,6 +89,8 @@ const HABITAT_DATA: HabitatData[] = [
 export const Home: React.FC = () => {
   const [currentCardIndex, setCurrentCardIndex] = useState(0)
   const currentData = HABITAT_DATA[currentCardIndex]
+  const [soccerPitchCount, setSoccerPitchCount] = useState(0)
+  const [pageLoadTime] = useState(Date.now())
 
   // Typewriter effects for climate numbers
   const temperature = useTypewriter(currentData.temperature, 30)
@@ -103,6 +105,25 @@ export const Home: React.FC = () => {
 
     return () => clearInterval(interval)
   }, [])
+
+  // Soccer pitch ticker: 18 pitches per minute = 1 pitch every 3.33 seconds
+  useEffect(() => {
+    const updateSoccerPitchCount = () => {
+      const elapsedSeconds = (Date.now() - pageLoadTime) / 1000
+      // 18 pitches per minute = 0.3 pitches per second
+      // So every 3.33 seconds, we add 1 pitch
+      const count = Math.floor(elapsedSeconds / 3.33)
+      setSoccerPitchCount(count)
+    }
+
+    // Update immediately
+    updateSoccerPitchCount()
+
+    // Update every 3.33 seconds (3333 milliseconds)
+    const interval = setInterval(updateSoccerPitchCount, 3333)
+
+    return () => clearInterval(interval)
+  }, [pageLoadTime])
 
   return (
     <>
@@ -284,7 +305,9 @@ export const Home: React.FC = () => {
                 <div className={styles.soccerIconWrapper}>
                   <img src={Soccerlogo} alt="Soccer Field" className={styles.soccerIcon} />
                 </div>
-                <div className={styles.soccerNumber}>06</div>
+                <div className={styles.soccerNumber}>
+                  {String(soccerPitchCount).padStart(2, '0')}
+                </div>
                 <p className={styles.soccerText}>
                   Soccer pitches of tropical primary forest lost since you landed on our website.
                 </p>

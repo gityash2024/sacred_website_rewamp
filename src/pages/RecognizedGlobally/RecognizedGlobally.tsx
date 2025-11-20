@@ -348,7 +348,7 @@ export const RecognizedGlobally: React.FC = () => {
     {
       id: 1,
       logo: CGC_1,
-      description: '*Gigrin Prysg and Coed Rhyai* have been recognised by the Welsh Government for their rare temperate rainforests and vital role in local ecosystems.',
+      description: 'Gigrin Prysg and Coed Rhyai have been recognised by the Welsh Government for their rare temperate rainforests and vital role in local ecosystems.',
       url: 'https://www.gov.wales/national-forest-wales',
       logoAlignment: 'left'
     },
@@ -362,7 +362,7 @@ export const RecognizedGlobally: React.FC = () => {
     {
       id: 3,
       logo: CGC_3,
-      description: 'Part of the *Microsoft Entrepreneurship for Positive Impact Accelerator.',
+      description: 'Part of the Microsoft Entrepreneurship for Positive Impact Accelerator.',
       url: 'https://www.microsoft.com/en-us/corporate-responsibility/entrepreneurship-for-positive-impact',
       logoAlignment: 'right'
     },
@@ -376,14 +376,14 @@ export const RecognizedGlobally: React.FC = () => {
     {
       id: 5,
       logo: CGC_2,
-      description: '*Featured in PwC\'s Net Zero Future50 – Middle East report.*',
+      description: 'Featured in PwC\'s Net Zero Future50 – Middle East report.',
       url: 'https://www.pwc.com/m1/en/publications/net-zero-future50-middle-east.html',
       logoAlignment: 'center'
     },
     {
       id: 6,
       logo: CGC_3,
-      description: 'Part of the *Microsoft Entrepreneurship for Positive Impact Accelerator.*',
+      description: 'Part of the Microsoft Entrepreneurship for Positive Impact Accelerator.',
       url: 'https://www.microsoft.com/en-us/corporate-responsibility/entrepreneurship-for-positive-impact',
       logoAlignment: 'right'
     }

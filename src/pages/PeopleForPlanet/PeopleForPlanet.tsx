@@ -26,29 +26,30 @@ import foursecurelogo from '@/assets/foursecurelogo.svg'
 import fivesecurelogo from '@/assets/fivesecurelogo.svg'
 import playbutton from '@/assets/playbutton.svg'
 // 4 section
-import ImpactCompass from '@/assets/ImpactCompass.png' 
-import ProtectaHabitat from '@/assets/ProtectaHabitat.svg' 
+import ImpactCompass from '@/assets/ImpactCompass.png'
+import ProtectaHabitat from '@/assets/ProtectaHabitat.svg'
 import BritishPoundbackground from '@/assets/BritishPoundbackground.svg' // Note: This is now only a placeholder import as background is done via CSS color/div
-import BritishPoundlogo from '@/assets/BritishPoundlogo.svg' 
+import BritishPoundlogo from '@/assets/BritishPoundlogo.svg'
 import Arrow1 from '@/assets/Arrow1.svg' // Used for quantity arrows
-  // 5 section
-   import GiftaHabitatilogo from '@/assets/GiftaHabitatilogo.svg' 
-   import GiftaHabitatimage from '@/assets/GiftaHabitatimage.png'
-    import GiftaHabitat_1 from '@/assets/GiftaHabitat_1.svg' 
-    import GiftaHabitat_2 from '@/assets/GiftaHabitat_2.svg' 
-    import GiftaHabitat_3 from '@/assets/GiftaHabitat_3.svg'
-     import GiftaHabitat_4 from '@/assets/GiftaHabitat_4.svg' 
-     import GiftaHabitat_5 from '@/assets/GiftaHabitat_5.svg' 
-     import GiftaHabitat_6 from '@/assets/GiftaHabitat_6.svg'
-      import GiftaHabitat_7 from '@/assets/GiftaHabitat_7.svg' 
-      // 6 section
-       import Sacreddeedsmust from '@/assets/Sacreddeedsmust.svg'
-        import Certificateimage from '@/assets/Certificateimage.svg' 
-        import certificateimagelogo from '@/assets/certificateimagelogo.svg'
-         import VirtualBackground from '@/assets/VirtualBackground.svg'
-          import virtualbacklogo from '@/assets/virtualbacklogo.png' 
-          import virtualbackcenterlogo_1 from '@/assets/virtualbackcenterlogo_1.svg'
-           import virtualbackcenterlogo_2 from '@/assets/virtualbackcenterlogo_2.svg'
+// 5 section
+import GiftaHabitatilogo from '@/assets/GiftaHabitatilogo.svg'
+import dotdotbox from '@/assets/dotdotbox.png'
+import GiftaHabitatimage from '@/assets/GiftaHabitatimage.png'
+import GiftaHabitat_1 from '@/assets/GiftaHabitat_1.svg'
+import GiftaHabitat_2 from '@/assets/GiftaHabitat_2.svg'
+import GiftaHabitat_3 from '@/assets/GiftaHabitat_3.svg'
+import GiftaHabitat_4 from '@/assets/GiftaHabitat_4.svg'
+import GiftaHabitat_5 from '@/assets/GiftaHabitat_5.svg'
+import GiftaHabitat_6 from '@/assets/GiftaHabitat_6.svg'
+import GiftaHabitat_7 from '@/assets/GiftaHabitat_7.svg'
+// 6 section
+import Sacreddeedsmust from '@/assets/Sacreddeedsmust.svg'
+import Certificateimage from '@/assets/Certificateimage.svg'
+import certificateimagelogo from '@/assets/certificateimagelogo.svg'
+import VirtualBackground from '@/assets/VirtualBackground.svg'
+import virtualbacklogo from '@/assets/virtualbacklogo.png'
+import virtualbackcenterlogo_1 from '@/assets/virtualbackcenterlogo_1.svg'
+import virtualbackcenterlogo_2 from '@/assets/virtualbackcenterlogo_2.svg'
 
 export const PeopleForPlanet: React.FC = () => {
   return (
@@ -90,7 +91,11 @@ export const PeopleForPlanet: React.FC = () => {
             </div>
 
             <div className={styles.guardianRight}>
-              <img src={BecomeaGuardianlogo} className={styles.guardianLogo} alt="Become a Guardian logo" />
+              <img
+                src={BecomeaGuardianlogo}
+                className={styles.guardianLogo}
+                alt="Become a Guardian logo"
+              />
 
               <h2 className={styles.guardianTitle}>
                 Become a Guardian
@@ -172,7 +177,11 @@ export const PeopleForPlanet: React.FC = () => {
 
             {/* RIGHT SIDE BIG CARD */}
             <div className={styles.rightSection}>
-              <img src={SacredGroglobalscale} className={styles.rightBg} alt="Sacred Grove background" />
+              <img
+                src={SacredGroglobalscale}
+                className={styles.rightBg}
+                alt="Sacred Grove background"
+              />
 
               <div className={styles.rightContent}>
                 <h2 className={styles.wildTitle}>
@@ -195,7 +204,11 @@ export const PeopleForPlanet: React.FC = () => {
                 </div>
 
                 <div className={styles.videoBox}>
-                  <img src={SacredGroglobalscale} className={styles.videoThumb} alt="Video thumbnail" />
+                  <img
+                    src={SacredGroglobalscale}
+                    className={styles.videoThumb}
+                    alt="Video thumbnail"
+                  />
                   <a href="https://youtu.be/yW7uG1JpN9Q" target="_blank" className={styles.playBtn}>
                     <img src={playbutton} alt="Play button" />
                   </a>
@@ -204,79 +217,118 @@ export const PeopleForPlanet: React.FC = () => {
             </div>
           </div>
         </section>
-        
+
         {/* SECTION 4 — IMPACT COMPASS */}
         <section className={styles.habitatSection}>
           <div className={styles.habitatWrapper}>
             {/* LEFT SIDE: Impact Graphic */}
             <div className={styles.habitatLeft}>
               <div className={styles.impactCompassContainer}>
-                  {/* Using ImpactCompass.png for the central graphic, figures, and metrics */}
-                  <img src={ImpactCompass} className={styles.impactCompassGraphic} alt="Impact Compass Graphic with metrics and figures" />
+                {/* Using ImpactCompass.png for the central graphic, figures, and metrics */}
+                <img
+                  src={ImpactCompass}
+                  className={styles.impactCompassGraphic}
+                  alt="Impact Compass Graphic with metrics and figures"
+                />
               </div>
             </div>
 
             {/* RIGHT SIDE: Text and Button */}
             <div className={styles.habitatRight}>
               <div className={styles.habitatLogoContainer}>
-                <img src={ProtectaHabitat} className={styles.habitatLogo} alt="Protect a Habitat Logo" />
+                <img
+                  src={ProtectaHabitat}
+                  className={styles.habitatLogo}
+                  alt="Protect a Habitat Logo"
+                />
               </div>
 
               <h2 className={styles.habitatTitle}>
                 Protect
-                <br />
-                a Habitat
+                <br />a Habitat
               </h2>
 
+              <p className={styles.habitatText}>Imagine a forest in your name.</p>
               <p className={styles.habitatText}>
-                Imagine a forest in your name.
+                With Sacred Groves Clusters, your climate action protects real acres of forest - a
+                simple, tangible step toward regeneration.
               </p>
-              <p className={styles.habitatText}>
-                With Sacred Groves Clusters, your climate action protects real acres of forest - a simple, tangible step toward regeneration.
-              </p>
-              
+
               {/* FIXED: ACT NOW button with nested content and arrow */}
               <button className={styles.actNowBtn}>
                 <div className={styles.actNowInnerContent}>
                   <span>ACT NOW</span>
-                  <div className={styles.actNowAvatars}>
-                    
-                  </div>
+                  <div className={styles.actNowAvatars}></div>
                 </div>
                 <img src={arrow} className={styles.actNowArrow} alt="Act Now Arrow" />
               </button>
             </div>
           </div>
-           
-           {/* Controls at the bottom, centered relative to the section */}
+
+          {/* Controls at the bottom, centered relative to the section */}
           <div className={styles.controlsSection}>
             <div className={styles.controlsWrapper}>
               {/* FIXED: Price Box: £ 40 with custom dark circle background */}
-             <div className={styles.controlBox}>
-  <div className={styles.priceContent}>
-    <div className={styles.poundLogoCircle}>
-      <img src={BritishPoundlogo} className={styles.poundLogo} alt="Pound logo" />
-    </div>
-    <span className={styles.priceValue}>40</span>
-  </div>
-</div>
+              <div className={styles.controlBox}>
+                <div className={styles.priceContent}>
+                  <div className={styles.poundLogoCircle}>
+                    <img src={BritishPoundlogo} className={styles.poundLogo} alt="Pound logo" />
+                  </div>
+                  <span className={styles.priceValue}>40</span>
+                </div>
+              </div>
 
               {/* FIXED: Quantity Box: ↑ 1 Sacred Groves Cluster. Text is moved inside. Down arrow removed. */}
-<div className={styles.controlBox}>
-  <div className={styles.qtyWrapper}>
-    <img src={Arrow1} className={styles.qtyArrow} alt="Up Arrow" />
-    <span className={styles.qtyNumber}>1</span>
-  </div>
+              <div className={styles.controlBox}>
+                <div className={styles.qtyWrapper}>
+                  <img src={Arrow1} className={styles.qtyArrow} alt="Up Arrow" />
+                  <span className={styles.qtyNumber}>1</span>
+                </div>
 
-  <div className={styles.qtyLabel}>Sacred Groves Cluster</div>
-</div>
-
-
-
+                <div className={styles.qtyLabel}>Sacred Groves Cluster</div>
+              </div>
             </div>
           </div>
         </section>
       </div>
+      {/* SECTION 5 — GIFT A HABITAT */}
+<section className={styles.giftSection}>
+  <div className={styles.giftWrapper}>
+    <div className={styles.giftLeft}>
+      <img src={GiftaHabitatilogo} className={styles.giftLogo} alt="Gift a Habitat logo" />
+      <h2 className={styles.giftTitle}>Gift a Habitat</h2>
+      <p className={styles.giftText}>
+        Mark life’s special moments with a gift that lasts. A Sacred Groves Cluster is a thoughtful, planet-positive way to celebrate friends, family, and colleagues.
+      </p>
+     <button className={styles.giftBtn}>
+              <span>GIFT NOW</span>
+              {/* Arrow logo added as requested */}
+              <img src={arrow} className={styles.giftBtnArrow} alt="Arrow" />
+            </button>
+    </div>
+
+    <div className={styles.giftRight}>
+      <img src={dotdotbox} className={styles.dotGrid} alt="dot grid" />
+      <div className={styles.giftImageContainer}>
+        <img src={GiftaHabitatimage} className={styles.giftMainImage} alt="Gift image main" />
+      </div>
+
+      <div className={styles.sideIcons}>
+        <img src={GiftaHabitat_1} alt="icon1" className={styles.iconItem} />
+        <img src={GiftaHabitat_2} alt="icon2" className={styles.iconItem} />
+        <img src={GiftaHabitat_3} alt="icon3" className={styles.iconItem} />
+        <img src={GiftaHabitat_4} alt="icon4" className={styles.iconItem} />
+        <img src={GiftaHabitat_5} alt="icon5" className={styles.iconItem} />
+        <img src={GiftaHabitat_6} alt="icon6" className={styles.iconItem} />
+        <img src={GiftaHabitat_7} alt="icon7" className={styles.iconItem} />
+        <img src={GiftaHabitat_2} alt="icon2" className={styles.iconItem} />
+
+      
+      </div>
+    </div>
+  </div>
+</section>
+
     </>
   )
 }

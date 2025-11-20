@@ -291,7 +291,7 @@
 .habitatSection {
   width: 100%;
   padding: 80px 0 160px 0;
-  background-color: #DAF5EC;
+  background-color: #daf5ec;
   position: relative;
 }
 
@@ -305,7 +305,7 @@
 }
 
 .habitatLeft {
-  width: 60%; 
+  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -318,23 +318,23 @@
 }
 
 .impactCompassGraphic {
-    /* Exact CSS requested from Figma */
-    position: relative;
-    width: 946.0665893554688px;
-    height: 849px;
-    left: 80px; 
-    object-fit: contain;
+  /* Exact CSS requested from Figma */
+  position: relative;
+  width: 946.0665893554688px;
+  height: 849px;
+  left: 80px;
+  object-fit: contain;
 }
 
 .habitatRight {
   width: 40%;
-  max-width: 450px; 
+  max-width: 450px;
   padding-top: 100px;
   padding-left: 50px;
-  
-  display: flex; 
+
+  display: flex;
   flex-direction: column;
-  align-items: flex-end; 
+  align-items: flex-end;
   text-align: right;
 }
 
@@ -343,7 +343,7 @@
 }
 
 .habitatLogo {
-  width: 130px; 
+  width: 130px;
   height: auto;
   margin-bottom: 10px;
 }
@@ -380,57 +380,57 @@
   font-weight: 600;
   display: flex;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between;
   padding: 0 20px;
   cursor: pointer;
-  margin-top: 10px; 
+  margin-top: 10px;
 }
 
 .actNowInnerContent {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .actNowAvatars {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .actNowAvatar {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    object-fit: cover;
-    margin-left: -5px; 
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  margin-left: -5px;
 }
 
 .actNowAvatar:first-child {
-    margin-left: 0; 
+  margin-left: 0;
 }
 
 .actNowArrow {
-  width: 20px; 
+  width: 20px;
   height: 20px;
 }
 
 /* Controls at the bottom */
 .controlsSection {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    /* Adjusted bottom value to account for the overall section padding and visually align with the image */
-    bottom: 80px; 
-    left: 50%;
-    transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  /* Adjusted bottom value to account for the overall section padding and visually align with the image */
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .controlsWrapper {
   display: flex;
   justify-content: center;
-  gap: 20px; 
+  gap: 20px;
   width: 100%;
   max-width: 550px; /* Aligned with user's requested width of ~528 */
   padding: 0 40px;
@@ -441,13 +441,11 @@
   height: 75px;
   background: #ffffff;
   border-radius: 40px;
-  border: 1px solid #003B3A;
+  border: 1px solid #003b3a;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
   align-items: center;
 }
-
-
 
 .controlBox:first-child {
   flex-direction: row;
@@ -457,15 +455,15 @@
 
 /* NEW: Style for the dark circle around the pound logo */
 .poundLogoCircle {
-    width: 45px; 
-    height: 45px;
-    border-radius: 50%;
-    background-color: #03303D; /* FIXED: Dark background color */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px; 
-    flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #03303d; /* FIXED: Dark background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
 }
 
 .priceContent {
@@ -474,19 +472,19 @@
   font-size: 38px;
   font-weight: 700;
   color: #003b3a;
-  position: relative; 
+  position: relative;
   z-index: 2;
 }
 
 .poundLogo {
-    /* Logo inside the dark circle */
-    width: 20px; 
-    height: 20px;
-    filter: brightness(0) invert(1); /* Makes the logo white */
+  /* Logo inside the dark circle */
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1); /* Makes the logo white */
 }
 
 .priceValue {
-    color: #03303D;
+  color: #03303d;
 }
 
 /* Quantity Box Specific (second controlBox) */
@@ -501,7 +499,7 @@
   align-items: center;
   font-size: 32px;
   font-weight: 700;
-  color: #003B3A;
+  color: #003b3a;
 }
 
 .qtyArrow {
@@ -510,7 +508,6 @@
   margin-bottom: 6px;
 }
 
-
 .qtyWrapper {
   display: flex;
   flex-direction: column;
@@ -518,32 +515,217 @@
   justify-content: center;
 }
 
-
 .qtyNumber {
   font-size: 32px;
   font-weight: 700;
-  color: #003B3A;
+  color: #003b3a;
 }
 
-
 .qtyLabel {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 32px;
   font-weight: 600;
   line-height: 32px;
   text-align: center;
-  color: #003B3A;
+  color: #003b3a;
   margin-top: 12px;
 }
 
-
-
 .qtyBoxText {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 32px;
   line-height: 32px;
   text-align: center;
-  color: #003B3A;
+  color: #003b3a;
   margin-top: 10px;
+}
+/* 5 section  */
+.giftSection {
+  width: 100%;
+  padding: 80px 0 120px;
+  background: #ffffff;
+}
+
+.giftWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 520px auto;
+  gap: 40px;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.giftLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.giftLogo {
+  width: 300px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.giftTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 55px;
+  line-height: 40px;
+  color: #03303D;
+  margin: 6px 0;
+}
+
+.giftText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 130%;
+  color: #003B3A;
+  max-width: 460px;
+}
+
+.giftBtn {
+  /* FIXED: Match button style from image */
+  width: 180px;
+  height: 50px;
+  border-radius: 6px;
+  background: #03303d;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* Reduced gap */
+  padding: 0 15px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.giftBtnArrow {
+  /* FIXED: Style for arrow on dark background */
+  width: 14px;
+  height: 14px;
+  filter: brightness(0) invert(1); /* Makes the arrow white */
+  transform: rotate(0deg); /* Ensure it points right */
+}
+
+.giftRight {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  /* FIXED: Center image horizontally and align to top vertically */
+  align-items: center; 
+  justify-content: flex-start;
+  min-height: 520px;
+}
+.giftBtnAvatars {
+  display: flex;
+  align-items: center;
+  margin-left: 6px;
+}
+
+.giftAvatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -8px;
+  object-fit: cover;
+}
+
+/* .giftBtnArrow {
+  width: 18px;
+  height: 18px;
+  margin-left: 8px;
+} */
+
+.giftRight {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+}
+
+/* dotted grid background */
+.dotGrid {
+  position: absolute;
+  right: 0;
+  /* top: 30px; */
+  width: 646px;
+  height: 700px;
+  object-fit: contain;
+  opacity: 1;
+  pointer-events: none;
+  margin-top: 70px;
+}
+
+/* main composed image container */
+.giftImageContainer {
+  position: relative;
+  width: 639px;
+  height: 511px;
+  z-index: 3;
+  display: block;
+}
+
+.giftMainImage {
+  position: absolute;
+  inset: 0;
+  width: 639px;
+  height: 511px;
+  object-fit: cover;
+  clip-path: none;
+  opacity: 1;
+}
+
+/* individual pieces (positioning tuned to match the reference) */
+.giftPiece {
+  position: absolute;
+  width: 220px;
+  height: 180px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* specific piece positions (tweak values if needed) */
+.p1 { left: 160px; top: -20px; transform: rotate(-18deg); width: 260px; height: 170px; }
+.p2 { left: 320px; top: -40px; transform: rotate(12deg); width: 260px; height: 200px; }
+.p3 { left: 80px; top: 70px; transform: rotate(-8deg); width: 260px; height: 180px; }
+.p4 { left: 260px; top: 90px; transform: rotate(2deg); width: 260px; height: 180px; }
+.p5 { left: 440px; top: 120px; transform: rotate(18deg); width: 260px; height: 170px; }
+.p6 { left: 160px; top: 230px; transform: rotate(0deg); width: 260px; height: 180px; }
+.p7 { left: 360px; top: 260px; transform: rotate(-6deg); width: 260px; height: 170px; }
+
+/* vertical side icons */
+.sideIcons {
+  position: absolute;
+  right: -70px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  z-index: 4;
+}
+
+.iconItem {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  filter: none;
+}
+
+/* responsive adjustments */
+@media (max-width: 1200px) {
+  .giftWrapper { grid-template-columns: 1fr; }
+  .giftRight { margin-top: 30px; }
+  .dotGrid { display: none; }
+  .sideIcons { display: none; }
+  .giftMainImage, .giftPiece { position: relative; left: 0; top: 0; transform: none; width: 100%; height: auto; }
 }

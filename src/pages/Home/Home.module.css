@@ -66,7 +66,7 @@
 }
 
 .guardianLogo {
-  width: 100px;
+  width: 100%;
   height: auto;
 }
 
@@ -79,7 +79,7 @@
 }
 
 .infoSection {
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 
 .infoLabel {
@@ -87,7 +87,7 @@
   font-weight: 700;
   font-size: 12px;
   color: #03303D;
-  margin: 0 0 2px 0;
+  margin: 0;
 }
 
 .infoValue {
@@ -111,6 +111,7 @@
   margin-bottom: 15px;
   border-radius: 12px;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .mapImage {
@@ -142,16 +143,22 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  justify-content: space-between;
 }
 
 .indicatorIcon {
   width: 20px;
   height: 20px;
+  margin-left: 10px;
 }
 
 .indicatorContent {
   display: flex;
   flex-direction: column;
+  text-align: right;
+  width: 100%;
+  align-items: flex-end;
+  margin-right: 10px;
 }
 
 .indicatorValue {
@@ -176,16 +183,22 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
+  justify-content: space-between;
 }
 
 .weatherIcon {
   width: 24px;
   height: 24px;
+  margin-left: 10px;
 }
 
 .weatherContent {
   display: flex;
   flex-direction: column;
+  text-align: right;
+  width: 100%;
+  align-items: flex-end;
+  margin-right: 20px;
 }
 
 .weatherValue {
@@ -210,6 +223,7 @@
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
+  justify-content: space-between;
 }
 
 .densityIcon {
@@ -220,10 +234,14 @@
 .densityContent {
   display: flex;
   flex-direction: column;
+  text-align: right;
+  width: 100%;
+  align-items: flex-end;
+  margin-right: 10px;
+  margin-left: 20px;
 }
 
 .densityValue {
-
   font-weight: 600;
   font-size: 13px;
   color: #ffffff;
@@ -266,6 +284,7 @@
   color: #ffffff;
   line-height: 1.2;
   display: block;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .tagline {
@@ -274,6 +293,7 @@
   font-size: 30px;
   color: #ffffff;
   margin-top: 24px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Responsive Design for Original Section */
@@ -379,7 +399,7 @@
 
 .splitHeading {
 
-  font-size: 30px;
+  font-size: 32px;
   font-weight: 500;
   line-height: 36px;
   color: #03303D;
@@ -419,7 +439,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* Pushes content to top and bottom */
   align-items: center;
 }
 
@@ -427,7 +446,7 @@
   margin-bottom: 50px;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 15px;
 }
@@ -487,18 +506,20 @@
 .forestDescription {
   max-width: 100%;
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-top: 20px;
 }
 
 .forestText {
 
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 100%;
+  line-height: 1.4;
   color: #ffffff;
   margin: 0;
-  text-align: center;
+  text-align: left;
+  max-width: 320px;
 }
 
 /* Responsive Design for Split Section */
@@ -649,9 +670,10 @@
   grid-column: 1;
   grid-row: 1;
   justify-self: start;
+  margin-left: -20px;
   background: #03303D;
   border-radius: 20px;
-  padding: 30px;
+  padding: 50px;
   width: 280px;
   color: #ffffff;
   display: flex;
@@ -670,6 +692,7 @@
 }
 
 .soccerNumber {
+  font-family: 'Montserrat', sans-serif;
   font-size: 48px;
   font-weight: 700;
   line-height: 1;
@@ -677,29 +700,36 @@
 }
 
 .soccerText {
-  font-size: 14px;
-  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 100%;
   color: #ffffff;
   margin: 0;
+  letter-spacing: 0%;
 }
 
 .soccerSource {
   margin-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 10px;
 }
 
 .sourceLabel {
-  font-size: 10px;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
   margin: 0 0 2px 0;
+  letter-spacing: 0%;
 }
 
 .sourceValue {
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  color: #ffffff;
   margin: 0;
+  letter-spacing: 0%;
 }
 
 /* Middle Section - Heading and Buttons - Row 2, Center Aligned */
@@ -715,12 +745,12 @@
 }
 
 .guardianHeading {
-  font-family: 'Montserrat';
-  font-size: 44px;
-  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
   color: #ffffff;
   margin: 0;
-  line-height: 1.2;
+  line-height: 100%;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -736,7 +766,8 @@
   color: #03303D;
   padding: 16px 32px;
   border-radius: 50px;
-  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
   font-weight: 700;
   text-decoration: none;
   display: flex;
@@ -744,13 +775,19 @@
   gap: 10px;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0%;
+  line-height: 100%;
+  cursor: pointer;
 }
 
 .guardianBtn:hover {
-  background: #44D09F;
+  background: #59C09A;
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+.guardianBtn:hover .joinArrow {
+  filter: brightness(0) invert(1);
 }
 
 .btnArrow {
@@ -764,16 +801,17 @@
   grid-row: 3;
   justify-self: end;
   text-align: right;
-  max-width: 400px;
+  max-width: 100%;
 }
 
 .locationText p {
-  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
   font-weight: 400;
   color: #ffffff;
   margin: 0;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
-  line-height: 1.5;
+  line-height: 122%;
+  white-space: nowrap;
 }
 
 /* Responsive Design for Guardian Section */
@@ -786,6 +824,7 @@
     width: 100%;
     max-width: 350px;
     justify-self: center;
+    margin-left: 0;
   }
 
   .locationText {
@@ -794,8 +833,12 @@
     justify-self: center;
   }
 
+  .locationText p {
+    white-space: normal;
+  }
+
   .guardianHeading {
-    font-size: 42px;
+    font-size: 32px;
   }
 }
 
@@ -811,10 +854,11 @@
   .soccerCard {
     padding: 25px;
     max-width: 100%;
+    margin-left: 0;
   }
 
   .guardianHeading {
-    font-size: 36px;
+    font-size: 28px;
   }
 
   .guardianButtons {
@@ -827,25 +871,12 @@
     width: 100%;
     justify-content: center;
     padding: 14px 28px;
-    font-size: 13px;
-  }
-
-  .soccerCard {
-    max-width: 100%;
-  }
-
-  .guardianHeading {
-    font-size: 30px;
-    margin-bottom: 10px;
-  }
-
-  .guardianBtn {
-    padding: 14px 28px;
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .locationText p {
-    font-size: 12px;
+    font-size: 14px;
+    white-space: normal;
   }
 }
 
@@ -873,13 +904,30 @@
   display: flex;
   min-height: 100vh;
   width: 100%;
+  gap: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/* Left Side - Image - 60% width */
+/* Left Side - Image - 50% width */
 .peopleImageSection {
-  flex: 0 0 60%;
-  width: 60%;
+  flex: 0 0 50%;
+  width: 50%;
   overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.peopleImageSection > div {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
 .peopleImage {
@@ -887,18 +935,34 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
-/* Right Side - Content - 40% width */
+/* Right Side - Content - 50% width */
 .peopleContentSection {
-  flex: 0 0 40%;
-  width: 40%;
+  flex: 0 0 50%;
+  width: 50%;
   background-color: #03303D;
   padding: 80px 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin-left: -1px;
+}
+
+.peopleContentSection > div {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
 }
 
 .wildlifeIcons {
@@ -911,26 +975,27 @@
 }
 
 .peopleHeading {
-  font-family: 'Montserrat';
-  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 55px;
   font-weight: 600;
   color: #ffffff;
   margin: 0;
-  line-height: 64px;
+  line-height: 60px;
 }
 
 .peopleHeadingItalic {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .peopleSubheading {
-  font-family: 'Montserrat';
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   font-weight: 600;
   color: #ffffff;
   margin: 0;
   line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .benefitsList {
@@ -943,13 +1008,14 @@
 }
 
 .benefitsList li {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 500;
   color: #ffffff;
   padding-left: 25px;
   position: relative;
   line-height: 38px;
+  letter-spacing: 0%;
 }
 
 .benefitsList li::before {
@@ -963,8 +1029,8 @@
   background: #ffffff;
   border: none;
   border-radius: 50px;
-  padding: 18px 71px;
-  font-family: 'Montserrat';
+  padding: 14px 50px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #03303D;
@@ -976,6 +1042,8 @@
   transition: all 0.3s ease;
   align-self: flex-start;
   margin-top: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .joinButton:hover,
@@ -983,12 +1051,12 @@
   background: #03303D;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 
 .joinArrow {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   transition: filter 0.3s ease;
 }
 
@@ -1004,12 +1072,12 @@
   }
 
   .peopleHeading {
-    font-size: 52px;
-    line-height: 1.1;
+    font-size: 55px;
+    line-height: 60px;
   }
 
   .peopleSubheading {
-    font-size: 28px;
+    font-size: 32px;
   }
 }
 
@@ -1142,26 +1210,28 @@
 }
 
 .businessHeading {
-  font-family: 'Montserrat';
-  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 55px;
   font-weight: 600;
   color: #03303D;
   margin: 0;
-  line-height: 64px;
+  line-height: 60px;
+  letter-spacing: 0%;
 }
 
 .businessHeadingItalic {
   font-style: italic;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .businessSubheading {
-  font-family: 'Montserrat';
-  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
   font-weight: 600;
   color: #03303D;
   margin: 0;
   line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .businessList {
@@ -1174,13 +1244,14 @@
 }
 
 .businessList li {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   font-size: 24px;
   font-weight: 500;
   color: #03303D;
   padding-left: 25px;
   position: relative;
-  line-height: 27px;
+  line-height: 38px;
+  letter-spacing: 0%;
 }
 
 .businessList li::before {
@@ -1195,8 +1266,8 @@
   background: #ffffff;
   border: none;
   border-radius: 50px;
-  padding: 18px 71px;
-  font-family: 'Montserrat';
+  padding: 14px 50px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   font-weight: 700;
   color: #03303D;
@@ -1208,6 +1279,8 @@
   transition: all 0.3s ease;
   align-self: flex-start;
   margin-top: 20px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .businessJoinButton:hover,
@@ -1215,12 +1288,12 @@
   background: #03303D;
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: none;
 }
 
 .businessJoinArrow {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   transition: filter 0.3s ease;
 }
 

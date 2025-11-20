@@ -4,13 +4,16 @@
  */
 import React, { useState } from 'react'
 import styles from './CommonSections.module.css'
-import ShopforthePlanet from '@/assets/ShopforthePlanet.svg'
-import ShopforthePlanet_1 from '@/assets/ShopforthePlanet_1.svg'
-import LearnforthePlanet from '@/assets/LearnforthePlanet.svg'
+import ShopforthePlanet from '@/assets/linked_in_post.png'
+import ShopforthePlanet_1 from '@/assets/linked_in_post.png'
+import LearnforthePlanet from '@/assets/linked_in_post.png'
 import scaradelogo from '@/assets/scaradelogo.svg'
 import linkedln from '@/assets/linkedln.svg'
 import silderleftarrow from '@/assets/silderleftarrow.svg'
 import silderrightside from '@/assets/silderrightside.svg'
+import likeIcon from '@/assets/like_icon.svg'
+import commentIcon from '@/assets/comment_icon.svg'
+import shareIcon from '@/assets/share_icon.svg'
 
 export const LinkedInPostsSlider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -90,19 +93,23 @@ export const LinkedInPostsSlider: React.FC = () => {
             {/* Post Image */}
             <div className={styles.postImageContainer}>
               <img src={post.image} alt={post.title} className={styles.postImage} />
-              {index === 1 && (
-                <div className={styles.newBadge}>NEW</div>
-              )}
             </div>
 
             {/* Post Footer */}
             <div className={styles.postFooter}>
               <div className={styles.postStats}>
-                <span className={styles.postLikes}>♥ {post.likes}</span>
-                <span className={styles.postComments}>💬 {post.comments}</span>
+                <span className={styles.postLikes}>
+                  <img src={likeIcon} alt="Like" className={styles.icon} />
+                  {post.likes}
+                </span>
+                <span className={styles.postComments}>
+                  <img src={commentIcon} alt="Comment" className={styles.icon} />
+                  {post.comments}
+                </span>
               </div>
               <button className={styles.shareButton}>
-                <span>🔗</span> Share
+                <img src={shareIcon} alt="Share" className={styles.icon} />
+                Share
               </button>
             </div>
           </div>

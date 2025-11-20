@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './ScrollToTop.module.css';
+import bottomTopIcon from '@/assets/bottom_top_top.svg';
 
 
 const ScrollToTop: React.FC = () => {
@@ -31,7 +32,7 @@ const ScrollToTop: React.FC = () => {
         <>
             {isVisible && (
                 <button onClick={scrollToTop} className={styles.scrollToTop}>
-                    <span className={styles.arrow}>↑</span>
+                    <img src={bottomTopIcon} alt="Scroll to top" className={styles.arrow} />
                 </button>
             )}
         </>

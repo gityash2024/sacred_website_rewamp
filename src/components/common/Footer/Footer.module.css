@@ -19,17 +19,25 @@
   color: #fff;
   border-radius: 40px;
   padding: 14px 36px;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .followButton:hover {
-  background-color: #019462;
+  background-color: #03303D;
+  color: #ffffff;
+}
+
+.followButton:hover svg {
+  stroke: #ffffff;
 }
 
 .container {
@@ -45,23 +53,30 @@
 }
 
 .footerGrid h3 {
-  font-size: 15px;
-  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
   margin-bottom: 14px;
 }
 
 .footerGrid a {
   display: block;
-  color: #333;
-  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 122%;
+  letter-spacing: 0%;
   text-decoration: none;
   margin-bottom: 8px;
-  line-height: 1.6;
   transition: color 0.3s ease;
 }
 
 .footerGrid a:hover {
-  color: #00b378;
+  color: #000000;
 }
 
 .legalHeading {
@@ -78,10 +93,13 @@
 }
 
 .contactSection p {
-  font-size: 14px;
-  color: #444;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #000000;
   margin-bottom: 14px;
-  line-height: 1.6;
 }
 
 .socialIcons {
@@ -102,27 +120,45 @@
 
 .mail {
   display: inline-block;
-  color: #111;
-  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
   text-decoration: none;
   margin-bottom: 12px;
 }
 
 .mail:hover {
-  color: #00b378;
+  color: #000000;
+}
+
+.downloadHeading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0%;
+  color: #000000;
+  margin: 12px 0 10px 0;
 }
 
 .appButtons {
   display: flex;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 0;
+  align-items: center;
 }
 
-.appButtons img {
-  height: 35px;
-  /* Fixed height for consistency */
+.appStoreIcon {
+  height: 45px;
   width: auto;
-  /* Maintain aspect ratio */
+}
+
+.playStoreIcon {
+  height: 35px;
+  width: auto;
 }
 
 .footerBottom {
@@ -130,24 +166,41 @@
   text-align: center;
   /* border-top: 1px solid #ddd; */
   padding-top: 25px;
-  font-size: 13px;
-  color: #666;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  line-height: 1.5;
 }
 
 .footerBottom p {
+  font-family: 'Montserrat', sans-serif;
   flex: 1;
   text-align: center;
+  color: #000000;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
-.leftIcons,
-.rightIcons {
+.copyrightFirst {
+  font-size: 12px;
+  display: block;
+}
+
+.copyrightSecond {
+  font-size: 10px;
+  display: block;
+  margin-top: 4px;
+}
+
+.leftIcons {
   width: 120px;
-  /* Ensure both have the same width */
+  height: auto;
+  object-fit: contain;
+}
+
+.rightIcons {
+  width: 180px;
   height: auto;
   object-fit: contain;
 }
@@ -187,9 +240,12 @@
     gap: 20px;
   }
 
-  .leftIcons,
-  .rightIcons {
+  .leftIcons {
     width: 100px;
+  }
+
+  .rightIcons {
+    width: 150px;
   }
 
   .footerBottom p {

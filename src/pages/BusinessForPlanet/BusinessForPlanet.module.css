@@ -8,7 +8,7 @@
 }
 
 .container h1 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
   font-size: 48px;
   font-weight: 600;
   color: #03303D;
@@ -16,7 +16,7 @@
 }
 
 .container p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
   font-size: 18px;
   color: #333;
   line-height: 1.8;

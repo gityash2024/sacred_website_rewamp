@@ -623,7 +623,7 @@
 }
 
 .wildTechSubheading {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   color: #7dd3c0;
   margin-bottom: 5px;
@@ -642,7 +642,7 @@
 }
 
 .wildTechTagline {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
 
   margin-bottom: 30px;
@@ -735,7 +735,7 @@
 }
 
 .inlineTechCardTitle {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   color: #03303D;
   margin: 0;
@@ -755,7 +755,7 @@
   background: transparent;
   border: none;
   color: #03303D;
-  font-size: 32px;
+  font-size: 30px;
   cursor: pointer;
   padding: 0;
   width: 32px;
@@ -936,7 +936,7 @@
 }
 
 .youCanDoHeading {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 500;
   color: #03303D;
   line-height: 36px;
@@ -975,7 +975,7 @@
 }
 
 .actionTitle {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 400;
   color: #000000;
   margin-bottom: 15px;
@@ -1474,7 +1474,7 @@
   }
 
   .youCanDoHeading {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .actionCard {

@@ -1,25 +1,161 @@
-/* Business For The Planet Page Styles */
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 80px 40px;
-  text-align: center;
+.heroSection {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+  overflow: hidden;
 }
 
-.container h1 {
+.bgImg {
+  width: 100%;
+  height: 1024px;
+  object-fit: cover;
+}
+
+.textBlock {
+  position: absolute;
+  top: 320px;
+  left: 210px;
+  width: 480px;
+  text-align: left;
+  color: #fff;
+}
+
+.textBlock h2 {
   font-family: 'Montserrat';
-  font-size: 48px;
-  font-weight: 600;
-  color: #03303D;
-  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 55px;
+  line-height: 111%;
 }
 
-.container p {
+.textBlock h2 span {
+  font-weight: 700;
+}
+
+.dronLogo {
+  position: absolute;
+  width: 76.5px;
+  height: 76.5px;
+  top: 755px;
+  left: 334px;
+}
+
+.flyLogo {
+  position: absolute;
+  width: 76px;
+  top: 840px;
+  left: 334px;
+}
+
+/* Update only these parts */
+
+.ringBox {
+  position: absolute;
+  top: 50%;
+  right: 18%;
+  transform: translateY(-50%);
+  width: 760px;
+  height: auto;
+}
+
+.dronLogo {
+  position: absolute;
+  width: 105px;
+  height: auto;
+  top: 681px;
+  left: 300px;
+}
+
+.flyLogo {
+  position: absolute;
+  width: 105px;
+  height: auto;
+  top: 900px;
+  left: 300px;
+}
+/* SECTION 2 */
+
+.section2 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  margin-top: 140px;
+  padding-bottom: 80px;
+}
+
+.sec2Left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sec2TopIcon {
+ width: 93px;
+    margin-bottom: 25px;
+    margin-right: 538px;
+    /* top: 10px; */
+    margin-top: -101px;
+}
+
+.sec2CenterIcon {
+  width: 93px;
+    margin-bottom: 25px;
+    margin-right: 538px;
+    /* top: 10px; */
+    padding-top: 23px;
+}
+
+.sec2SmallTitle {
+  font-family: 'Montserrat';
+  font-size: 28px;
+  font-weight: 500;
+  color: #002D38;
+  text-align: center;
+  line-height: 110%;
+  margin-bottom: 40px;
+      margin-right: 507px;
+}
+
+.sec2MainHeading {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-family: 'Montserrat';
+  font-size: 45px;
+  font-weight: 700;
+  color: #002D38;
+}
+
+.dotBox {
+  width: 45px;
+  height: auto;
+}
+
+.sec2Right {
+  width: 540px;
+  position: relative;
+}
+
+.gridTop {
+ position: absolute;
+    top: -106px;
+    right: 132px;
+    width: 383px;
+}
+
+.gridBottom {
+    position: absolute;
+    bottom: -34px;
+    left: -533px;
+    width: 390px;
+}
+
+.sec2Para {
   font-family: 'Montserrat';
   font-size: 18px;
-  color: #03303D
-;
-  line-height: 1.8;
+  color: #002D38;
+  line-height: 150%;
+     margin-top: 404px;
 }
+
 

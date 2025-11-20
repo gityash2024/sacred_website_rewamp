@@ -374,4 +374,58 @@ font-family: 'Montserrat';
   gap: 12px;
 }
 
+/* SECTION 7 */
+.section7 {
+  width: 100%;
+  min-height: 900px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 100px 0;
+}
 
+.sec7Content {
+  width: 100%;
+ min-height: 1056px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 120px;
+}
+
+.sec7Left {
+  width: 50%;
+  color: white;
+  z-index: 2;
+}
+
+.sec7Logo {
+  width: 220px;
+  margin-bottom: 40px;
+}
+
+.sec7Heading {
+  font-family: 'Montserrat';
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 140%;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.sec7Para {
+  font-family: 'Montserrat';
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 160%;
+  color: white;
+}
+
+.sec7Para strong {
+  font-weight: 700;
+}

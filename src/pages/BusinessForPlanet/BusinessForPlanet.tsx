@@ -41,6 +41,11 @@ import Businessesreimagined_9 from '@/assets/Businessesreimagined_9.svg'
 import Businessesreimagined_10 from '@/assets/Businessesreimagined_10.svg'
 import Businessesreimagined_11 from '@/assets/Businessesreimagined_11.svg'
 import arrow from '@/assets/arrow.svg'
+// 6 section 
+
+// 7 section 
+import TheSacredGrovesisa from '@/assets/TheSacredGrovesisa.svg'
+import earth from '@/assets/earth.png'
 
 export const BusinessForPlanet: React.FC = () => {
   const [activeTab, setActiveTab] = useState(0)
@@ -243,7 +248,37 @@ export const BusinessForPlanet: React.FC = () => {
   </button>
 </section>
 
+{/* 6 section */}
+
+{/* 7 section */}
+<section className={styles.section7} style={{ backgroundImage: `url(${earth})` }}>
+  <div className={styles.sec7Content}>
+    <div className={styles.sec7Left}>
+      <img src={TheSacredGrovesisa} className={styles.sec7Logo} />
+      
+      <h2 className={styles.sec7Heading}>
+        The Sacred Groves is a<br />
+        Community Interest<br />
+        Company, incorporated<br />
+        in the United Kingdom,<br />
+        reimagining business in<br />
+        partnership with<br />
+        nature — our ultimate<br />
+        shareholder.
+      </h2>
+
+      <p className={styles.sec7Para}>
+        With Guardians in over <strong>30 countries</strong>, we protect<br />
+        three biodiverse habitats in the UK and Canada.<br />
+        By 2030, our goal is to safeguard a million acres of<br />
+        critical ecosystems across the planet.
+      </p>
+    </div>
+  </div>
+</section>
 
     </>
   )
 }
+
+  

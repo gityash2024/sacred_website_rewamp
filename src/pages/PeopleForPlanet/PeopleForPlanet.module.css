@@ -8,10 +8,8 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
   background-size: cover;
   background-position: top center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,106 +17,87 @@
 
 .heroOverlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
+  inset: 0;
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
   padding: 0 40px;
   text-align: center;
-  width: 100%;
 }
 
 .heroTitle {
-  font-family: 'Montserrat';
-  font-weight: 500;
   font-size: 55px;
-  line-height: 111%;
-  color: #FFFFFF;
-  margin: 0;
+  color: #fff;
 }
 
-/* SECTION 2 — GUARDIAN */
+/* SECTION 2 — Guardian */
 .guardianSection {
   width: 100%;
-  padding-top: 0px; /* NO GAP between section 1 & 2 */
-  padding-bottom: 100px;
-      padding-right: 308px;
+  padding-top: 0;
+  padding-bottom: 0;   /* UPDATED */
 }
+
 
 .guardianGrid {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 760px auto; /* EXACT WIDTH YOU GAVE */
+  grid-template-columns: 760px auto;
   gap: 60px;
-  align-items: start;
-  padding-left: 80px; /* YOU GAVE LEFT = 81px */
+  padding-left: 80px;
 }
 
-/* LEFT IMAGE STACK */
 .guardianLeft {
   display: flex;
   flex-direction: column;
-  gap: 0px; /* ZERO SPACE */
+  gap: 0;
 }
 
-/* IMAGE BOX = SQUARE */
 .imgWrapper {
   position: relative;
-  width: 800px; /* EXACT */
-  height: 500px; /* SQUARE SHAPE */
-  /* border-radius: 16px; */
+  width: 800px;
+  height: 500px;
   overflow: hidden;
 }
 
-/* FULL IMAGE COVER */
 .mainImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* ICON POSITIONS */
 .iconTop {
-position: absolute;
+  position: absolute;
   top: 62px;
-    right: 258px;
-    width: 168px;
+  right: 258px;
+  width: 168px;
 }
 
 .iconBottom {
-    position: absolute;
-    bottom: 49px;
-    right: 269px;
-    width: 168px;
+  position: absolute;
+  bottom: 49px;
+  right: 269px;
+  width: 168px;
 }
 
-/* RIGHT SIDE CONTENT */
 .guardianRight {
-  padding-top: 20px; /* Vertical alignment like reference */
+  padding-top: 20px;
   padding-left: 34px;
 }
 
 .guardianLogo {
   width: 310px;
   margin-bottom: 27px;
-      padding-top: 164px;
+  padding-top: 130px;
 }
 
 .guardianTitle {
-  font-family: 'Montserrat';
   font-size: 38px;
-  margin-bottom: 20px;
   color: #03303D;
-  line-height: 36px;
   font-weight: 500;
+  line-height: 36px;
 }
 
 .guardianText {
@@ -128,55 +107,183 @@ position: absolute;
   margin-bottom: 20px;
 }
 
-/* BUTTON AREA */
 .btnGroup {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin-top: 30px;
 }
 
-/* FIXED BUTTON WIDTH (BOTH SAME) */
 .guardianBtn {
   width: 310px;
-  height: 56px; /* FIXED HEIGHT FOR BOTH */
-  padding: 0 26px;
+  height: 56px;
   border-radius: 50px;
   border: 2px solid #44D09F;
   background: #fff;
   font-size: 17px;
   font-weight: 600;
-  color: #003B3A;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* FIXED ALIGNMENT */
-  gap: 14px;
-  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 0 26px;
 }
 
 .guardianBtn span {
-  flex: 1;                 /* ENSURES TEXT ALWAYS CENTERED */
+  flex: 1;
   text-align: center;
 }
 
-.guardianBtn img {
-  width: 20px;
+/* SECTION 3 — Wild Tech */
+.wildSection {
+  width: 100%;
+  padding: 0;
+   margin-top: 0;
 }
 
+.wildWrapper {
+  display: grid;
+  grid-template-columns: 420px 420px auto;
+  gap: 0;
+  width: 100%;
+    margin-top: 0 !important;   
+}
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .guardianGrid {
-    grid-template-columns: 1fr;
-    padding-left: 20px;
-  }
+/* LEFT 2x2 GRID */
+.leftGrid {
+  grid-column: 1 / span 2;
+  display: grid;
+  grid-template-columns: 420px 420px;
+  grid-template-rows: 512px 512px;
+}
 
-  .imgWrapper {
-    width: 100%;
-    height: auto;
-  }
+.gridCard {
+  position: relative;
+  width: 420px;
+  height: 512px;
+  padding: 40px;
+  overflow: hidden;
+  border-right: 2px solid rgba(255,255,255,0.25);
+  border-bottom: 2px solid rgba(255,255,255,0.25);
+}
 
-  .guardianBtn {
-    width: 100%;
-  }
+.gridCard:nth-child(2),
+.gridCard:nth-child(4) {
+  border-right: none;
+}
+
+.cardBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(2px) brightness(85%);
+}
+
+.cardIcon {
+  position: relative;
+  z-index: 3;
+  width: 85px;        /* increased size */
+}
+
+.cardNum {
+  margin-top: 26px;
+  font-size: 32px;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+.cardText {
+  margin-top: 14px;
+  width: 80%;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #fff;
+  position: relative;
+  z-index: 3;
+}
+
+/* RIGHT SECTION */
+.rightSection {
+  width: 100%;
+  height: 1024px;
+  position: relative;
+}
+
+.rightBg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 1024px;
+  object-fit: cover;
+}
+
+.rightContent {
+  position: relative;
+  padding: 80px 60px;
+  z-index: 3;
+  color: white;
+}
+
+.wildTitle {
+  font-size: 40px;
+  line-height: 46px;
+  font-weight: 500;
+  padding-left: 654px;
+}
+
+.wildTitle span {
+  color: #44D09F;
+}
+
+/* Step Row */
+.stepRow {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepIcon {
+  width: 78px;       /* bigger icon */
+}
+
+.stepNum {
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.stepDesc {
+  margin-top: 18px;
+  width: 75%;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Video Box */
+.videoBox {
+  margin-top: 48px;
+  width: 330px;
+  height: 210px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.videoThumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.playBtn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.playBtn img {
+  width: 78px; /* bigger play button */
 }

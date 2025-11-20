@@ -204,7 +204,7 @@
 .sidebarHeader {
   padding: 20px 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   /* border-bottom: 1px solid #f0f0f0; */
 }
@@ -212,27 +212,6 @@
 .sidebarLogo {
   height: 40px;
   width: auto;
-}
-
-.closeButton {
-  background: none;
-  border: none;
-  font-size: 30px;
-  cursor: pointer;
-  color: #03303D
-;
-  padding: 0;
-  line-height: 1;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
-}
-
-.closeButton:hover {
-  color: #59c09a;
 }
 
 .sidebarContent {
@@ -276,24 +255,20 @@
   justify-content: space-between;
   /* Align arrow left, text right */
   gap: 15px;
-
-  font-size: 16px;
-  /* Reduced from 20px */
-  font-weight: 400;
-  /* Regular */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
   color: #03303D;
-  /* Requested color */
   cursor: pointer;
   text-transform: none;
-  /* Reset uppercase */
   font-variant: small-caps;
-  /* Requested variant */
   letter-spacing: 0%;
   line-height: 100%;
   transition: all 0.3s ease;
   text-decoration: none;
   padding: 10px 0;
   width: 100%;
+  text-align: right;
 }
 
 .menuItemSingle {
@@ -345,12 +320,16 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  font-size: 14px;
-  color: #555;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #03303D;
   cursor: pointer;
   transition: color 0.3s ease;
   text-decoration: none;
+  text-align: right;
 }
 
 .submenuItem:hover {
@@ -358,9 +337,14 @@
 }
 
 .submenuItemLocation {
-  font-size: 12px;
-  color: #888;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #03303D;
   margin-top: 4px;
+  text-align: right;
 }
 
 .sidebarFooter {

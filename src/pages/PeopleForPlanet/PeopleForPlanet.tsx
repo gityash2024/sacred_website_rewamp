@@ -47,8 +47,6 @@ import Certificateimage from '@/assets/Certificateimage.svg'
 import certificateimagelogo from '@/assets/certificateimagelogo.svg'
 import VirtualBackground from '@/assets/VirtualBackground.svg'
 import virtualbacklogo from '@/assets/virtualbacklogo.png'
-import virtualbackcenterlogo_1 from '@/assets/virtualbackcenterlogo_1.svg'
-import virtualbackcenterlogo_2 from '@/assets/virtualbackcenterlogo_2.svg'
 import bracit1 from '@/assets/bracit1.png'
 import bracit2 from '@/assets/bracit2.png'
 

@@ -30,6 +30,8 @@ import HeroMap1 from '@/assets/hero_section_map_1.svg'
 import HeroMap2 from '@/assets/hero_section_map_2.svg'
 import HeroMap3 from '@/assets/hero_section_map_3.svg'
 import PartyCloudy from '@/assets/hero_section_party_cloud_weather.svg'
+import mobileHeroBg from '@/assets/mobile_hero_homepage.png'
+import mobilePeopleBg from '@/assets/mobile_poeple_for_the_planet_homepage.png'
 interface HabitatData {
   guardianName: string
   location: string
@@ -99,6 +101,7 @@ export const Home: React.FC = () => {
   const currentData = HABITAT_DATA[currentCardIndex]
   const [soccerPitchCount, setSoccerPitchCount] = useState(0)
   const [pageLoadTime] = useState(Date.now())
+  const [mobileCarouselIndex, setMobileCarouselIndex] = useState(0)
 
   // Typewriter effects for climate numbers
   const temperature = useTypewriter(currentData.temperature, 30)
@@ -148,6 +151,7 @@ export const Home: React.FC = () => {
           {/* Background Earth Image */}
           <div className={styles.earthBackground}>
             <img src={earth} alt="Earth" className={styles.earthImage} />
+            <img src={mobileHeroBg} alt="Earth Mobile" className={styles.mobileEarthImage} />
           </div>
 
           <div className={styles.container}>
@@ -273,24 +277,86 @@ export const Home: React.FC = () => {
 
             {/* Right Side - Dark Background */}
             <div className={styles.darkSection}>
-              {/* National Forest Logo with Text */}
-              <div className={styles.forestLogoWrapper}>
-                <img src={coedwing} alt="Coedwig Genedlaethol Cymru - National Forest for Wales" className={styles.forestLogo} />
-                <div className={styles.forestLogoText}>
-                  <p className={styles.forestLogoTitle}>Coedwig<br />Genedlaethol Cymru</p>
-                  <p className={styles.forestLogoSubtitle}>National Forest<br />for Wales</p>
+              {/* DESKTOP CONTENT */}
+              <div className={styles.desktopContent}>
+                {/* National Forest Logo with Text */}
+                <div className={styles.forestLogoWrapper}>
+                  <img src={coedwing} alt="Coedwig Genedlaethol Cymru - National Forest for Wales" className={styles.forestLogo} />
+                  <div className={styles.forestLogoText}>
+                    <p className={styles.forestLogoTitle}>Coedwig<br />Genedlaethol Cymru</p>
+                    <p className={styles.forestLogoSubtitle}>National Forest<br />for Wales</p>
+                  </div>
+                </div>
+
+                {/* Bottom Description */}
+                <div className={styles.forestDescription}>
+                  <p className={styles.forestText}>
+                    Once marked for private sale, these forests are now a part of the 'National Forest for Wales' network, helping build a contiguous green corridor across the Welsh country.
+                  </p>
                 </div>
               </div>
 
-              {/* Bottom Description */}
-              <div className={styles.forestDescription}>
-                <p className={styles.forestText}>
-                  Once marked for private sale, these forests are now a part of the 'National Forest for Wales' network, helping build a contiguous green corridor across the Welsh country.
-                </p>
+              {/* MOBILE CAROUSEL CONTENT */}
+              <div className={styles.mobileCarousel}>
+                {/* Carousel Slide */}
+                <div className={styles.carouselSlide}>
+                  {/* Logo for Wales (Only show for first 2 slides) */}
+                  {mobileCarouselIndex !== 2 && (
+                    <div className={styles.mobileForestLogoWrapper}>
+                      <img src={coedwing} alt="Coedwig Genedlaethol Cymru" className={styles.mobileForestLogo} />
+                      <div className={styles.mobileForestLogoText}>
+                        <p className={styles.mobileForestLogoTitle}>Coedwig<br />Genedlaethol Cymru</p>
+                        <p className={styles.mobileForestLogoSubtitle}>National Forest<br />for Wales</p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Text */}
+                  <p className={styles.mobileCarouselText}>
+                    {mobileCarouselIndex === 2
+                      ? "Ocean Sanctuary is a biodiverse habitat on the South Shore of Nova Scotia, protecting coastal forests and wetlands."
+                      : "Once marked for private sale, these forests are now a part of the 'National Forest for Wales' network, helping build a contiguous green corridor across the Welsh country."
+                    }
+                  </p>
+
+                  {/* Map Image */}
+                  <div className={styles.mobileMapContainer}>
+                    <img
+                      src={map}
+                      alt="Habitat Map"
+                      className={styles.mobileMapImage}
+                    />
+                  </div>
+
+                  {/* Location Info */}
+                  <div className={styles.mobileLocationInfo}>
+                    <h3 className={styles.mobileLocationName}>
+                      {mobileCarouselIndex === 0 ? "Coed Rhyal" : mobileCarouselIndex === 1 ? "Gigrin Prysg" : "Ocean Sanctuary"}
+                    </h3>
+                    <p className={styles.mobileLocationCountry}>
+                      {mobileCarouselIndex === 0 ? "Wales, United Kingdom" : mobileCarouselIndex === 1 ? "Wales, United Kingdom" : "Nova Scotia, Canada"}
+                    </p>
+                    <p className={styles.mobileLocationCoords}>
+                      {mobileCarouselIndex === 0 ? "Location: (51.70079, -4.274005)" : mobileCarouselIndex === 1 ? "Location: (52.291995, -3.49735)" : "Location: (43.8392603, -64.978444)"}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Carousel Dots */}
+                <div className={styles.carouselDots}>
+                  {[0, 1, 2].map((index) => (
+                    <button
+                      key={index}
+                      className={`${styles.dot} ${mobileCarouselIndex === index ? styles.activeDot : ''}`}
+                      onClick={() => setMobileCarouselIndex(index)}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Single Map Image showing all 3 habitats - Positioned Absolute */}
+            {/* Single Map Image showing all 3 habitats - Positioned Absolute (DESKTOP ONLY) */}
             <div className={styles.habitatMapContainer}>
               <img src={map} alt="Sacred Groves Habitats" className={styles.habitatMapFull} />
             </div>
@@ -316,6 +382,18 @@ export const Home: React.FC = () => {
                 <div className={styles.soccerNumber}>
                   {String(soccerPitchCount).padStart(2, '0')}
                 </div>
+                <div className={styles.desktopSoccerText}>
+                  <p className={styles.soccerText}>
+                    Soccer pitches of tropical primary forest lost since you landed on our website.
+                  </p>
+                  <div className={styles.soccerSource}>
+                    <p className={styles.sourceLabel}>Source:</p>
+                    <p className={styles.sourceValue}>World Resources Institute, May 2025</p>
+                  </div>
+                </div>
+              </div>
+              {/* Mobile Soccer Text - Outside the card */}
+              <div className={styles.mobileSoccerText}>
                 <p className={styles.soccerText}>
                   Soccer pitches of tropical primary forest lost since you landed on our website.
                 </p>
@@ -334,11 +412,11 @@ export const Home: React.FC = () => {
                 <div className={styles.guardianButtons}>
                   <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
                     PEOPLE FOR THE PLANET
-                    <img src={guardian_button_arrow} style={{marginLeft: '20px'}} alt="Arrow" className={styles.joinArrow} />
+                    <img src={guardian_button_arrow} style={{ marginLeft: '20px' }} alt="Arrow" className={styles.joinArrow} />
                   </a>
                   <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer" className={styles.guardianBtn}>
                     BUSINESS FOR THE PLANET
-                    <img src={guardian_button_arrow} style={{marginLeft: '20px'}} alt="Arrow" className={styles.joinArrow} />
+                    <img src={guardian_button_arrow} style={{ marginLeft: '20px' }} alt="Arrow" className={styles.joinArrow} />
                   </a>
                 </div>
               </div>
@@ -354,9 +432,11 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+
+
       {/* Fourth Section - People for the Planet */}
       <section className={styles.peopleSection}>
-        <div className={styles.peopleContainer}>
+        <div className={styles.peopleContainer} style={{ '--mobile-bg-image': `url(${mobilePeopleBg})` } as any}>
           {/* Left Side - Image */}
           <FadeInSection className={styles.peopleImageSection} delay="0.2s">
             <img src={girl} alt="Person in nature" className={styles.peopleImage} />
@@ -410,7 +490,8 @@ export const Home: React.FC = () => {
             {/* Main Heading */}
             <h2 className={styles.businessHeading}>
               Business<br />
-              <span className={styles.businessHeadingItalic}>for the</span> Planet
+              <span className={styles.businessHeadingItalic}>for the</span><br />
+              Planet
             </h2>
 
             {/* Subheading */}

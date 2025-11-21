@@ -60,11 +60,16 @@ import align_3 from '@/assets/align_3.svg'
 import align_4 from '@/assets/align_4.svg'
 import scaradelogo from '@/assets/scaradelogo.svg'
 import linkedln from '@/assets/linkedln.svg'
+
+// Arrow Navigation Icons
 import silderleftarrow from '@/assets/silderleftarrow.svg'
 import silderrightside from '@/assets/silderrightside.svg'
+import carouselArrowWildTech from '@/assets/corousel_arrow_wild_tech.svg'
+import leftArrow2ndScreen from '@/assets/left_arrow_2nd_screen.svg'
 import likeIcon from '@/assets/like_icon.svg'
 import commentIcon from '@/assets/comment_icon.svg'
 import shareIcon from '@/assets/share_icon.svg'
+import birds from '@/assets/birds.svg'
 
 // Interfaces
 interface RecognitionCard {
@@ -381,7 +386,7 @@ const LinkedInPostsSlider: React.FC = () => {
 export const RecognizedGlobally: React.FC = () => {
   const [selectedTech, setSelectedTech] = useState<TechItem | null>(null)
   const [hoveredTech, setHoveredTech] = useState<number | null>(null)
-  
+
   // Helper to get selected tech ID
   const getSelectedTechId = (): number | null => {
     return selectedTech ? selectedTech.id : null
@@ -444,6 +449,93 @@ export const RecognizedGlobally: React.FC = () => {
     setCurrentCardSlide((prev) => (prev + 1) % recognitionCards.length)
   }
 
+  // Mobile Carousel State
+  const [mobileCardIndex, setMobileCardIndex] = useState(0)
+
+  const nextMobileSlide = () => {
+    if (mobileCardIndex < recognitionCards.length - 1) {
+      setMobileCardIndex(prev => prev + 1)
+    }
+  }
+
+  const prevMobileSlide = () => {
+    if (mobileCardIndex > 0) {
+      setMobileCardIndex(prev => prev - 1)
+    }
+  }
+
+  // Mobile Seal of Trust Carousel State
+  const [mobileSealIndex, setMobileSealIndex] = useState(0)
+
+  const nextSealSlide = () => {
+    // Total slides: 3
+    if (mobileSealIndex < 2) {
+      setMobileSealIndex(prev => prev + 1)
+    }
+  }
+
+  const prevSealSlide = () => {
+    if (mobileSealIndex > 0) {
+      setMobileSealIndex(prev => prev - 1)
+    }
+  }
+
+  // Mobile Wild Tech State
+  const [mobileWildTechScreen, setMobileWildTechScreen] = useState<'intro' | 'overview' | 'detail'>('intro')
+  const [mobileWildTechIndex, setMobileWildTechIndex] = useState(0)
+
+  const goToWildTechOverview = () => {
+    setMobileWildTechScreen('overview')
+  }
+
+  const goToWildTechDetail = (index: number) => {
+    setMobileWildTechIndex(index)
+    setMobileWildTechScreen('detail')
+  }
+
+  const backToWildTechOverview = () => {
+    setMobileWildTechScreen('overview')
+  }
+
+  // Action Items Data
+  const actionItems = [
+    {
+      id: 'shop',
+      title: 'Shop',
+      subtitle: 'for the Planet',
+      description: "What if every piece you owned kept a tree standing? K. Salamoon's Forest Splendors, unveiled at Paris Fashion Week 2024, draws its spirit from the wild, with every purchase directly financing forest conservation.",
+      image1: ShopforthePlanetActionCard1,
+      image2: ShopforthePlanetActionCard2
+    },
+    {
+      id: 'learn',
+      title: 'Learn',
+      subtitle: 'for the Planet',
+      description: "Because education can plant deep roots. Eaton Business School and Saatchi & Saatchi's Offset Boxset are helping conserve real forests globally through Sacred Groves Clusters.",
+      image1: LearnforthePlanetActionCard1,
+      image2: LearnforthePlanet_1
+    },
+    {
+      id: 'joy',
+      title: 'Joy',
+      subtitle: 'for the Planet',
+      description: "Discover the art of conservation with Pyaarnation—an online art store where every square foot of art sold protects a square foot of habitat, transforming creativity into traceable climate impact.",
+      image1: JoyforthePlanet,
+      image2: JoyforthePlanet_1
+    },
+    {
+      id: 'invest',
+      title: 'Invest',
+      subtitle: 'for the Planet',
+      description: "Your everyday banking can protect real forests. Ruya Bank's NatureProtect has already safeguarded over 100,000 sq ft of forest with Sacred Groves, proof that deposits can serve a higher purpose.",
+      image1: InvestforthePlanet,
+      image2: InvestforthePlanet_1
+    }
+  ]
+
+  // Mobile Action Carousel State
+  const [mobileActionIndex, setMobileActionIndex] = useState(0)
+
   // Get visible cards for carousel (show 3)
   const getVisibleCards = () => {
     const visible = []
@@ -477,6 +569,107 @@ export const RecognizedGlobally: React.FC = () => {
   const handleActionImageClick = (image: string) => {
     setSelectedActionImage(image)
     setShowActionModal(true)
+  }
+
+  // Mobile LinkedIn Carousel Component
+  const MobileLinkedInCarousel = () => {
+    const [currentSlide, setCurrentSlide] = useState(0)
+
+    const posts = [
+      {
+        id: 1,
+        title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+        image: ShopforthePlanet,
+        likes: 101,
+        comments: 50,
+      },
+      {
+        id: 2,
+        title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+        image: ShopforthePlanet_1,
+        likes: 101,
+        comments: 50,
+      },
+      {
+        id: 3,
+        title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+        image: LearnforthePlanet,
+        likes: 101,
+        comments: 50,
+      },
+      {
+        id: 4,
+        title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+        image: ShopforthePlanet,
+        likes: 101,
+        comments: 50,
+      },
+      {
+        id: 5,
+        title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+        image: ShopforthePlanet_1,
+        likes: 101,
+        comments: 50,
+      },
+      {
+        id: 6,
+        title: "Guardian Spotlight: When Fine Jewellery Honours Beauty and ...",
+        image: LearnforthePlanet,
+        likes: 101,
+        comments: 50,
+      },
+    ]
+
+    const nextSlide = () => {
+      setCurrentSlide((prev) => (prev + 1) % posts.length)
+    }
+
+    const prevSlide = () => {
+      setCurrentSlide((prev) => (prev - 1 + posts.length) % posts.length)
+    }
+
+    return (
+      <div className={styles.mobileLinkedInSlider}>
+        <button className={styles.mobileSliderArrowLeft} onClick={prevSlide}>
+          <img src={silderrightside} alt="Previous" />
+        </button>
+
+        <div className={styles.mobilePostCard}>
+          <div className={styles.mobilePostHeader}>
+            <img src={scaradelogo} alt="Sacred Groves" className={styles.mobilePostLogo} />
+            <img src={linkedln} alt="LinkedIn" className={styles.mobileLinkedinIcon} />
+          </div>
+
+          <p className={styles.mobilePostTitle}>{posts[currentSlide].title}</p>
+          <a href="#" className={styles.mobileReadMore}>Read more</a>
+
+          <div className={styles.mobilePostImageContainer}>
+            <img src={posts[currentSlide].image} alt="Post" className={styles.mobilePostImage} />
+            <div className={styles.mobilePostOverlay}>
+              <img src={posts[currentSlide].image === ShopforthePlanet ? ShopforthePlanet : posts[currentSlide].image === ShopforthePlanet_1 ? ShopforthePlanet_1 : LearnforthePlanet} alt="Overlay" className={styles.mobileOverlayImage} />
+            </div>
+          </div>
+
+          <div className={styles.mobilePostFooter}>
+            <div className={styles.mobilePostStats}>
+              <span className={styles.mobilePostStat}>
+                <img src={likeIcon} alt="Like" /> {posts[currentSlide].likes}
+              </span>
+              <span className={styles.mobilePostStat}>
+                <img src={commentIcon} alt="Comment" /> {posts[currentSlide].comments}
+              </span>
+            </div>
+            <button className={styles.mobileShareButton}>
+              <img src={shareIcon} alt="Share" /> Share
+            </button>
+          </div>
+        </div>
+
+        <button className={styles.mobileSliderArrowRight} onClick={nextSlide}>
+          <img src={silderleftarrow} alt="Next" />
+        </button>
+      </div>
+    )
   }
 
   return (
@@ -518,6 +711,53 @@ export const RecognizedGlobally: React.FC = () => {
                   </p>
                 </a>
               ))}
+            </div>
+
+            {/* Mobile Carousel */}
+            <div className={styles.mobileWrapper}>
+              <div className={styles.topDecorationMobile}>
+                <img src={Alexandrelogo} alt="Alexandrelogo" className={styles.treeIconMobile} />
+              </div>
+              <h1 className={styles.headingMobile}>Our impact is<br />being recognized<br />globally.</h1>
+
+              <div className={styles.mobileCarouselContainer}>
+                {/* Left Arrow */}
+                <button
+                  className={`${styles.mobileArrow} ${styles.mobileArrowLeft}`}
+                  onClick={prevMobileSlide}
+                  style={{ visibility: mobileCardIndex === 0 ? 'hidden' : 'visible' }}
+                >
+                  <img src={silderrightside} alt="Previous" />
+                </button>
+
+                {/* Current Card */}
+                <div className={styles.mobileCardWrapper}>
+                  <a
+                    href={recognitionCards[mobileCardIndex].url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.mobileCard}
+                  >
+                    <div className={styles.mobileCardHeader}>
+                      <div className={`${styles.logoContainer} ${recognitionCards[mobileCardIndex].logoAlignment === 'left' ? styles.logoContainerLeft : recognitionCards[mobileCardIndex].logoAlignment === 'right' ? styles.logoContainerRight : ''}`}>
+                        <img src={recognitionCards[mobileCardIndex].logo} alt="Recognition Logo" className={styles.mainLogo} />
+                      </div>
+                    </div>
+                    <p className={styles.mobileCardDescription}>
+                      {recognitionCards[mobileCardIndex].description}
+                    </p>
+                  </a>
+                </div>
+
+                {/* Right Arrow */}
+                <button
+                  className={`${styles.mobileArrow} ${styles.mobileArrowRight}`}
+                  onClick={nextMobileSlide}
+                  style={{ visibility: mobileCardIndex === recognitionCards.length - 1 ? 'hidden' : 'visible' }}
+                >
+                  <img src={silderleftarrow} alt="Next" />
+                </button>
+              </div>
             </div>
 
             {/* Carousel Navigation */}
@@ -598,6 +838,96 @@ export const RecognizedGlobally: React.FC = () => {
             </div>
 
           </div>
+
+          {/* Mobile Carousel for Seal of Trust */}
+          <div className={styles.mobileSealWrapper}>
+            <div className={styles.mobileSealCarousel}>
+              {mobileSealIndex === 0 ? (
+                // First slide: Background + Image + Title + First Trust Point
+                <div className={styles.mobileSealSlide}>
+                  <div className={styles.mobileSealIntroSlide}>
+                    <div className={styles.mobileSealImageWrapper}>
+                      <img src={SacredGrovesbackgroud} alt="Background" className={styles.mobileSealBackground} />
+                      <img src={SacredGrovesSealofTrustlogo} alt="Sacred Groves Seal of Trust" className={styles.mobileSealImage} />
+                    </div>
+                    <h2 className={styles.mobileSealTitle}>Sacred Groves<br />Seal of Trust</h2>
+                  </div>
+
+                  {/* First Trust Point */}
+                  <div className={styles.mobileTrustPoint}>
+                    <h3 className={styles.mobileTrustPointTitle}>
+                      {trustPoints[0].title.split('\n').map((line, index, array) => (
+                        <span key={index}>
+                          {line}
+                          {index < array.length - 1 && <br />}
+                        </span>
+                      ))}
+                    </h3>
+                    <p className={styles.mobileTrustPointDescription}>
+                      {trustPoints[0].description}
+                    </p>
+                  </div>
+                </div>
+              ) : mobileSealIndex === 1 ? (
+                // Second slide: Trust points 2, 3, 4 (indices 1, 2, 3)
+                <div className={styles.mobileSealSlide}>
+                  {[1, 2, 3].map((pointIndex, arrayIndex) => (
+                    <div key={pointIndex}>
+                      <div className={styles.mobileTrustPoint}>
+                        <h3 className={styles.mobileTrustPointTitle}>
+                          {trustPoints[pointIndex].title.split('\n').map((line, index, array) => (
+                            <span key={index}>
+                              {line}
+                              {index < array.length - 1 && <br />}
+                            </span>
+                          ))}
+                        </h3>
+                        <p className={styles.mobileTrustPointDescription}>
+                          {trustPoints[pointIndex].description}
+                        </p>
+                      </div>
+                      {arrayIndex < 2 && <div className={styles.mobileTrustSeparator} />}
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                // Third slide: Trust points 5, 6, 7 (indices 4, 5, 6)
+                <div className={styles.mobileSealSlide}>
+                  {[4, 5, 6].map((pointIndex, arrayIndex) => (
+                    <div key={pointIndex}>
+                      <div className={styles.mobileTrustPoint}>
+                        <h3 className={styles.mobileTrustPointTitle}>
+                          {trustPoints[pointIndex].title.split('\n').map((line, index, array) => (
+                            <span key={index}>
+                              {line}
+                              {index < array.length - 1 && <br />}
+                            </span>
+                          ))}
+                        </h3>
+                        <p className={styles.mobileTrustPointDescription}>
+                          {trustPoints[pointIndex].description}
+                        </p>
+                      </div>
+                      {arrayIndex < 2 && <div className={styles.mobileTrustSeparator} />}
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Carousel Dots */}
+            <div className={styles.mobileSealDots}>
+              {[0, 1, 2].map((index) => (
+                <button
+                  key={index}
+                  className={`${styles.mobileSealDot} ${mobileSealIndex === index ? styles.mobileSealDotActive : ''}`}
+                  onClick={() => setMobileSealIndex(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
         </section>
       </FadeInSection>
 
@@ -610,14 +940,14 @@ export const RecognizedGlobally: React.FC = () => {
               <img src={Builtwith} alt="Forest background" className={styles.wildTechImage} />
 
               {selectedTech ? (
-                <div 
+                <div
                   className={styles.detailCardOverlay}
-                      onClick={handleCloseTech}
+                  onClick={handleCloseTech}
                 >
-                  <div 
+                  <div
                     className={styles.detailCard}
                     onClick={(e) => e.stopPropagation()}
-                    >
+                  >
                     <div className={styles.cardContent}>
                       <h3 className={styles.cardTitle}>{selectedTech.title}</h3>
                       <span className={styles.cardSubtitle}>{selectedTech.subtitle}</span>
@@ -704,6 +1034,162 @@ export const RecognizedGlobally: React.FC = () => {
               </ul>
             </div>
           </div>
+
+          {/* Mobile Wild Tech */}
+          <div className={styles.mobileWildTechWrapper}>
+            {mobileWildTechScreen === 'intro' && (
+              <div className={styles.mobileWildTechIntro}>
+                <div className={styles.mobileWildTechContent}>
+                  {/* Top Icon */}
+                  <div className={styles.mobileWildTechIcon}>
+                    <img src={cardIcon} alt="Built with" />
+                  </div>
+
+                  <div className={styles.mobileWildTechHeading}>
+                    <span className={styles.mobileWildTechSubheading}>Built with</span>
+                    <h2 className={styles.mobileWildTechTitle}>Wild Tech</h2>
+                  </div>
+
+                  <h3 className={styles.mobileWildTechTagline}>
+                    Inspired by Nature.<br />
+                    Built for Nature.
+                  </h3>
+
+                  <p className={styles.mobileWildTechDescription}>
+                    Our technology learns from nature itself, the world's most brilliant designer.
+                  </p>
+
+                  <p className={styles.mobileWildTechDescription}>
+                    Wild Tech powers our <strong>Assisted Natural Regeneration</strong> model, enabling real, on-ground recovery.
+                    Blending art, science, and technology, our mission is to build ecosystems where every living
+                    thing can thrive, from vast rivers to the smallest fungi.
+                  </p>
+                </div>
+
+                <button className={styles.mobileWildTechRightArrow} onClick={goToWildTechOverview}>
+                  <img src={silderleftarrow} alt="Next" />
+                </button>
+              </div>
+            )}
+
+            {mobileWildTechScreen === 'overview' && (
+              <div className={styles.mobileWildTechOverview}>
+                <img src={Builtwith} alt="Forest background" className={styles.mobileWildTechBg} />
+
+                {/* Left Back Arrow */}
+                <button className={styles.mobileWildTechLeftArrow} onClick={() => setMobileWildTechScreen('intro')}>
+                  <img src={leftArrow2ndScreen} alt="Back" />
+                </button>
+
+                {/* Bubble Network Layout */}
+                <div className={styles.mobileWildTechBubbles}>
+                  {/* Row 1: Cloud (top center) */}
+                  <div className={styles.bubbleRow}>
+                    <div className={styles.bubbleItem}>
+                      <button
+                        className={styles.mobileWildTechBubble}
+                        onClick={() => goToWildTechDetail(4)}
+                      >
+                        <img src={techItems[4].bubbleIcon} alt={techItems[4].label} />
+                      </button>
+                      <div className={styles.bubbleLine} />
+                      <span className={styles.bubbleLabel}>{techItems[4].label}</span>
+                    </div>
+                  </div>
+
+                  {/* Row 2: Virtual Visits & Satellites */}
+                  <div className={styles.bubbleRow}>
+                    <div className={styles.bubbleItem}>
+                      <button
+                        className={styles.mobileWildTechBubble}
+                        onClick={() => goToWildTechDetail(2)}
+                      >
+                        <img src={techItems[2].bubbleIcon} alt={techItems[2].label} />
+                      </button>
+                      <div className={styles.bubbleLine} />
+                      <span className={styles.bubbleLabel}>{techItems[2].label}</span>
+                    </div>
+
+                    <div className={styles.bubbleItem}>
+                      <button
+                        className={styles.mobileWildTechBubble}
+                        onClick={() => goToWildTechDetail(1)}
+                      >
+                        <img src={techItems[1].bubbleIcon} alt={techItems[1].label} />
+                      </button>
+                      <div className={styles.bubbleLine} />
+                      <span className={styles.bubbleLabel}>{techItems[1].label}</span>
+                    </div>
+                  </div>
+
+                  {/* Row 3: Advanced Analytics & Blockchain */}
+                  <div className={styles.bubbleRow}>
+                    <div className={styles.bubbleItem}>
+                      <button
+                        className={styles.mobileWildTechBubble}
+                        onClick={() => goToWildTechDetail(3)}
+                      >
+                        <img src={techItems[3].bubbleIcon} alt={techItems[3].label} />
+                      </button>
+                      <div className={styles.bubbleLine} />
+                      <span className={styles.bubbleLabel}>{techItems[3].label}</span>
+                    </div>
+
+                    <div className={styles.bubbleItem}>
+                      <button
+                        className={styles.mobileWildTechBubble}
+                        onClick={() => goToWildTechDetail(0)}
+                      >
+                        <img src={techItems[0].bubbleIcon} alt={techItems[0].label} />
+                      </button>
+                      <div className={styles.bubbleLine} />
+                      <span className={styles.bubbleLabel}>{techItems[0].label}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {mobileWildTechScreen === 'detail' && (
+              <div className={styles.mobileWildTechDetail}>
+                {/* Background Image */}
+                <img src={Builtwith} alt="Forest background" className={styles.mobileWildTechDetailBg} />
+
+                <button className={styles.mobileWildTechBackArrow} onClick={backToWildTechOverview}>
+                  <img src={carouselArrowWildTech} alt="Back" />
+                </button>
+
+                <div className={styles.mobileWildTechDetailCard}>
+                  <h3 className={styles.mobileDetailCardTitle}>{techItems[mobileWildTechIndex].title}</h3>
+                  <span className={styles.mobileDetailCardSubtitle}>{techItems[mobileWildTechIndex].subtitle}</span>
+
+                  <div className={styles.mobileDetailCardIconWrapper}>
+                    <img
+                      src={techItems[mobileWildTechIndex].icon}
+                      alt={techItems[mobileWildTechIndex].title}
+                      className={styles.mobileDetailCardIcon}
+                    />
+                  </div>
+
+                  <p className={styles.mobileDetailCardDescription}>
+                    {techItems[mobileWildTechIndex].description}
+                  </p>
+                </div>
+
+                <div className={styles.mobileWildTechDots}>
+                  {techItems.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`${styles.mobileWildTechDot} ${mobileWildTechIndex === index ? styles.mobileWildTechDotActive : ''}`}
+                      onClick={() => setMobileWildTechIndex(index)}
+                      aria-label={`Go to ${techItems[index].label}`}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
         </section>
       </FadeInSection>
 
@@ -775,6 +1261,72 @@ export const RecognizedGlobally: React.FC = () => {
             </div>
 
           </div>
+
+          {/* Mobile Action Carousel */}
+          <div className={styles.mobileActionWrapper}>
+            <div className={styles.mobileActionCarousel}>
+              {mobileActionIndex === 0 ? (
+                // Intro Slide
+                <div className={styles.mobileActionIntro}>
+                  <div className={styles.mobileActionIcons}>
+                    <img src={Youcandosomethinglogo} alt="Nature Icons" />
+                  </div>
+                  <h2 className={styles.mobileActionHeading}>
+                    You can do<br />
+                    something positive<br />
+                    for nature, every<br />
+                    day.
+                  </h2>
+                  <p className={styles.mobileActionText}>
+                    Every choice you make, from how you bank
+                    to what you buy, shapes the world we share.
+                  </p>
+                  <p className={styles.mobileActionText}>
+                    We partner with brands that share this
+                    vision, making it easy to live your values and
+                    let your everyday actions give back to nature.
+                  </p>
+                </div>
+              ) : (
+                // Card Slides
+                <div className={styles.mobileActionCard}>
+                  <div className={styles.mobileActionImagesContainer}>
+                    {/* Birds Icon */}
+                    <img src={birds} alt="Birds" className={styles.mobileActionBirds} />
+
+                    {/* Images with CSS Borders */}
+                    <div className={styles.mobileActionImages}>
+                      <div className={styles.mobileActionImageWrapper}>
+                        <img src={actionItems[mobileActionIndex - 1].image1} alt="Action 1" />
+                      </div>
+                      <div className={styles.mobileActionImageWrapper}>
+                        <img src={actionItems[mobileActionIndex - 1].image2} alt="Action 2" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <h2 className={styles.mobileActionTitle}>
+                    {actionItems[mobileActionIndex - 1].title} for the Planet
+                  </h2>
+                  <p className={styles.mobileActionDescription}>
+                    {actionItems[mobileActionIndex - 1].description}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Carousel Dots */}
+            <div className={styles.mobileActionDots}>
+              {[0, 1, 2, 3, 4].map((index) => (
+                <button
+                  key={index}
+                  className={`${styles.mobileActionDot} ${mobileActionIndex === index ? styles.mobileActionDotActive : ''}`}
+                  onClick={() => setMobileActionIndex(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
         </section>
       </FadeInSection>
 
@@ -815,6 +1367,33 @@ export const RecognizedGlobally: React.FC = () => {
           </div>
         </section>
       </FadeInSection>
+
+      {/* Mobile Aligned Sections */}
+      <div className={styles.mobileAlignedWrapper}>
+        {/* Section 1: UN SDGs */}
+        <section className={styles.mobileAlignedSDG}>
+          <h2 className={styles.mobileSDGHeading}>
+            Aligned with the<br />
+            UN Sustainable<br />
+            Development<br />
+            Goals.
+          </h2>
+          <div className={styles.mobileSDGGrid}>
+            <img src={align_1} alt="SDG 12" className={styles.mobileSDGIcon} />
+            <img src={align_2} alt="SDG 13" className={styles.mobileSDGIcon} />
+            <img src={align_3} alt="SDG 15" className={styles.mobileSDGIcon} />
+            <img src={align_4} alt="SDG 17" className={styles.mobileSDGIcon} />
+          </div>
+        </section>
+
+        {/* Section 2: LinkedIn Carousel */}
+        <section className={styles.mobileAlignedCarousel}>
+          <MobileLinkedInCarousel />
+          <button className={styles.mobileFollowButton}>
+            FOLLOW US
+          </button>
+        </section>
+      </div>
 
       {/* Action Modal - Rendered at root level to avoid transform issues */}
       {showActionModal && (

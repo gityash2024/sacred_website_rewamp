@@ -27,6 +27,14 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+.mobileEarthImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
 }
 
 /* Container */
@@ -339,19 +347,50 @@
 }
 
 @media (max-width: 768px) {
+  .earthImage {
+    display: none;
+  }
 
-  .guardianCard,
-  .indicatorsCard {
+  .mobileEarthImage {
+    display: block;
+  }
+
+  .leftSection {
+    display: none;
+  }
+
+  .container {
+    justify-content: center;
+    align-items: flex-end;
+    /* Position text towards bottom or center? */
+    padding-bottom: 100px;
+    /* Add some space from bottom */
+  }
+
+  .headingSection {
+    text-align: right;
     width: 100%;
-    max-width: 300px;
+    margin-bottom: 150px;
+    /* Adjusted to match visual spacing in screenshot */
+    padding-right: 20px;
+    /* Add some padding from the edge */
   }
 
   .headingLine {
-    font-size: 30px;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1;
+    color: #F3F3F3;
+    display: block;
+    /* Ensure each span breaks into a new line */
   }
 
   .tagline {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    color: #FFFFFF;
+    margin-top: 16px;
   }
 }
 
@@ -440,6 +479,133 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.desktopContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.mobileCarousel {
+  display: none;
+  /* Hidden on desktop */
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carouselSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.mobileForestLogoWrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.mobileForestLogo {
+  width: 50px;
+  height: auto;
+}
+
+.mobileForestLogoText {
+  text-align: left;
+}
+
+.mobileForestLogoTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.mobileForestLogoSubtitle {
+  font-size: 12px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.mobileCarouselText {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 300px;
+}
+
+.mobileMapContainer {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.mobileMapImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mobileLocationInfo {
+  margin-bottom: 30px;
+}
+
+.mobileLocationName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+}
+
+.mobileLocationCountry {
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+}
+
+.mobileLocationCoords {
+  font-size: 10px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.carouselDots {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeDot {
+  background-color: #59C09A;
 }
 
 .forestLogoWrapper {
@@ -561,6 +727,15 @@
     align-items: center;
   }
 
+  .desktopContent {
+    display: flex;
+    /* Still visible on tablet/small desktop */
+  }
+
+  .mobileCarousel {
+    display: none;
+  }
+
   .forestLogoWrapper {
     justify-content: center;
   }
@@ -601,13 +776,22 @@
   }
 
   .habitatMapContainer {
-    width: 100%;
-    position: relative;
-    top: auto;
-    left: auto;
-    transform: none;
-    margin: 20px 0;
-    max-width: 100%;
+    display: none;
+    /* Hide the absolute map on mobile */
+  }
+
+  .desktopContent {
+    display: none;
+    /* Hide desktop content on mobile */
+  }
+
+  .mobileCarousel {
+    display: flex;
+    /* Show mobile carousel */
+  }
+
+  .darkSection {
+    padding: 40px 20px;
   }
 }
 
@@ -732,6 +916,17 @@
   letter-spacing: 0%;
 }
 
+.desktopSoccerText {
+  display: block;
+}
+
+.mobileSoccerText {
+  display: none;
+  text-align: center;
+  margin-top: 20px;
+  color: #ffffff;
+}
+
 /* Middle Section - Heading and Buttons - Row 2, Center Aligned */
 .guardianMiddle {
   grid-column: 1;
@@ -843,40 +1038,70 @@
 }
 
 @media (max-width: 768px) {
-  .guardianContent {
-    padding: 60px 20px;
-  }
-
   .guardianLayout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
     gap: 30px;
+    justify-items: center;
+    /* Center items horizontally */
   }
 
   .soccerCard {
-    padding: 25px;
-    max-width: 100%;
+    width: auto;
+    /* Fit content */
+    padding: 30px;
     margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .desktopSoccerText {
+    display: none;
+  }
+
+  .mobileSoccerText {
+    display: block;
+    max-width: 300px;
   }
 
   .guardianHeading {
     font-size: 28px;
+    text-align: center;
   }
 
   .guardianButtons {
     flex-direction: column;
     width: 100%;
-    max-width: 100%;
+    align-items: center;
   }
 
   .guardianBtn {
     width: 100%;
     justify-content: center;
+    max-width: 300px;
     padding: 14px 28px;
     font-size: 16px;
+  }
+
+  .joinArrow {
+    display: none;
+    /* Hide arrow on mobile */
+  }
+
+  .locationText {
+    text-align: left;
+    /* Align left on mobile */
+    width: 100%;
+    max-width: 300px;
+    /* Match other content width */
+    justify-self: center;
   }
 
   .locationText p {
     font-size: 14px;
     white-space: normal;
+    text-align: left;
   }
 }
 
@@ -921,7 +1146,7 @@
   box-sizing: border-box;
 }
 
-.peopleImageSection > div {
+.peopleImageSection>div {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -958,7 +1183,7 @@
   margin-left: -1px;
 }
 
-.peopleContentSection > div {
+.peopleContentSection>div {
   margin: 0;
   padding: 0;
   border: none;
@@ -1089,65 +1314,76 @@
 }
 
 @media (max-width: 1200px) {
-  .peopleContainer {
-    flex-direction: column;
-  }
-
-  .peopleImageSection,
   .peopleContentSection {
-    flex: none;
-    width: 100%;
-  }
-
-  .peopleImageSection {
-    height: 50vh;
-    min-height: 300px;
-  }
-
-  .peopleContentSection {
-    padding: 60px 40px;
-    min-height: auto;
-    align-items: center;
-    text-align: center;
+    padding: 40px 30px;
   }
 
   .peopleHeading {
     font-size: 42px;
-  }
-
-  .peopleSubheading {
-    font-size: 24px;
+    line-height: 1.2;
   }
 }
 
 @media (max-width: 768px) {
+  .peopleContainer {
+    flex-direction: row;
+    /* Force row layout */
+    min-height: 100vh;
+    background-image: var(--mobile-bg-image);
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-color: #03303D;
+    /* Fallback color */
+  }
+
   .peopleImageSection {
-    min-height: 40vh;
+    flex: 0 0 50%;
+    width: 50%;
+    height: auto;
+    min-height: 100vh;
+    /* Full height */
+    background: transparent;
+    /* Transparent to show container bg */
+  }
+
+  .peopleImage {
+    display: none;
+    /* Hide the actual image tag */
   }
 
   .peopleContentSection {
-    padding: 40px 30px;
-    gap: 20px;
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 40px 20px;
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+    background-color: rgba(3, 48, 61, 0.85);
+    /* Semi-transparent overlay */
   }
 
   .wildlifeIconsImage {
-    height: 45px;
+    height: 40px;
   }
 
   .peopleHeading {
-    font-size: 36px;
+    font-size: 32px;
+    line-height: 1.2;
   }
 
   .peopleSubheading {
     font-size: 18px;
-  }
-
-  .benefitsList {
-    margin: 15px 0;
-    gap: 10px;
+    line-height: 1.3;
   }
 
   .benefitsList li {
+    font-size: 16px;
+    line-height: 1.4;
+    padding-left: 20px;
+  }
+
+  .benefitsList li::before {
     font-size: 16px;
   }
 
@@ -1302,7 +1538,11 @@
   width: 14px;
   height: 14px;
   transition: filter 0.3s ease;
+
+
+
 }
+
 
 .businessJoinButton:hover .businessJoinArrow,
 .businessJoinButton:active .businessJoinArrow {
@@ -1383,46 +1623,103 @@
 }
 
 @media (max-width: 768px) {
+  .businessSection {
+    min-height: auto;
+    /* Remove full height constraint */
+    height: auto;
+  }
+
+
+
+  .businessContainer {
+    flex-direction: column;
+    position: relative;
+    /* For absolute positioning of image */
+    padding-top: 0;
+    min-height: auto;
+    /* Remove full height constraint */
+  }
+
   .businessContentSection {
-    padding: 40px 30px;
-    gap: 20px;
+    width: 100%;
+    flex: none;
+    padding: 40px 20px;
+    padding-left: 30px;
+    /* Align with design */
+  }
+
+  .businessImageSection {
+    position: absolute;
+    top: 53px;
+    /* Adjust top position */
+    right: 39px;
+    width: 45%;
+    padding: 0;
+    justify-content: center;
+    flex: none;
+    min-height: auto;
+  }
+
+  .businessImage {
+    width: 100%;
+    max-width: 160px;
+    /* Restrict max width */
   }
 
   .businessIconsImage {
-    height: 45px;
+    height: 40px;
+    /* Smaller icons */
   }
 
   .businessHeading {
-    font-size: 36px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 32px;
+    max-width: 60%;
+    /* Ensure text doesn't overlap image too much */
   }
 
   .businessSubheading {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 100%;
+    margin-top: 20px;
   }
 
   .businessList {
-    margin: 15px 0;
+    margin: 20px 0;
     gap: 10px;
   }
 
   .businessList li {
     font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    padding-left: 20px;
+  }
+
+  .businessList li::before {
+    font-size: 16px;
+    top: 0;
   }
 
   .businessJoinButton {
+    align-self: flex-start;
+    /* Align left */
+    width: auto;
+    /* Auto width */
+    justify-content: flex-start;
     padding: 14px 40px;
-    font-size: 16px;
-    margin-top: 10px;
+    gap: 0;
   }
 
   .businessJoinArrow {
-    width: 16px;
-    height: 16px;
+    display: none !important;
   }
 
   .businessImageSection {
-    padding: 30px;
-    min-height: 40vh;
+    padding: 10px;
+    /* min-height: 40vh; */
   }
 }
 

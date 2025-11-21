@@ -181,6 +181,123 @@
   transition: transform 0.2s ease;
 }
 
+/* Mobile Carousel Styles */
+.mobileCarouselContainer {
+  display: none;
+}
+
+.mobileWrapper {
+  display: none;
+  /* Hidden on desktop */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px 20px;
+    /* Further reduced padding */
+    min-height: auto;
+    /* Remove min-height to fit content */
+  }
+
+  .topDecoration,
+  .heading,
+  .recognitionCards,
+  .carouselNavigation {
+    display: none;
+  }
+
+  .mobileWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 0;
+    /* Remove gap */
+  }
+
+  .mobileCarouselContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    padding: 0 10px;
+  }
+
+  .mobileArrow {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileArrow img {
+    width: 32px;
+    /* Increased for bolder appearance */
+    height: 32px;
+    /* #59C09A color */
+  }
+
+  .mobileCardWrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  .mobileCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 320px;
+    text-decoration: none;
+  }
+
+  .topDecorationMobile {
+    margin-bottom: 15px;
+    /* Reduced margin */
+  }
+
+  .treeIconMobile {
+    height: 60px;
+    /* Increased size */
+    width: auto;
+  }
+
+  .headingMobile {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: #03303D;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    /* Added bottom margin as requested */
+    text-align: center;
+  }
+
+  .mobileCardHeader {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .mobileCardDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #03303D;
+    text-align: center;
+    max-width: 280px;
+  }
+}
+
 /* ========================================
  * SECTION 2: Sacred Groves Seal of Trust Section
  * ========================================*/
@@ -377,6 +494,146 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Mobile Seal of Trust Carousel */
+.mobileSealWrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sealOfTrustSection {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+
+  .sealBackground,
+  .sealContent {
+    display: none;
+  }
+
+  .mobileSealWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 30px;
+  }
+
+  .mobileSealCarousel {
+    width: 100%;
+    max-width: 350px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobileSealSlide {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .mobileSealIntroSlide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .mobileSealImageWrapper {
+    position: relative;
+    width: 90vw;
+    /* Increased to 90vw */
+    max-width: 400px;
+    /* Max width constraint */
+    height: auto;
+    aspect-ratio: 1;
+    /* Maintain square aspect */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    /* Center horizontally */
+  }
+
+  .mobileSealBackground {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 0;
+  }
+
+  .mobileSealImage {
+    position: relative;
+    width: 85%;
+    /* Relative to wrapper */
+    height: auto;
+    z-index: 1;
+  }
+
+  .mobileSealTitle {
+    display: none;
+    /* Hidden as title is in the image */
+  }
+
+  .mobileTrustPoint {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mobileTrustSeparator {
+    width: 100%;
+    height: 1px;
+    background-color: #59C09A;
+    margin: 20px 0;
+  }
+
+  .mobileTrustPointTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #03303D;
+    line-height: 1.3;
+    text-align: left;
+    text-transform: uppercase;
+    font-variant: small-caps;
+  }
+
+  .mobileTrustPointDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #03303D;
+    text-align: left;
+  }
+
+  .mobileSealDots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .mobileSealDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid #03303D;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .mobileSealDotActive {
+    background-color: #03303D;
   }
 }
 
@@ -925,6 +1182,354 @@
   margin: 0;
   max-width: 100%;
   letter-spacing: 0%;
+  object-fit: contain;
+}
+
+/* Mobile Wild Tech Styles */
+.mobileWildTechWrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .wildTechContent {
+    display: none;
+  }
+
+  .wildTechSection {
+    min-height: auto;
+    /* Remove fixed height on mobile */
+    padding: 0;
+  }
+
+  .mobileWildTechWrapper {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    /* Content-based height */
+    position: relative;
+  }
+
+  /* Screen 1: Intro */
+  .mobileWildTechIntro {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: auto;
+    padding: 40px 80px 40px 40px;
+    /* Further reduced padding */
+    position: relative;
+  }
+
+  .mobileWildTechContent {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* Increased gap */
+    max-width: 100%;
+    flex: 1;
+  }
+
+  .mobileWildTechIcon {
+    margin-bottom: 15px;
+  }
+
+  .mobileWildTechIcon img {
+    width: 160px;
+    /* Increased from 100px */
+    height: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .mobileWildTechSubheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    /* Increased from 14px */
+    font-weight: 500;
+    font-style: italic;
+    color: #59C09A;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .mobileWildTechTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    font-style: italic;
+    color: #FFFFFF;
+    line-height: 1.2;
+  }
+
+  .mobileWildTechTagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 1.4;
+    margin-top: 5px;
+  }
+
+  .mobileWildTechDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    /* Increased from 13px */
+    font-weight: 400;
+    line-height: 1.7;
+    /* Increased line height */
+    color: #FFFFFF;
+    margin: 0;
+  }
+
+
+
+  .mobileWildTechRightArrow {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .mobileWildTechRightArrow img {
+    width: 50px;
+    height: 50px;
+    /* #59C09A color */
+  }
+
+  /* Screen 2: Overview (Horizontal Bubbles) */
+  .mobileWildTechOverview {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 60px 20px;
+  }
+
+  .mobileWildTechBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .mobileWildTechLeftArrow {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .mobileWildTechLeftArrow img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .mobileWildTechBubbles {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .bubbleRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+  }
+
+  .bubbleItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobileWildTechBubble {
+    background-color: #FFFFFF;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    /* Prevent shrinking */
+    min-height: 100px;
+    /* Prevent shrinking */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    /* Enforce square aspect */
+  }
+
+  .mobileWildTechBubble:active {
+    transform: scale(0.95);
+  }
+
+  .mobileWildTechBubble img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .bubbleLine {
+    width: 2px;
+    height: 40px;
+    background-color: #FFFFFF;
+    opacity: 0.8;
+  }
+
+  .bubbleLabel {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    /* Bold */
+    color: #59C09A;
+    /* Green */
+    text-align: center;
+    max-width: 120px;
+    line-height: 1.3;
+  }
+
+  /* Screen 3: Detail Carousel */
+  .mobileWildTechDetail {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 30px 80px;
+    overflow: hidden;
+  }
+
+  .mobileWildTechDetailBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .mobileWildTechBackArrow {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .mobileWildTechBackArrow img {
+    width: 30px;
+    height: 30px;
+    /* filter: invert(1); */
+  }
+
+  .mobileWildTechDetailCard {
+    background-color: #59C09A;
+    border-radius: 20px;
+    padding: 40px 30px;
+    max-width: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .mobileDetailCardTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #03303D;
+    line-height: 1.2;
+  }
+
+  .mobileDetailCardSubtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #03303D;
+    line-height: 1.3;
+  }
+
+  .mobileDetailCardIconWrapper {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin: 10px 0;
+  }
+
+  .mobileDetailCardIcon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .mobileDetailCardDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #03303D;
+  }
+
+  .mobileWildTechDots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .mobileWildTechDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .mobileWildTechDotActive {
+    background-color: #59C09A;
+  }
 }
 
 /* ========================================
@@ -941,6 +1546,19 @@
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .youCanDoSection {
+    background-color: #ffffff;
+    /* Override to white on mobile */
+    min-height: auto;
+  }
+}
+
+.mobileActionWrapper {
+  display: none;
+  /* Hidden on desktop */
+}
+
 .youCanDoContent {
   max-width: 1400px;
   margin: 0 auto;
@@ -950,6 +1568,23 @@
   width: 100%;
   padding: 80px 40px;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .youCanDoContent {
+    display: none;
+    /* Hide desktop content on mobile */
+  }
+}
+
+.mobileAlignedWrapper {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobileAlignedWrapper {
+    display: block;
+  }
 }
 
 /* Left Side - Text Content */
@@ -1103,6 +1738,377 @@
   object-fit: cover;
 }
 
+/* Mobile Action Carousel */
+@media (max-width: 768px) {
+  .mobileActionWrapper {
+    display: block;
+    width: 100%;
+    padding: 80px 20px;
+    background-color: #ffffff;
+    /* Match section background */
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .mobileActionCarousel {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Intro Slide */
+  .mobileActionIntro {
+    text-align: left;
+    padding: 0 20px;
+  }
+
+  .mobileActionIcons {
+    margin-bottom: 30px;
+  }
+
+  .mobileActionIcons img {
+    height: 50px;
+    width: auto;
+  }
+
+  .mobileActionHeading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #03303D;
+    line-height: 1.2;
+    margin-bottom: 30px;
+  }
+
+  .mobileActionText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #03303D;
+    margin-bottom: 20px;
+  }
+
+  /* Card Slides */
+  .mobileActionCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .mobileActionImagesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    height: 300px;
+    /* Increased height */
+    position: relative;
+    width: 240px;
+    /* Fixed width for borders */
+    padding: 20px;
+  }
+
+  /* Curved Borders using SVG Background Images */
+  .mobileActionImagesContainer::before,
+  .mobileActionImagesContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  /* Left Curve */
+  .mobileActionImagesContainer::before {
+    left: -40px;
+    background-image: url('/src/assets/left_border.svg');
+  }
+
+  /* Right Curve */
+  .mobileActionImagesContainer::after {
+    right: -40px;
+    background-image: url('/src/assets/right_border.svg');
+  }
+
+  /* Birds Icon */
+  /* Birds Icon */
+  .mobileActionBirds {
+    position: absolute;
+    top: -20px;
+    right: -60px;
+    /* Positioned near right border top */
+    left: auto;
+    width: 60px;
+    height: auto;
+    z-index: 1;
+    transform: scaleX(-1);
+    /* Flip horizontally to face inward if needed, or just to match design */
+  }
+
+  .mobileActionImages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobileActionImageWrapper {
+    width: 140px;
+    /* Increased size */
+    height: 140px;
+    /* Increased size */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .mobileActionImageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mobileActionTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #03303D;
+    margin-bottom: 15px;
+  }
+
+  .mobileActionDescription {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #03303D;
+    padding: 0 20px;
+  }
+
+  /* Dots */
+  .mobileActionDots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+  }
+
+  .mobileActionDot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(3, 48, 61, 0.3);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .mobileActionDotActive {
+    background-color: #03313E;
+    /* Active dot color requested */
+    transform: scale(1.2);
+  }
+
+  /* Mobile Aligned Sections */
+  .mobileAlignedWrapper {
+    display: block;
+    width: 100%;
+  }
+
+  /* Section 1: UN SDGs */
+  .mobileAlignedSDG {
+    background-color: #B8E0D3;
+    padding: 60px 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .mobileSDGHeading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #03303D;
+    line-height: 1.2;
+    margin-bottom: 40px;
+  }
+
+  .mobileSDGGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  .mobileSDGIcon {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Section 2: LinkedIn Carousel */
+  .mobileAlignedCarousel {
+    background-color: #03313E;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  .mobileLinkedInSlider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+
+  .mobileSliderArrowLeft,
+  .mobileSliderArrowRight {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobilePostCard {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    width: 100%;
+    max-width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .mobilePostHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .mobilePostLogo {
+    height: 30px;
+    width: auto;
+  }
+
+  .mobileLinkedinIcon {
+    height: 24px;
+    width: auto;
+  }
+
+  .mobilePostTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    line-height: 1.4;
+    text-align: left;
+  }
+
+  .mobileReadMore {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #666666;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+  }
+
+  .mobilePostImageContainer {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .mobilePostImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .mobilePostOverlay {
+    display: none;
+    /* Hide overlay for now as per simple card design */
+  }
+
+  .mobilePostFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+  }
+
+  .mobilePostStats {
+    display: flex;
+    gap: 15px;
+  }
+
+  .mobilePostStat {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #666666;
+  }
+
+  .mobileShareButton {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: #666666;
+    cursor: pointer;
+  }
+
+  .mobileFollowButton {
+    background-color: #44D09F;
+    color: #03303D;
+    /* Green button color */
+    /* color: #ffffff; */
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    /* font-weight: 600; */
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+}
+
 /* ========================================
  * SECTION 5: Aligned with UN SDGs Section
  * ========================================*/
@@ -1114,6 +2120,12 @@
   width: 100%;
   max-width: 100vw;
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .alignedSection {
+    display: none;
+  }
 }
 
 .alignedContainer {

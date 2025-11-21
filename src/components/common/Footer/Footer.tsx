@@ -43,10 +43,8 @@ export const Footer = () => {
             <h3>People for the Planet</h3>
             <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer">Protect a Habitat</a>
             <a href="/people-for-the-planet" target="_blank" rel="noopener noreferrer">Gift a Habitat</a>
-          </div>
 
-          <div>
-            <h3>Business for the Planet</h3>
+            <h3 className={styles.legalHeading}>Business for the Planet</h3>
             <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Partnership for the Planet</a>
             <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">myEarth Point</a>
             <a href="/business-for-the-planet" target="_blank" rel="noopener noreferrer">Junk to Jungles</a>

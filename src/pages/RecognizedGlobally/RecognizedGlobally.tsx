@@ -1378,7 +1378,10 @@ export const RecognizedGlobally: React.FC = () => {
         {/* Section 2: LinkedIn Carousel */}
         <section className={styles.mobileAlignedCarousel}>
           <MobileLinkedInCarousel />
-          <button className={styles.mobileFollowButton}>
+          <button
+            className={styles.mobileFollowButton}
+            onClick={() => window.open('https://www.linkedin.com/company/the-sacred-groves/', '_blank')}
+          >
             FOLLOW US
           </button>
         </section>

@@ -210,47 +210,112 @@
     padding: 40px 0 20px;
   }
 
+  /* Hide FOLLOW US button from footer on mobile */
+  .followContainer {
+    display: none;
+  }
+
   .container {
     padding: 0 20px;
   }
 
   .footerGrid {
     grid-template-columns: 1fr;
-    gap: 30px;
-    text-align: center;
+    gap: 25px; /* Reduced gap between sections */
+    text-align: left; /* Left-aligned on mobile */
+  }
+
+  .footerGrid h3 {
+    text-align: left; /* Left-aligned headings */
+  }
+
+  .footerGrid a {
+    text-align: left; /* Left-aligned links */
   }
 
   .contactSection {
-    text-align: center;
+    text-align: left; /* Left-aligned contact section */
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Align items to left */
+    gap: 0; /* Remove default gap */
+  }
+
+  .contactSection .logo {
+    margin-bottom: 10px;
+  }
+
+  .contactSection p {
+    margin-bottom: 12px;
+  }
+
+  .contactSection .socialIcons {
+    margin-bottom: 12px;
+  }
+
+  .contactSection .mail {
+    margin-bottom: 12px;
+  }
+
+  .contactSection .downloadHeading {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  .contactSection .appButtons {
+    margin-bottom: 0; /* No margin after app buttons */
+  }
+
+  .logo {
+    align-self: flex-start; /* Logo aligned to left */
+  }
+
+  .contactSection p {
+    text-align: left; /* Address left-aligned */
   }
 
   .socialIcons {
-    justify-content: center;
+    justify-content: flex-start; /* Social icons aligned to left */
+  }
+
+  .mail {
+    text-align: left; /* Email left-aligned */
+  }
+
+  .downloadHeading {
+    text-align: left; /* Download heading left-aligned */
+    margin-bottom: 10px; /* Reduce space after heading */
   }
 
   .appButtons {
-    justify-content: center;
+    justify-content: flex-start; /* App buttons aligned to left */
+    margin-bottom: 0; /* Remove any bottom margin */
   }
 
   .footerBottom {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px; /* Reduced gap */
+    align-items: flex-start; /* Left-aligned footer bottom */
+    text-align: left; /* Left-aligned text */
+    margin-top: 30px; /* Reduced top margin */
   }
 
+  /* Hide left icon on mobile */
   .leftIcons {
-    width: 100px;
+    display: none;
   }
 
+  /* Show only right icon on mobile */
   .rightIcons {
-    width: 150px;
+    width: 100%;
+    max-width: 65%; /* 65% max width */
+    align-self: center; /* Center horizontally */
+    margin-top: 15px; /* Top margin */
   }
 
   .footerBottom p {
     order: -1;
-    /* Put text above icons if desired, or remove this line to keep order */
     width: 100%;
+    text-align: left; /* Left-aligned copyright text */
   }
 }

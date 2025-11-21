@@ -221,24 +221,31 @@
 
   .footerGrid {
     grid-template-columns: 1fr;
-    gap: 25px; /* Reduced gap between sections */
-    text-align: left; /* Left-aligned on mobile */
+    gap: 25px;
+    /* Reduced gap between sections */
+    text-align: left;
+    /* Left-aligned on mobile */
   }
 
   .footerGrid h3 {
-    text-align: left; /* Left-aligned headings */
+    text-align: left;
+    /* Left-aligned headings */
   }
 
   .footerGrid a {
-    text-align: left; /* Left-aligned links */
+    text-align: left;
+    /* Left-aligned links */
   }
 
   .contactSection {
-    text-align: left; /* Left-aligned contact section */
+    text-align: left;
+    /* Left-aligned contact section */
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to left */
-    gap: 0; /* Remove default gap */
+    align-items: flex-start;
+    /* Align items to left */
+    gap: 0;
+    /* Remove default gap */
   }
 
   .contactSection .logo {
@@ -263,41 +270,54 @@
   }
 
   .contactSection .appButtons {
-    margin-bottom: 0; /* No margin after app buttons */
+    margin-bottom: 0;
+    /* No margin after app buttons */
   }
 
   .logo {
-    align-self: flex-start; /* Logo aligned to left */
+    align-self: flex-start;
+    /* Logo aligned to left */
   }
 
   .contactSection p {
-    text-align: left; /* Address left-aligned */
+    text-align: left;
+    /* Address left-aligned */
   }
 
   .socialIcons {
-    justify-content: flex-start; /* Social icons aligned to left */
+    justify-content: flex-start;
+    /* Social icons aligned to left */
   }
 
   .mail {
-    text-align: left; /* Email left-aligned */
+    text-align: left;
+    /* Email left-aligned */
   }
 
   .downloadHeading {
-    text-align: left; /* Download heading left-aligned */
-    margin-bottom: 10px; /* Reduce space after heading */
+    text-align: left;
+    /* Download heading left-aligned */
+    margin-bottom: 10px;
+    /* Reduce space after heading */
   }
 
   .appButtons {
-    justify-content: flex-start; /* App buttons aligned to left */
-    margin-bottom: 0; /* Remove any bottom margin */
+    justify-content: flex-start;
+    /* App buttons aligned to left */
+    margin-bottom: 0;
+    /* Remove any bottom margin */
   }
 
   .footerBottom {
     flex-direction: column;
-    gap: 15px; /* Reduced gap */
-    align-items: flex-start; /* Left-aligned footer bottom */
-    text-align: left; /* Left-aligned text */
-    margin-top: 30px; /* Reduced top margin */
+    gap: 15px;
+    /* Reduced gap */
+    align-items: flex-start;
+    /* Left-aligned footer bottom */
+    text-align: left;
+    /* Left-aligned text */
+    margin-top: 30px;
+    /* Reduced top margin */
   }
 
   /* Hide left icon on mobile */
@@ -308,14 +328,18 @@
   /* Show only right icon on mobile */
   .rightIcons {
     width: 100%;
-    max-width: 65%; /* 65% max width */
-    align-self: center; /* Center horizontally */
-    margin-top: 15px; /* Top margin */
+    max-width: 65%;
+    /* 65% max width */
+    align-self: center;
+    /* Center horizontally */
+    margin-top: 15px;
+    /* Top margin */
   }
 
   .footerBottom p {
     order: -1;
     width: 100%;
-    text-align: left; /* Left-aligned copyright text */
+    text-align: left;
+    /* Left-aligned copyright text */
   }
 }

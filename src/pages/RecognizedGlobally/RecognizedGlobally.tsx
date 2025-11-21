@@ -467,18 +467,7 @@ export const RecognizedGlobally: React.FC = () => {
   // Mobile Seal of Trust Carousel State
   const [mobileSealIndex, setMobileSealIndex] = useState(0)
 
-  const nextSealSlide = () => {
-    // Total slides: 3
-    if (mobileSealIndex < 2) {
-      setMobileSealIndex(prev => prev + 1)
-    }
-  }
 
-  const prevSealSlide = () => {
-    if (mobileSealIndex > 0) {
-      setMobileSealIndex(prev => prev - 1)
-    }
-  }
 
   // Mobile Wild Tech State
   const [mobileWildTechScreen, setMobileWildTechScreen] = useState<'intro' | 'overview' | 'detail'>('intro')

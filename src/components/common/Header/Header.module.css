@@ -5,6 +5,11 @@
   top: 0;
   z-index: 1000;
   width: 100%;
+  transition: all 0.3s ease;
+}
+
+.header.searchExpanded {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .skipLink {
@@ -37,12 +42,25 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+}
+
+.header.searchExpanded .container {
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header.searchExpanded .logo {
+  align-self: flex-start;
+  padding-top: 0;
+  margin-top: 15px;
 }
 
 .logoImage {
@@ -55,6 +73,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.header.searchExpanded .navRight {
+  flex: 1;
+  justify-content: flex-start;
+  margin-left: 40px;
+  align-items: flex-start;
 }
 
 .signUpButton,
@@ -85,6 +110,89 @@
   display: flex;
   align-items: center;
   position: relative;
+  width: 100%;
+}
+
+.searchExpandedContent {
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  margin-left: 0;
+}
+
+.searchInputContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.header.searchExpanded .searchButton {
+  flex-shrink: 0;
+}
+
+.searchInputExpanded {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 0;
+  border: 1px solid #D9D9D9;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  color: #03303D;
+  transition: all 0.3s ease;
+}
+
+.searchInputExpanded:focus {
+  outline: none;
+  border-color: #03303D;
+  box-shadow: none;
+}
+
+.searchInputExpanded::placeholder {
+  color: #999;
+}
+
+.popularSearches {
+  padding-top: 10px;
+}
+
+.popularSearchesLabel {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.popularSearchesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+}
+
+.popularSearchItem {
+  background: none;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #03303D;
+  cursor: pointer;
+  padding: 8px 0;
+  text-align: left;
+  transition: color 0.3s ease;
+  width: 100%;
+}
+
+.popularSearchItem:hover {
+  color: #59c09a;
 }
 
 .searchButton,
@@ -100,6 +208,10 @@
   cursor: pointer;
   transition: all 0.3s ease;
   flex-shrink: 0;
+}
+
+.header.searchExpanded .menuButton {
+  display: none;
 }
 
 .searchButton:hover,
@@ -452,6 +564,23 @@
   .sidebar {
     max-width: 100%;
     /* Full width on mobile */
+  }
+
+  .searchExpandedContent {
+    padding: 15px 0;
+  }
+
+  .searchInputExpanded {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  .popularSearchesLabel {
+    font-size: 12px;
+  }
+
+  .popularSearchItem {
+    font-size: 14px;
   }
 }
 

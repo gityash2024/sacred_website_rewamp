@@ -14,7 +14,7 @@ export const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.followContainer}>
-        <a href="#" className={styles.followButton}>
+        <a href="https://www.linkedin.com/company/the-sacred-groves/" target="_blank" rel="noopener noreferrer" className={styles.followButton}>
           FOLLOW US
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

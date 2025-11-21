@@ -25,9 +25,42 @@ export const Header: React.FC = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null)
   const inputRef = useRef<HTMLInputElement | null>(null)
+  const searchContainerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
-    if (searchOpen) inputRef.current?.focus()
+    if (searchOpen) {
+      inputRef.current?.focus()
+    }
+  }, [searchOpen])
+
+  // Close search when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchOpen) {
+        const target = event.target as HTMLElement
+        // Check if click is outside search container and not on any search button
+        if (
+          searchContainerRef.current &&
+          !searchContainerRef.current.contains(target) &&
+          !target.closest(`.${styles.searchButton}`) &&
+          !target.closest(`.${styles.searchWrap}`)
+        ) {
+          setSearchOpen(false)
+        }
+      }
+    }
+
+    if (searchOpen) {
+      // Use a small delay to avoid immediate closure when opening
+      const timeoutId = setTimeout(() => {
+        document.addEventListener('mousedown', handleClickOutside)
+      }, 100)
+
+      return () => {
+        clearTimeout(timeoutId)
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    }
   }, [searchOpen])
 
   // Prevent body scroll when sidebar is open
@@ -91,8 +124,13 @@ export const Header: React.FC = () => {
     }
   ]
 
+  const popularSearches = [
+    'Business for the Planet',
+    'Stories that inspire us'
+  ]
+
   return (
-    <header className={`${styles.header} ${sidebarOpen ? styles.headerHidden : ''}`} role="banner">
+    <header className={`${styles.header} ${sidebarOpen ? styles.headerHidden : ''} ${searchOpen ? styles.searchExpanded : ''}`} role="banner">
       <div className={styles.headerContent}>
         <a href="#main-content" className={styles.skipLink}>
           Skip to main content
@@ -111,28 +149,63 @@ export const Header: React.FC = () => {
                 </>
               )}
 
-              <div className={styles.searchWrap}>
+              <div className={styles.searchWrap} ref={searchContainerRef}>
                 {searchOpen && (
+                  <div className={styles.searchExpandedContent}>
+                    <div className={styles.searchInputContainer}>
                   <input
                     ref={inputRef}
-                    className={`${styles.searchInput} ${searchOpen ? styles.visible : ''}`}
+                        className={styles.searchInputExpanded}
                     type="search"
                     placeholder="Search"
                     aria-label="Search"
                   />
+                      <button
+                        className={styles.searchButton}
+                        aria-label="Close search"
+                        onClick={() => setSearchOpen(false)}
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                          <path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                          <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                    <div className={styles.popularSearches}>
+                      <p className={styles.popularSearchesLabel}>Popular searches</p>
+                      <ul className={styles.popularSearchesList}>
+                        {popularSearches.map((search, index) => (
+                          <li key={index}>
+                            <button
+                              className={styles.popularSearchItem}
+                              onClick={() => {
+                                // Handle search click - you can add navigation logic here
+                                setSearchOpen(false)
+                              }}
+                            >
+                              {search}
+                            </button>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
                 )}
+                {!searchOpen && (
                 <button
                   className={styles.searchButton}
-                  aria-label={searchOpen ? 'Close search' : 'Open search'}
-                  onClick={() => setSearchOpen(prev => !prev)}
+                    aria-label="Open search"
+                    onClick={() => setSearchOpen(true)}
                 >
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                     <path d="M11 19a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                     <path d="M21 21l-4.35-4.35" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
+                )}
               </div>
 
+              {!searchOpen && (
               <button
                 className={styles.menuButton}
                 aria-label="Menu"
@@ -142,6 +215,7 @@ export const Header: React.FC = () => {
                 <span></span>
                 <span></span>
               </button>
+              )}
             </div>
           </div>
         </nav>

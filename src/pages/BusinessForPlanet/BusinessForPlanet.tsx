@@ -9,7 +9,7 @@ import fly from '@/assets/fly.svg'
 
 import bussionconnection from '@/assets/bussionconnection.svg'
 import tree from '@/assets/tree.svg'
-import dotdotbox from '@/assets/dotdotbox.svg'
+// import dotdotbox from '@/assets/dotdotbox.svg'
 import plant from '@/assets/plant.svg'
 import Prosperity from '@/assets/Prosperity.svg'
 import purpose from '@/assets/purpose.svg'

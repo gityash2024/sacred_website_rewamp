@@ -1016,6 +1016,7 @@
   position: relative;
   line-height: 38px;
   letter-spacing: 0%;
+  cursor: pointer;
 }
 
 .benefitsList li::before {
@@ -1048,7 +1049,7 @@
 
 .joinButton:hover,
 .joinButton:active {
-  background: #03303D;
+  background: #59C09A;
   color: #ffffff;
   transform: translateY(-2px);
   box-shadow: none;

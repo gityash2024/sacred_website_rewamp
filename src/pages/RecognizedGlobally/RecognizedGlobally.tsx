@@ -41,9 +41,14 @@ import openArrow from '@/assets/close_trust_point_arrow.svg'
 import Youcandosomethinglogo from '@/assets/Youcandosomethinglogo.svg'
 import InvestforthePlanet from '@/assets/InvestforthePlanet.svg'
 import InvestforthePlanet_1 from '@/assets/InvestforthePlanet_1.svg'
+// LinkedIn carousel images (keep separate)
 import ShopforthePlanet from '@/assets/linked_in_post.png'
 import ShopforthePlanet_1 from '@/assets/linked_in_post.png'
 import LearnforthePlanet from '@/assets/linked_in_post.png'
+// Action Cards images (separate from LinkedIn carousel)
+import ShopforthePlanetActionCard1 from '@/assets/2nd_row_first_image.png'
+import ShopforthePlanetActionCard2 from '@/assets/2nd_row_2nd_image.png'
+import LearnforthePlanetActionCard1 from '@/assets/3rd_row_1st_image.png'
 import LearnforthePlanet_1 from '@/assets/LearnforthePlanet_1.svg'
 import JoyforthePlanet from '@/assets/JoyforthePlanet.svg'
 import JoyforthePlanet_1 from '@/assets/JoyforthePlanet_1.svg'
@@ -146,37 +151,37 @@ const trustPoints: TrustPoint[] = [
   {
     id: 1,
     title: "WE'RE FULLY REGULATED",
-    description: "Sacred Groves is a Community Interest Company (CIC) registered in England & Wales (No. 12475659). We are regulated by the Office of the Regulator of Community Interest Companies, ensuring our assets are locked for community benefit."
+    description: "All habitats are owned or leased by The Sacred Groves Community Interest Company (No. 12481036), incorporated in England and Wales and regulated by Companies House, UK. We file audited financial statements annually, publicly available for complete transparency."
   },
   {
     id: 2,
     title: "WE'RE GOVERNED BY ENGLISH LAW",
-    description: "Our operations and Sacred Groves Cluster (SGC) agreements are governed by English Law, providing a robust legal framework for all our conservation activities and community engagements."
+    description: "All contracts and agreements are legally binding under English law and prepared by leading global law firms. Long-term legal frameworks ensure these habitats remain protected, enabling biodiversity to flourish."
   },
   {
     id: 3,
     title: "WE'RE PART OF THE\n'NATIONAL FOREST FOR WALES' NETWORK",
-    description: "We are proud members of the National Forest for Wales network, contributing to the preservation and expansion of woodlands across Wales and supporting national biodiversity goals."
+    description: "Gigrin Prysg and Coed Rhyal have been recognised by the Welsh Government for their rare temperate rainforests and vital role in local ecosystems."
   },
   {
     id: 4,
     title: "WE'RE TRUSTED BY GUARDIANS\nFROM 30+ COUNTRIES",
-    description: "Our community of Guardians spans over 30 countries, uniting people globally in the mission to protect and restore our planet's natural habitats."
+    description: "Guardians from more than 30 countries including UAE, India, France, USA, Canada, UK, Singapore, Maldives, Ethiopia, Nepal, and Saudi Arabia, trust Sacred Groves. Their trust is rooted in our transparency, traceability, and fully verifiable climate impact at a global scale."
   },
   {
     id: 5,
     title: "WE'RE TRANSPARENT",
-    description: "Natural habitats are monitored through Google Earth. Every Sacred Groves Cluster is assigned a unique code, so you can see exactly where you're making a difference."
+    description: "Natural habitats are monitored through Google Earth. Every Sacred Groves Cluster is assigned a unique code, so you can see exactly where you’re making a difference."
   },
   {
     id: 6,
     title: "ALL TRANSACTIONS ARE TRACEABLE",
-    description: "We use blockchain technology to ensure every transaction is recorded and traceable. This provides complete transparency on how funds are used for conservation efforts."
+    description: "Each Sacred Groves Cluster is recorded on the blockchain, ensuring your contribution is permanently traceable and transparent. You can follow exactly where and how your support protects habitats."
   },
   {
     id: 7,
     title: "ALL PAYMENTS ARE SECURE",
-    description: "We use industry-standard encryption and secure payment gateways to ensure all financial transactions and personal data are protected at all times."
+    description: "All contributions are processed through Stripe, a world-class payment gateway, that accepts major cards, wallets, and bank debits. Your support is handled with the highest security standards."
   }
 ]
 
@@ -745,8 +750,8 @@ export const RecognizedGlobally: React.FC = () => {
                 title="Shop"
                 subtitle="for the Planet"
                 description="With just a piece you owned kept a tree alive in the wild. K. Salampoot's Forest Splendors, unveiled at Paris Fashion Week 2024, draws its spirit from the wild, with every purchase directly financing forest conservation."
-                image1={ShopforthePlanet}
-                image2={ShopforthePlanet_1}
+                image1={ShopforthePlanetActionCard1}
+                image2={ShopforthePlanetActionCard2}
                 onImageClick={handleActionImageClick}
               />
 
@@ -754,7 +759,7 @@ export const RecognizedGlobally: React.FC = () => {
                 title="Learn"
                 subtitle="for the Planet"
                 description="Because education can plant deep roots. Eaton Business School and Mitchell & Sabarti's Offset Boxset are conserving real habitats globally through our Sacred Groves Clusters."
-                image1={LearnforthePlanet}
+                image1={LearnforthePlanetActionCard1}
                 image2={LearnforthePlanet_1}
                 onImageClick={handleActionImageClick}
               />

@@ -560,6 +560,77 @@ export const RecognizedGlobally: React.FC = () => {
     setShowActionModal(true)
   }
 
+  // Swipe Handler Hook
+  const useSwipe = (onSwipeLeft: () => void, onSwipeRight: () => void) => {
+    const [touchStart, setTouchStart] = useState(0)
+    const [touchEnd, setTouchEnd] = useState(0)
+
+    const minSwipeDistance = 50
+
+    const onTouchStart = (e: React.TouchEvent) => {
+      setTouchEnd(0) // Reset touch end
+      setTouchStart(e.targetTouches[0].clientX)
+    }
+
+    const onTouchMove = (e: React.TouchEvent) => {
+      setTouchEnd(e.targetTouches[0].clientX)
+    }
+
+    const onTouchEnd = () => {
+      if (!touchStart || !touchEnd) return
+      const distance = touchStart - touchEnd
+      const isLeftSwipe = distance > minSwipeDistance
+      const isRightSwipe = distance < -minSwipeDistance
+      if (isLeftSwipe) {
+        onSwipeLeft()
+      }
+      if (isRightSwipe) {
+        onSwipeRight()
+      }
+    }
+
+    return {
+      onTouchStart,
+      onTouchMove,
+      onTouchEnd
+    }
+  }
+
+  // Swipe handlers for each carousel
+  const recognitionSwipeHandlers = useSwipe(nextMobileSlide, prevMobileSlide)
+
+  const nextSealSlide = () => {
+    if (mobileSealIndex < 2) setMobileSealIndex(prev => prev + 1)
+  }
+  const prevSealSlide = () => {
+    if (mobileSealIndex > 0) setMobileSealIndex(prev => prev - 1)
+  }
+  const sealSwipeHandlers = useSwipe(nextSealSlide, prevSealSlide)
+
+  // Wild Tech Swipe Logic
+  // Note: Wild Tech has different screens. We only want to swipe on 'overview' screen between bubbles? 
+  // Or maybe swipe between screens? The user said "all corousels". 
+  // Wild Tech is not exactly a carousel in the traditional sense, it's a bubble map. 
+  // But the 'detail' view has dots and arrows, so it IS a carousel.
+  // And the 'intro' screen has a right arrow to go to overview.
+  // Let's add swipe to the 'detail' view carousel.
+  const nextWildTechDetail = () => {
+    if (mobileWildTechIndex < techItems.length - 1) setMobileWildTechIndex(prev => prev + 1)
+  }
+  const prevWildTechDetail = () => {
+    if (mobileWildTechIndex > 0) setMobileWildTechIndex(prev => prev - 1)
+  }
+  const wildTechDetailSwipeHandlers = useSwipe(nextWildTechDetail, prevWildTechDetail)
+
+  // Action Carousel Swipe Logic
+  const nextActionSlide = () => {
+    if (mobileActionIndex < 4) setMobileActionIndex(prev => prev + 1)
+  }
+  const prevActionSlide = () => {
+    if (mobileActionIndex > 0) setMobileActionIndex(prev => prev - 1)
+  }
+  const actionSwipeHandlers = useSwipe(nextActionSlide, prevActionSlide)
+
   // Mobile LinkedIn Carousel Component
   const MobileLinkedInCarousel = () => {
     const [currentSlide, setCurrentSlide] = useState(0)
@@ -617,8 +688,10 @@ export const RecognizedGlobally: React.FC = () => {
       setCurrentSlide((prev) => (prev - 1 + posts.length) % posts.length)
     }
 
+    const linkedInSwipeHandlers = useSwipe(nextSlide, prevSlide)
+
     return (
-      <div className={styles.mobileLinkedInSlider}>
+      <div className={styles.mobileLinkedInSlider} {...linkedInSwipeHandlers}>
         <button className={styles.mobileSliderArrowLeft} onClick={prevSlide}>
           <img src={silderrightside} alt="Previous" />
         </button>
@@ -703,7 +776,7 @@ export const RecognizedGlobally: React.FC = () => {
             </div>
 
             {/* Mobile Carousel */}
-            <div className={styles.mobileWrapper}>
+            <div className={styles.mobileWrapper} {...recognitionSwipeHandlers}>
               <div className={styles.topDecorationMobile}>
                 <img src={Alexandrelogo} alt="Alexandrelogo" className={styles.treeIconMobile} />
               </div>
@@ -829,7 +902,7 @@ export const RecognizedGlobally: React.FC = () => {
           </div>
 
           {/* Mobile Carousel for Seal of Trust */}
-          <div className={styles.mobileSealWrapper}>
+          <div className={styles.mobileSealWrapper} {...sealSwipeHandlers}>
             <div className={styles.mobileSealCarousel}>
               {mobileSealIndex === 0 ? (
                 // First slide: Background + Image + Title + First Trust Point
@@ -1140,7 +1213,7 @@ export const RecognizedGlobally: React.FC = () => {
             )}
 
             {mobileWildTechScreen === 'detail' && (
-              <div className={styles.mobileWildTechDetail}>
+              <div className={styles.mobileWildTechDetail} {...wildTechDetailSwipeHandlers}>
                 {/* Background Image */}
                 <img src={Builtwith} alt="Forest background" className={styles.mobileWildTechDetailBg} />
 
@@ -1252,7 +1325,7 @@ export const RecognizedGlobally: React.FC = () => {
           </div>
 
           {/* Mobile Action Carousel */}
-          <div className={styles.mobileActionWrapper}>
+          <div className={styles.mobileActionWrapper} {...actionSwipeHandlers}>
             <div className={styles.mobileActionCarousel}>
               {mobileActionIndex === 0 ? (
                 // Intro Slide

@@ -1,6 +1,6 @@
 /* About Us Page Styles - Enhanced UI/UX */
 
-/* Hero Section */
+/* No styles needed - using UnderConstruction component */
 .heroSection {
   position: relative;
   width: 100%;
@@ -149,8 +149,7 @@
   font-family: 'Montserrat';
   font-size: 18px;
   line-height: 1.9;
-  color: #03303D
-;
+  color: #03303D;
   margin-bottom: 25px;
 }
 
@@ -177,8 +176,7 @@
   font-family: 'Montserrat';
   font-size: 18px;
   line-height: 1.9;
-  color: #03303D
-;
+  color: #03303D;
   margin-bottom: 25px;
 }
 
